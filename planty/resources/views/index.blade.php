@@ -14,10 +14,10 @@
   <body>
     <!-- <x-navbar>
     </x-navbar> -->
-    <div class="container">
+    <div class="container-fluid">
       <section class="jumbo">
         <div class="row-jumbo d-flex">
-          <div class="col-7 ">
+          <div class="col-7">
             <div class="jumbo-text">
                 <h1>Grow your own garden now.</h1>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic veniam consequuntur ea ab necessitatibus c</p>
@@ -27,7 +27,7 @@
             <button type="button" class="btn btn-secondary">Base class</button>
             </div>
           </div>
-          <div class="col-5 ">
+          <div class="col-5">
             <img src="../assets/home/jumbo-img.png" alt="" class="jumbo-img">
           </div>
         </div>

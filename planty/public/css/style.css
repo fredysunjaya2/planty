@@ -9,11 +9,19 @@
     color: white;
 }
 
+.container-fluid{
+    background-image: url(../assets/home/home-bg2.png);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 7rem;
+}
+
 .jumbo{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 10rem;
+    /* padding-top: 10rem; */
     /* background-color: red; */
 }
 
@@ -21,10 +29,10 @@
     display: flex;
     /* background-color: green; */
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     width: 65rem;
     height: 25rem;
-    gap: 6rem;
+    /* gap: 6rem; */
 }
 
 .jumbo-text{
@@ -54,6 +62,13 @@
 .jumbo-btn{
     gap: 1rem;
 }
+
+.col-5{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
 .jumbo-img{
     width: 20rem;
     height: 24rem;
@@ -142,6 +157,8 @@ backdrop-filter: blur(6.099999904632568px);
 
 .why{
     margin-top: 20rem;
+    padding-bottom: 20rem;
+    position: relative;
 }
 
 .row-why{
@@ -162,6 +179,8 @@ backdrop-filter: blur(6.099999904632568px);
     /* align-items: center; */
     text-align: left;
     padding-left: 2rem;
+    position: relative;
+    right: 10%;
 }
 
 .card-why h2{
@@ -180,20 +199,30 @@ backdrop-filter: blur(6.099999904632568px);
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    width: 42rem;
 }
 
 .why-img{
     position: absolute;
-    left: 50%;
+    left: 60%;
 }
 
 .testi{
     border-top: 0.3px solid var(--tes1, #ADBC9F);
     background: radial-gradient(154.51% 145.91% at 29.72% -54.98%, #ADBC9F 0%, #838F79 99.99%);
     box-shadow: 0px -5px 15px 0px rgba(0, 0, 0, 0.29);
-    margin-top: 20rem;
+    /* margin-top: 20rem; */
     height: 40rem;
     gap: 3rem;
+}
+
+.testi-scroll::-webkit-scrollbar{
+    width: 0;
+    background: transparent;
+}
+
+.testi-scroll{
+    padding-bottom: 2rem;
 }
 
 .testi-text{
@@ -234,7 +263,8 @@ backdrop-filter: blur(6.099999904632568px);
     width: 19rem;
     height: 20rem;
     text-align: center;
-    gap: 1.5rem;
+    gap: 0.5rem;
+    margin-left: 1rem;
     /* padding: 1rem; */
 }
 .testi-card img{
@@ -255,25 +285,51 @@ backdrop-filter: blur(6.099999904632568px);
     text-align: left;
     margin-left: 1.5rem;
     margin-right: 1.5rem;
+    margin-top: 0.2rem;
 }
 
 .testi-profile{
-    gap: 0.5rem;
     justify-content: center;
     align-items: center;
-    gap: 0;
-    margin: 0;
+    margin-top: 0rem;
     padding: 0;
+    gap: 1rem;
 }
 
 .testi-profile img{
     width: 2.75rem;
     height: 2.75rem;
-    margin-left: 2rem;
+    margin-left: 4rem;
     margin-top: 0rem;
 }
 
-.testi-profile-text{
+
+.testi-profile-text {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
     gap: 0;
+    margin-top: 0;
+}
+
+.testi-profile-text p{
     margin: 0;
+}
+.pp-name{
+    margin: 0;
+    color: #FFF;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.8125rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.pp-tier{
+    color: #FFF;
+    font-family: "DM Sans";
+    font-size: 0.625rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
