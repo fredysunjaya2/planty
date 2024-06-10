@@ -11,14 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('subs_categories', function (Blueprint $table) {
             $table->id();
-            $table->string('first_name');
-            $table->string('last_name');
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->string('phone_number');
-            $table->foreignId("address_id")->references('id')->on('addresses');
+            $table->foreignid('subs_tier_id')->references('id')->on('subs_tiers');
+            $table->integer('months');
+            $table->double('price');
             $table->timestamps();
         });
     }
@@ -28,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('subs_categories');
     }
 };
