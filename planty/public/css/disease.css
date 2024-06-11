@@ -1,0 +1,118 @@
+*{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+.container{
+    position: relative;
+}
+
+.title{
+    font-family: "Poppins", sans-serif;
+    font-size: 48px;
+    font-weight: 800;
+}
+
+.sub-title{
+    font-family: "Poppins", sans-serif;
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.card{
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.disease-card{
+    width: 100%;
+    height: 100%;
+    justify-content: space-evenly;
+}
+
+.card-title{
+    max-width: 243px;
+    min-height: 334px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: "Poppins", sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+  
+    /* max-width: 300px;
+    height: 150px; */
+    padding: 35px;
+  
+    border: 0.5px solid var(--tes1, #ADBC9F);
+    border-radius: 15px;
+    background-color: linear-gradient(108deg, rgba(173, 188, 159, 0.30) 10.91%, rgba(79, 86, 73, 0.30) 111.54%);
+    box-shadow: 0px 8px 30px 0px rgba(0, 0, 0, 0.25);
+  
+    backdrop-filter: blur(12px);
+}
+
+.desc-card{
+    width: 100%;
+    height: 1157px;
+    position: relative;
+    top: 150px;
+}
+
+.desc-disease-card{
+    /* width: 1246px; */
+    width: 100%;
+    height: 451px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.desc{
+    width: 598px;
+    height: 451px;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-disease{
+    width: 246px;
+    height: 451px;
+    position: absolute;
+    left: 0;
+    background-color: #ADBC9F;
+}
+
+.desc-disease{
+    max-width: 545px;
+    min-height: 393px;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    font-family: "Poppins", sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+  
+    /* max-width: 300px;
+    height: 150px; */
+    padding: 20px 40px 20px 245px;
+  
+    border: 0.5px solid var(--tes1, #ADBC9F);
+    border-radius: 15px;
+    background-color: linear-gradient(108deg, rgba(173, 188, 159, 0.30) 10.91%, rgba(79, 86, 73, 0.30) 111.54%);
+    box-shadow: 0px 8px 30px 0px rgba(0, 0, 0, 0.25);
+  
+    backdrop-filter: blur(12px);
+}
+
+.desc-disease p{
+    font-size: 14px;
+    font-weight: 500;
+    align-items: start;
+    padding: 0;
+}
