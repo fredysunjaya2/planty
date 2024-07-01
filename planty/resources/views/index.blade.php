@@ -40,38 +40,14 @@
                 <h3>Our Services</h3>
               </div>
               <div class="services-desc">
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
               </div>
             </div>
-            <div class="col-6 card-service ">
-                <div class="service-icon">
-                  <img src="../assets/home/service-icon1.png" alt="">
-                </div>
-                <div class="service-text d-flex gap-1 flex-column">
-                  <h4>Gift a subscription</h4>
-                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita </p>
-                </div>
-            </div>
+            <x-service-card serviceTitle="Gift a Subscription"></x-service-card>
           </div>
           <div class="row d-flex gap-4">
-              <div class="col-6 card-service ">
-                <div class="service-icon">
-                  <img src="../assets/home/service-icon1.png" alt="">
-                </div>
-                <div class="service-text d-flex gap-1 flex-column">
-                  <h4>Gift a subscription</h4>
-                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita </p>
-                </div>
-              </div>
-              <div class="col-6 card-service ">
-              <div class="service-icon">
-                  <img src="../assets/home/service-icon1.png" alt="">
-                </div>
-                <div class="service-text d-flex gap-1 flex-column">
-                  <h4>Gift a subscription</h4>
-                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita </p>
-                </div>
-              </div>
+            <x-service-card serviceTitle="Unique Gardening Experience"></x-service-card>
+            <x-service-card serviceTitle="Free Delivery"></x-service-card>
           </div>
         </div>
       </section>
@@ -96,83 +72,27 @@
           <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Animi, eum optio,</p>
         </div>
         <div class="testi-scroll d-flex overflow-x-scroll gap-3">
-          <div class="testi-card d-flex flex-column">
-            <img src="../assets/home/testi-quote.png" alt="">
-            <p>Lorem Ipsumis simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to </p>
-            <div class="testi-profile d-flex flex-row">
-              <img src="../assets/home/testi-pp.png" alt="">
-              <div class="testi-profile-text">
-                <p class="pp-name">Name</p>
-                <p class="pp-tier">tier 1</p>
-              </div>
-            </div>
-          </div>
-          <div class="testi-card d-flex flex-column">
-            <img src="../assets/home/testi-quote.png" alt="">
-            <p>Lorem Ipsumis simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to </p>
-            <div class="testi-profile d-flex flex-row">
-              <img src="../assets/home/testi-pp.png" alt="">
-              <div class="testi-profile-text">
-                <p class="pp-name">Name</p>
-                <p class="pp-tier">tier 1</p>
-              </div>
-            </div>
-          </div>
-          <div class="testi-card d-flex flex-column">
-            <img src="../assets/home/testi-quote.png" alt="">
-            <p>Lorem Ipsumis simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to </p>
-            <div class="testi-profile d-flex flex-row">
-              <img src="../assets/home/testi-pp.png" alt="">
-              <div class="testi-profile-text">
-                <p class="pp-name">Name</p>
-                <p class="pp-tier">tier 1</p>
-              </div>
-            </div>
-          </div>
-          <div class="testi-card d-flex flex-column">
-            <img src="../assets/home/testi-quote.png" alt="">
-            <p>Lorem Ipsumis simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to </p>
-            <div class="testi-profile d-flex flex-row">
-              <img src="../assets/home/testi-pp.png" alt="">
-              <div class="testi-profile-text">
-                <p class="pp-name">Name</p>
-                <p class="pp-tier">tier 1</p>
-              </div>
-            </div>
-          </div>
-          <div class="testi-card d-flex flex-column">
-            <img src="../assets/home/testi-quote.png" alt="">
-            <p>Lorem Ipsumis simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to </p>
-            <div class="testi-profile d-flex flex-row">
-              <img src="../assets/home/testi-pp.png" alt="">
-              <div class="testi-profile-text">
-                <p class="pp-name">Name</p>
-                <p class="pp-tier">tier 1</p>
-              </div>
-            </div>
-          </div>
-          <div class="testi-card d-flex flex-column">
-            <img src="../assets/home/testi-quote.png" alt="">
-            <p>Lorem Ipsumis simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to </p>
-            <div class="testi-profile d-flex flex-row">
-              <img src="../assets/home/testi-pp.png" alt="">
-              <div class="testi-profile-text">
-                <p class="pp-name">Name</p>
-                <p class="pp-tier">tier 1</p>
-              </div>
-            </div>
-          </div>
-          <div class="testi-card d-flex flex-column">
-            <img src="../assets/home/testi-quote.png" alt="">
-            <p>Lorem Ipsumis simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to </p>
-            <div class="testi-profile d-flex flex-row">
-              <img src="../assets/home/testi-pp.png" alt="">
-              <div class="testi-profile-text">
-                <p class="pp-name">Name</p>
-                <p class="pp-tier">tier 1</p>
-              </div>
-            </div>
-          </div>
+          <x-testi-card testiName="Name" testiTier="Enthusiast">
+            Lorem Ipsumis simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to 
+          </x-testi-card>
+          <x-testi-card testiName="Name" testiTier="Enthusiast">
+            Lorem Ipsumis simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to 
+          </x-testi-card>
+          <x-testi-card testiName="Name" testiTier="Enthusiast">
+            Lorem Ipsumis simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to 
+          </x-testi-card>
+          <x-testi-card testiName="Name" testiTier="Enthusiast">
+            Lorem Ipsumis simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to 
+          </x-testi-card>
+          <x-testi-card testiName="Name" testiTier="Enthusiast">
+            Lorem Ipsumis simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to 
+          </x-testi-card>
+          <x-testi-card testiName="Name" testiTier="Enthusiast">
+            Lorem Ipsumis simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to 
+          </x-testi-card>
+          <x-testi-card testiName="Name" testiTier="Enthusiast">
+            Lorem Ipsumis simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to 
+          </x-testi-card>
         </div>
 
     </section>
