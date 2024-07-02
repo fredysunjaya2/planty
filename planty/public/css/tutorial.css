@@ -1,7 +1,6 @@
-*{
+* {
     scroll-behavior: smooth;
 }
-
 
 .jumbo {
     background-image: url(../assets/tutorial/jumbo.png);
@@ -25,7 +24,7 @@
     /* padding-top: 7rem; */
 }
 
-.jumbo-text{
+.jumbo-text {
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -33,8 +32,8 @@
     /* background-color: aliceblue; */
 }
 
-.jumbo-text h2{
-    color: #FFF;
+.jumbo-text h2 {
+    color: #fff;
     text-align: center;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     font-family: "Poppins", sans-serif;
@@ -44,23 +43,23 @@
     line-height: normal;
 }
 
-.jumbo-desc{
+.jumbo-desc {
     justify-content: center;
     align-items: center;
     text-align: center;
 }
 
-.jumbo-desc h3{
-    color: #FFF;
-    font-family:"Poppins", sans-serif;
+.jumbo-desc h3 {
+    color: #fff;
+    font-family: "Poppins", sans-serif;
     font-size: 2.5rem;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
 }
 
-.jumbo-desc p{
-    color: #FFF;
+.jumbo-desc p {
+    color: #fff;
     text-align: center;
     font-family: "DM Sans";
     font-size: 1.125rem;
@@ -74,31 +73,38 @@
     background-color: aliceblue;
 }
 
-.tutor{
+.tutor {
     height: 36.5rem;
 }
 
-.tutor-scroll{
+.tutor-scroll {
     justify-content: center;
     align-items: center;
     gap: 3rem;
     padding-left: 20rem;
 }
 
-.tutor-card{
+.tutor-card {
     border-radius: 0.9375rem;
-    border: 1px solid var(--tes1, #ADBC9F);
-    background: var(--tes1, linear-gradient(108deg, rgba(173, 188, 159, 0.30) 10.91%, rgba(79, 86, 73, 0.30) 111.54%));
+    border: 1px solid var(--tes1, #adbc9f);
+    background: var(
+        --tes1,
+        linear-gradient(
+            108deg,
+            rgba(173, 188, 159, 0.3) 10.91%,
+            rgba(79, 86, 73, 0.3) 111.54%
+        )
+    );
     box-shadow: 0px 8px 30px 0px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(6.099999904632568px);
     width: 25rem;
-    height: 30.375rem;  
+    height: 30.375rem;
     transition: all 0.2s !important;
 }
-    
-.tutor-card:hover{
+
+.tutor-card:hover {
     /* background: var(--tes1, linear-gradient(108deg, rgba(173, 188, 159, 0.50) 10.91%, rgba(79, 86, 73, 0.70) 111.54%)); */
-    background-color: #ADBC9F;
+    background-color: #adbc9f;
 }
 
 .tutor-card-top {
@@ -111,13 +117,13 @@
     gap: 0.5rem;
 }
 
-.tutor-card-top img{
+.tutor-card-top img {
     width: 15.375rem;
     height: 0.0625rem;
     /* background-color: #ADBC9F; */
 }
 
-.tutor-card-top p{
+.tutor-card-top p {
     color: #122218;
     font-family: "DM Sans";
     font-size: 1.3rem;
@@ -131,7 +137,7 @@
     width: 7rem;
 }
 
-.tutor-card-main{
+.tutor-card-main {
     justify-content: center;
     align-items: flex-start;
     /* background-color: gray; */
@@ -140,16 +146,16 @@
     padding-left: 3rem;
 }
 
-.tutor-card-title{
+.tutor-card-title {
     gap: 0.5rem;
 }
 
-.tutor-card-title img{
+.tutor-card-title img {
     width: 1.8125rem;
     height: 3.5625rem;
 }
 
-.tutor-card-title p{
+.tutor-card-title p {
     color: #122218;
     font-family: "Poppins", sans-serif;
     font-size: 2rem;
@@ -158,7 +164,7 @@
     line-height: normal;
 }
 
-.tutor-card-desc p{
+.tutor-card-desc p {
     color: #122218;
     font-family: "DM Sans";
     font-size: 1rem;
@@ -176,45 +182,43 @@
     gap: 0.5rem;
 }
 
-.learn-more:hover{
+.learn-more:hover {
     cursor: pointer;
 }
 
-.learn-more p{
+.learn-more p {
     /* background-color: antiquewhite; */
     margin: 0;
 }
 
-
-.learn-more img{
+.learn-more img {
     width: 1.25rem;
-height: 0.5rem;
+    height: 0.5rem;
     /* background-color: #ADBC9F; */
 }
 
-.tutor-scroll::-webkit-scrollbar{
+.tutor-scroll::-webkit-scrollbar {
     width: 0;
     background: transparent;
 }
 
-.tutor-scroll{
+.tutor-scroll {
     padding-bottom: 2rem;
 }
 
-
-.ask-us{
+.ask-us {
     height: 40rem;
     padding: 10rem;
     padding-right: 5rem;
 }
 
-.askus-img{
+.askus-img {
     justify-content: center;
     align-items: center;
     /* background-color: gray; */
 }
 
-.askus-desc{
+.askus-desc {
     justify-content: center;
     align-items: start;
     /* background-color: aqua; */
@@ -222,7 +226,7 @@ height: 0.5rem;
     gap: 1rem;
 }
 
-.askus-desc h4{
+.askus-desc h4 {
     color: #122218;
     font-family: "Poppins", sans-serif;
     font-size: 2.5rem;
@@ -231,7 +235,7 @@ height: 0.5rem;
     line-height: normal;
 }
 
-.askus-desc p{
+.askus-desc p {
     color: #122218;
     font-family: "DM Sans";
     font-size: 1rem;
@@ -241,22 +245,29 @@ height: 0.5rem;
     width: 33.0625rem;
 }
 
-.popup{
+.popup {
     width: 68.0625rem;
     height: 37.625rem;
     border-radius: 0.9375rem;
-    background: var(--tes1, linear-gradient(108deg, rgba(173, 188, 159, 0.30) 10.91%, rgba(79, 86, 73, 0.30) 111.54%));
+    background: var(
+        --tes1,
+        linear-gradient(
+            108deg,
+            rgba(173, 188, 159, 0.3) 10.91%,
+            rgba(79, 86, 73, 0.3) 111.54%
+        )
+    );
     box-shadow: 0px 8px 30px 0px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(50px);
     justify-content: center;
     align-items: center;
 }
 
-.popup-x{
+.popup-x {
     background-color: aqua;
     justify-content: end;
 }
-.popup-x i{
+.popup-x i {
     color: white;
     justify-content: end;
     align-items: center;
@@ -267,28 +278,33 @@ height: 0.5rem;
     gap: 1rem;
 }
 
-.popup-vid iframe{
+.popup-vid iframe {
     width: 30.7585rem;
     height: 14.875rem;
     border-radius: 0.65625rem;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.15) inset;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25),
+        0px 4px 4px 0px rgba(0, 0, 0, 0.15) inset;
 }
 
-.popup-left{
+.popup-left {
     gap: 1rem;
     justify-content: center;
     align-items: center;
 }
 
-.popup-head{
+.popup-head {
     width: 30.75rem;
     height: 14.6875rem;
     justify-content: start;
     align-items: start;
     text-align: left;
     border-radius: 0.9375rem;
-    border: 1.5px solid #ADBC9F;
-    background:  linear-gradient(108deg, rgba(173, 188, 159, 0.30) 10.91%, rgba(255, 255, 255, 0.30) 111.54%);
+    border: 1.5px solid #adbc9f;
+    background: linear-gradient(
+        108deg,
+        rgba(173, 188, 159, 0.3) 10.91%,
+        rgba(255, 255, 255, 0.3) 111.54%
+    );
     box-shadow: 0px 8px 30px 0px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(6.099999904632568px);
     padding: 1.5rem;
@@ -296,14 +312,14 @@ height: 0.5rem;
     gap: 1rem;
 }
 
-.popup-title{
+.popup-title {
     gap: 1rem;
     justify-content: center;
     align-items: center;
 }
 
-.popup-title h2{
-    color: #FFF;
+.popup-title h2 {
+    color: #fff;
     text-align: center;
     font-family: "Poppins", sans-serif;
     font-size: 2rem;
@@ -312,13 +328,13 @@ height: 0.5rem;
     line-height: normal;
 }
 
-.popup-title img{
+.popup-title img {
     width: 1.29031rem;
     height: 2.52531rem;
 }
 
-.popup-head p{
-    color: #FFF;
+.popup-head p {
+    color: #fff;
     font-family: "DM Sans";
     font-size: 1rem;
     font-style: normal;
@@ -327,10 +343,14 @@ height: 0.5rem;
     width: 25.9375rem;
 }
 
-.popup-right{
+.popup-right {
     border-radius: 0.9375rem;
-    border: 1.5px solid #ADBC9F;
-    background:linear-gradient(108deg, rgba(173, 188, 159, 0.30) 10.91%, rgba(255, 255, 255, 0.30) 111.54%);
+    border: 1.5px solid #adbc9f;
+    background: linear-gradient(
+        108deg,
+        rgba(173, 188, 159, 0.3) 10.91%,
+        rgba(255, 255, 255, 0.3) 111.54%
+    );
     box-shadow: 0px 8px 30px 0px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(6.099999904632568px);
     width: 29.8125rem;
@@ -342,8 +362,8 @@ height: 0.5rem;
     padding-top: 4rem;
 }
 
-.popup-right h2{
-    color: #FFF;
+.popup-right h2 {
+    color: #fff;
     text-align: center;
     font-family: "Poppins", sans-serif;
     font-size: 2rem;
@@ -352,14 +372,11 @@ height: 0.5rem;
     line-height: normal;
 }
 
-.popup-right p{
-    color: #FFF;
+.popup-right p {
+    color: #fff;
     font-family: "DM Sans";
     font-size: 1rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
 }
-
-
-
