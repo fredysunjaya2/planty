@@ -7,9 +7,12 @@ Route::get('/', function () {
 });
 
 Route::get('/tutorial', function () {
-    return view('tutorial');
+    return view('index');
 });
 
 Route::get('/diseases', function () {
     return view('disease');
+});
+Route::get('/donts', function(){
+    return view('donts');
 });
