@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ url('/css/productDetail.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url('/css/utils.css') }}" />
 </head>
 <body>
     <div class="container-fluid d-flex m-0 p-0" style="width: 100%; height: 100vh">
@@ -27,48 +28,49 @@
                     <div class="box-content" style="margin-left: 2.5rem">
                         <div class="title d-flex col-12">
                             <div class="tier row col-6">
-                                <h1>Beginner</h1>
-                                <p>subscription plan</p>
+                                <h1 class="planty-heading-1">Beginner</h1>
+                                <p class="planty-text-sentence">subscription plan</p>
                             </div>
-                            <div class="price d-flex col-6 justify-content-end align-items-center">
-                                <h2>Rp 39.299,00</h2>
-                                <p>/Month</p>
+                            <div class="price d-flex col-6 justify-content-end align-items-center planty-text-sentence">
+                                <h2 class="planty-heading-2">Rp 39.299,00</h2>
+                                /Month
                             </div>
                         </div>
                         <div class="description d-flex row justify-center mt-3" style="width: 40.25rem; height: 22.75rem; padding: 2.3125rem 2.875rem 2.3125rem 2.875rem">
                             <div class="plan row-8">
-                                <h3>Delivered Monthly</h3>
-                                <p>Receive 1 kit of Beginner each month directly to your door shipped within 12-48 hours of processed payment. Plan doesn’t auto renews.</p>
-                                <h3>Recurring Plan</h3>
+                                <h3 class="planty-heading-4">Delivered Monthly</h3>
+                                <p class="planty-text-sentence">Receive 1 kit of Beginner each month directly to your door shipped within 12-48 hours of processed payment. Plan doesn’t auto renews.</p>
+                                <h3 class="planty-heading-4">Recurring Plan</h3>
                                 <select class="form-select" aria-label="Default select example">
                                     <option selected value="1">
-                                        <p>6 months prepaid</p>
-                                        <p>(save 16%)</p>
+                                        <p class="planty-text-sentence">6 months prepaid</p>
+                                        <p class="planty-heading-4">(save 16%)</p>
                                     </option>
                                     <option value="2">
-                                        <p>3 months prepaid</p>
-                                        <p>(save 9%)</p>
+                                        <p class="planty-text-sentence">3 months prepaid</p>
+                                        <p class="planty-heading-4">(save 9%)</p>
                                     </option>
                                     <option value="3">
-                                        <p>1 month prepaid</p>
+                                        <p class="planty-text-sentence">1 month prepaid</p>
                                     </option>
                                 </select>
                             </div>
                             <div class="pricing row-4 d-flex justify-content-center align-items-center">
-                                <h3 class="me-1">Rp.235.794,00</h3>
-                                <h3 class="ms-1">Rp.198.066,96</h3>
+                                <h3 class="me-1 planty-heading-4 opacity-50"><del>Rp.235.794,00</del></h3>
+                                <h3 class="ms-1 planty-heading-4">Rp.198.066,96</h3>
                             </div>
                         </div>
-                        <div class="as-gift d-flex align-items-center border-bottom border-secondary" style="height: 7.0625rem;">
-                            <div class="form-check">
-                                <input class="form-check-input rounded-0" style="border-color: #618264;" type="checkbox" value="" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
+                        <div class="as-gift d-flex align-items-center" style="height: 7.0625rem;">
+                            <div class="form-check d-flex align-items-center">
+                                <input class="form-check-input rounded-0" style="width: 1.625rem; height: 1.4375rem;" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label planty-heading-4 ms-2" for="flexCheckDefault">
                                   Give Beginner as a gift
                                 </label>
                             </div>
                         </div>
+                        <hr class="border-2" style="border-color: #618264; ">
                         <div class="payment-btn d-flex justify-content-center mt-5">
-                            <button type="button" class="btn btn-success">Payment</button>
+                            <button type="button" class="btn btn-success planty-heading-4 text-white" style="border-radius: 0.625rem;">Payment</button>
                         </div>
                     </div>
                 </div>

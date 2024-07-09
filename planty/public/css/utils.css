@@ -72,32 +72,44 @@ body {
 .planty-heading-1 {
     font-size: 48px;
     font-weight: 800;
+    color: #122218;
 }
 
 .planty-heading-2 {
     font-size: 40px;
     font-weight: 600;
+    color: #122218;
 }
 
 .planty-heading-3 {
     font-size: 32px;
     font-weight: 600;
+    color: #122218;
 }
 
 .planty-heading-4 {
     font-size: 20px;
     font-weight: 600;
+    color: #122218;
 }
 
 .planty-text-sentence {
     font-family: "DM Sans", sans-serif;
     font-weight: normal;
     font-size: 18px;
+    color: #122218;
 }
 
 .planty-text-paragraph {
     font-family: "DM Sans", sans-serif;
     font-weight: normal;
     font-size: 16px;
+    color: #122218;
 }
 
+.planty-text {
+    font-family: "DM Sans", sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    color: #122218;
+}
