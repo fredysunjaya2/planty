@@ -40,3 +40,11 @@ Route::get('/diseases', function () {
 Route::get('/donts', function(){
     return view('donts');
 });
+
+Route::get('/productDetail', function(){
+    return view('product_detail');
+});
+
+Route::get('/paymentDetail', function(){
+    return view('payment_detail');
+});
