@@ -1,0 +1,83 @@
+* {
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+}
+
+.page-container {
+    background-image: url(../assets/donts/bg.png);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+}
+
+.jumbotron {
+    height: 45.0625rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mistake-card {
+    width: 21.5625rem;
+    height: 7.5625rem;
+    border-radius: 0.9375rem;
+    background: var(
+        --tes1,
+        linear-gradient(
+            108deg,
+            rgba(173, 188, 159, 0.3) 10.91%,
+            rgba(79, 86, 73, 0.3) 111.54%
+        )
+    );
+    border: 1px solid var(--tes1, #adbc9f);
+    box-shadow: 0px 8px 30px 0px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(6.099999904632568px);
+    transition: all 0.2s ease-out time;
+}
+
+.mistake-card:hover {
+    background-image: url(../assets/donts/mistakeOptionsHover.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card-body p {
+    color: #122218;
+}
+
+.mistake-card:hover p {
+    color: white;
+}
+
+.mistake-card:hover img {
+    filter: brightness(100000%);
+}
+
+.content-desc {
+    border-radius: 0.9375rem;
+    border: 1px solid var(--tes1, #adbc9f);
+    background: var(
+        --tes1,
+        linear-gradient(
+            108deg,
+            rgba(173, 188, 159, 0.3) 10.91%,
+            rgba(79, 86, 73, 0.3) 111.54%
+        )
+    );
+
+    /* tes1 */
+    box-shadow: 0px 8px 30px 0px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(6.099999904632568px);
+}
+
+.content-pic {
+    border-radius: 0.9375rem;
+    background: lightgray 50% / cover no-repeat;
+    padding: 0;
+    margin: 0;
+    /* tes1 */
+    box-shadow: 0px 8px 30px 0px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(6.099999904632568px);
+}
