@@ -1,0 +1,91 @@
+*{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+.card-title{
+    /* max-width: 243px;
+    min-height: 334px; */
+    width: 15.1875rem;
+    height: 20.875rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #122218;
+
+    padding: 2rem;
+
+    background: var(
+        --tes1,
+        linear-gradient(
+            108deg,
+            rgba(173, 188, 159, 0.3) 10.91%,
+            rgba(79, 86, 73, 0.3) 111.54%
+        )
+    );
+
+    border: 3px solid var(--tes1, #ADBC9F);
+    border-radius: 0.9375rem;
+    box-shadow: 0px 8px 30px 0px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(6.099999904632568px);
+}
+
+.card-title:hover {
+    border-radius: 0.9375rem;
+    border: 3px solid var(--tes1, #ADBC9F);
+    background: url(../assets/desc-card.png) lightgray 50% / cover no-repeat;
+    box-shadow: 0px 8px 20px 0px #FFF;
+    backdrop-filter: blur(6.099999904632568px);
+}
+
+.card-title:hover p{
+    color: white;
+}
+
+.desc-disease-card{
+    width: 100%;
+    height: 28rem;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 8rem;
+    gap: 4rem;
+}
+
+.image-disease{
+    width: 15.375rem;
+    height: 28.1875rem;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    border-radius: 0.9375rem;
+    border: 3px solid var(--tes1, #ADBC9F);
+    background: url(../assets/desc-card.png) lightgray 50% / cover no-repeat;
+
+    box-shadow: 0px 8px 30px 0px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(6.099999904632568px);
+}
+
+.desc-disease{
+    width: 34.0625rem;
+    height: 24.5625rem;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+
+    border-radius: 0.9375rem;
+    background: var(
+        --tes1,
+        linear-gradient(
+            108deg,
+            rgba(173, 188, 159, 0.30) 10.91%,
+            rgba(79, 86, 73, 0.30) 111.54%
+        )
+    );
+    border: 2px solid var(--tes1, #ADBC9F);
+    box-shadow: 0px 8px 30px 0px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(6.099999904632568px);
+}
+

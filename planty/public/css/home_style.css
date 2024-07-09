@@ -1,7 +1,5 @@
-
-
-.container-fluid{
-    background-image: url(../assets/home/home-bg2.png);
+.home-container.container-fluid{
+    background-image: url("/assets/home/home-bg2.png");
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
@@ -54,7 +52,7 @@
     gap: 1rem;
 }
 
-.col-5{
+.row-jumbo .col-5{
     display: flex;
     align-items: center;
     justify-content: end;
@@ -77,12 +75,30 @@
   gap: 1rem;
 
   border-radius: 0.9375rem;
-border: 1px solid var(--tes1, #ADBC9F);
-background: var(--tes1, linear-gradient(108deg, rgba(173, 188, 159, 0.30) 10.91%, rgba(79, 86, 73, 0.30) 111.54%));
+    border: 1px solid var(--tes1, #ADBC9F);
+    background: var(--tes1, linear-gradient(108deg, rgba(173, 188, 159, 0.30) 10.91%, rgba(79, 86, 73, 0.30) 111.54%));
 
-/* tes1 */
-box-shadow: 0px 8px 30px 0px rgba(0, 0, 0, 0.25);
-backdrop-filter: blur(6.099999904632568px);
+    /* tes1 */
+    box-shadow: 0px 8px 30px 0px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(6.099999904632568px);
+    transition: all 0.3s ease-in;
+}
+
+.card-service:hover{
+    border-radius: 0.95388rem;
+    border: 1.017px solid var(--tes1, #ADBC9F);
+    background: var(--lin3, linear-gradient(180deg, #122218 0%, #618264 100%));
+    box-shadow: 0px 8px 30px 0px #122218;
+    backdrop-filter: blur(6.099999904632568px);
+
+}
+
+.card-service:hover h4{
+    color: white;
+}
+
+.card-service:hover p{
+    color: white;
 }
 
 .services{
@@ -256,333 +272,17 @@ backdrop-filter: blur(6.099999904632568px);
     text-align: center;
     gap: 0.5rem;
     margin-left: 1rem;
+    transition: all 0.4s ease-in;
     /* padding: 1rem; */
 }
-.testi-card img{
-    width: 3.5rem;
-    height: 2.5rem;
-    margin-left: 2rem;
-    margin-top: 1rem;
-}
 
-.testi-card p{
-    width: 16rem;
-    color: #FFF;
-    font-family: "DM Sans";
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    text-align: left;
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
-    margin-top: 0.2rem;
-}
-
-.testi-profile{
-    justify-content: center;
-    align-items: center;
-    margin-top: 0rem;
-    padding: 0;
-    gap: 1rem;
-}
-
-.testi-profile img{
-    width: 2.75rem;
-    height: 2.75rem;
-    margin-left: 4rem;
-    margin-top: 0rem;
-}
-
-
-.testi-profile-text {
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    margin-top: 0;
-}
-
-.testi-profile-text p{
-    margin: 0;
-}
-.pp-name{
-    margin: 0;
-    color: #FFF;
-    font-family: "Poppins", sans-serif;
-    font-size: 0.8125rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-}
-
-.pp-tier{
-    color: #FFF;
-    font-family: "DM Sans";
-    font-size: 0.625rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
-
-.container-fluid{
-    background-image: url(../assets/home/home-bg2.png);
-    background-position: top;
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding-top: 7rem;
-}
-
-.jumbo{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* padding-top: 10rem; */
-    /* background-color: red; */
-}
-
-.row-jumbo{
-    display: flex;
-    /* background-color: green; */
-    align-items: center;
-    justify-content: space-between;
-    width: 65rem;
-    height: 25rem;
-    /* gap: 6rem; */
-}
-
-.jumbo-text{
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.jumbo-text h1{
-    color: #122218;
-    font-family: "Poppins", sans-serif;
-    font-size: 3.75rem;
-    font-style: normal;
-    font-weight: 800;
-    line-height: 105%;
-}
-
-.jumbo-text p{
-    color: #122218;
-    font-family: "DM Sans";
-    font-size: 1.125rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
-
-.jumbo-btn{
-    gap: 1rem;
-}
-
-.col-5{
-    display: flex;
-    align-items: center;
-    justify-content: end;
-}
-
-.jumbo-img{
-    width: 20rem;
-    height: 24rem;
-}
-
-.card-service{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-family: "Poppins", sans-serif;
-
-  width: 20rem;
-  height: 15rem;
-  gap: 1rem;
-
-  border-radius: 0.9375rem;
-border: 1px solid var(--tes1, #ADBC9F);
-background: var(--tes1, linear-gradient(108deg, rgba(173, 188, 159, 0.30) 10.91%, rgba(79, 86, 73, 0.30) 111.54%));
-
-/* tes1 */
-box-shadow: 0px 8px 30px 0px rgba(0, 0, 0, 0.25);
-backdrop-filter: blur(6.099999904632568px);
-}
-
-.services{
-    margin-top: 20rem;
-    /* background-color: aqua; */
-    align-items: center;
-    justify-content: center;
-}
-
-.row-services{
-    /* width: 48rem;
-    height: 33rem; */
-    /* background-color: burlywood; */
-    justify-content: center;
-    align-items: center;
-    gap: 3rem;
-}
-
-.service-h{
-    width: 20rem;
-  height: 15rem;
-    justify-content: center;
-}
-
-.services-title h3{
-    color: #122218;
-    text-align: left;
-    font-family: "Poppins", sans-serif;
-    font-size: 2rem;
-    font-style: normal;
-    font-weight: 800;
-    line-height: normal;
-}
-
-.services-desc p{
-    color: #122218;
-    font-family: "DM Sans";
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
-
-.service-text h4{
-    color: #122218;
-    text-align: center;
-    font-family: "Poppins", sans-serif;
-    font-size: 1.25rem;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-}
-
-.service-text p{
-    color: #122218;
-    text-align: center;
-    font-family: "DM Sans";
-    font-size: 0.91rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
-
-.why{
-    margin-top: 20rem;
-    padding-bottom: 20rem;
-    position: relative;
-}
-
-.row-why{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.card-why{
-    border-radius: 0.9375rem;
-    border: 0.5px solid var(--tes1, #ADBC9F);
-    background: var(--tes1, linear-gradient(108deg, rgba(173, 188, 159, 0.30) 10.91%, rgba(79, 86, 73, 0.30) 111.54%));
-    box-shadow: 0px 8px 30px 0px rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(6.099999904632568px);
-    width: 54rem;
-    height: 29rem;
-    justify-content: center;
-    /* align-items: center; */
-    text-align: left;
-    padding-left: 2rem;
-    position: relative;
-    right: 10%;
-}
-
-.card-why h2{
-    color: #122218;
-    font-family: "Poppins", sans-serif;
-    font-size: 3rem;
-    font-style: normal;
-    font-weight: 750;
-    line-height: normal;
-}
-
-.card-why p{
-    color: #122218;
-    font-family: "DM Sans";
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    width: 42rem;
-}
-
-.why-img{
-    position: absolute;
-    left: 60%;
-}
-
-.testi{
-    border-top: 0.3px solid var(--tes1, #ADBC9F);
-    background: radial-gradient(154.51% 145.91% at 29.72% -54.98%, #ADBC9F 0%, #838F79 99.99%);
-    box-shadow: 0px -5px 15px 0px rgba(0, 0, 0, 0.29);
-    /* margin-top: 20rem; */
-    height: 40rem;
-    gap: 3rem;
-}
-
-.testi-scroll::-webkit-scrollbar{
-    width: 0;
-    background: transparent;
-}
-
-.testi-scroll{
-    padding-bottom: 2rem;
-}
-
-.testi-text{
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    gap: 0.5rem;
-    padding-top: 3rem;
-}
-
-.testi-text h2{
-    color: #FFF;
-    text-align: center;
-    font-family: "Poppins", sans-serif;
-    font-size: 3rem;
-    font-style: normal;
-    font-weight: 800;
-    line-height: normal;
-}
-
-.testi-text p{
-    color: #FFF;
-    text-align: center;
-    font-family: "DM Sans";
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    width: 36rem;
-}
-
-.testi-card{
+.testi-card:hover{
     border-radius: 1.25rem;
-    border: 1.5px solid #FFF;
-    background: linear-gradient(185deg, rgba(255, 255, 255, 0.30) 6.27%, rgba(173, 188, 159, 0.30) 97.12%);
-    box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(6.099999904632568px);
-    width: 19rem;
-    height: 20rem;
-    text-align: center;
-    gap: 0.5rem;
-    margin-left: 1rem;
-    /* padding: 1rem; */
+    border: none;
+    background: #122218;
+    box-shadow: 0px 4px 10px 0px #122218;
 }
+
 .testi-card img{
     width: 3.5rem;
     height: 2.5rem;

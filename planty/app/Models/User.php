@@ -52,6 +52,8 @@ class User extends Authenticatable
         ];
     }
 
+    protected $with = ['address'];
+
     public function address(): BelongsTo {
         return $this->belongsTo(Address::class);
     }

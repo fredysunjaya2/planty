@@ -12,6 +12,8 @@ class Gift extends Model
 
     protected $guarded = [];
 
+    protected $with = ['transaction'];
+
     public function transaction(): BelongsTo {
         return $this->belongsTo(Transaction::class);
     }

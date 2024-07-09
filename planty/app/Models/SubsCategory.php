@@ -13,6 +13,8 @@ class SubsCategory extends Model
 
     protected $guarded = [];
 
+    protected $with = ['subsTier'];
+
     public function subsTier(): BelongsTo {
         return $this->belongsTo(SubsTier::class);
     }

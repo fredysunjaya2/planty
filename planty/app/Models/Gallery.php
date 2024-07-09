@@ -13,6 +13,8 @@ class Gallery extends Model
 
     protected $guarded = [];
 
+    protected $with = ['subsTier', 'plant'];
+
     public function subsTier(): BelongsTo {
         return $this->belongsTo(SubsTier::class);
     }

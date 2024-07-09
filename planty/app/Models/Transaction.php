@@ -13,6 +13,8 @@ class Transaction extends Model
 
     protected $guarded = [];
 
+    protected $with = ['user', 'subsCategory', 'paymentMethod', 'gift'];
+
     public function user(): BelongsTo {
         return $this->belongsTo(User::class);
     }
