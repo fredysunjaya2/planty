@@ -7,7 +7,7 @@
         <div class="container-fluid collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="ps-4 col navbar-nav column-gap-4">
                 <li class="nav-item">
-                    <a aria-current="page" class="nav-link active" href="#">Home</a>
+                    <a aria-current="page" class="nav-link" href="#">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Plant Care</a>
