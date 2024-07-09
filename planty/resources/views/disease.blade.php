@@ -8,9 +8,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="{{ url('/css/disease.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('/css/disease_style.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('/css/utils.css') }}" />
 </head>
 <body>
+    <x-navbar></x-navbar>
     <div class="container-fluid position-relative d-flex row m-0 p-0" style="background-image: url('../assets/gradient-disease-background.png'); background-size: cover">
         <div class="d-flex row align-items-center justify-content-center m-0 p-0" style="background-image: url('../assets/diseases-jumbotron.png'); background-size: contain; width:100%; height:100vh">
             <a href="#">
@@ -48,5 +50,6 @@
             </div>
         </div>
     </div>
+    <x-footer></x-footer>
 </body>
 </html>

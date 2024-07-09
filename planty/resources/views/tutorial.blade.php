@@ -8,12 +8,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="../css/tutorial.css" />
     <script src="https://kit.fontawesome.com/e8542fcf67.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous" defer></script>
+    <link rel="stylesheet" type="text/css" href="{{ asset('/css/tutorial_style.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('/css/utils.css') }}" />
 </head>
 <body>
-<section class="container-fluid p-0">
+    <x-navbar></x-navbar>
+<section class="tutorial-container container-fluid p-0">
     <section class= "jumbo">
         <div class="jumbo-text d-flex flex-column">
             <div class="jumbo-header ">
@@ -42,9 +44,9 @@
                 <h4>Don't be afraid to ask us</h4>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>
                 <button type="button" class="btn btn-primary">Base class</button>
-            </div>  
+            </div>
         </div>
-    </section>    
+    </section>
   </section>
 
   <div class="modal fade modal-xl" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -74,6 +76,6 @@
 
 
 </section>
-
+<x-footer>s</x-footer>
 </body>
 </html>
