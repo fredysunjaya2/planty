@@ -1,10 +1,17 @@
-.paymentDetails{
+.paymentDetails {
     width: 46rem;
     height: 51.25rem;
 
     border-radius: 0.9375rem;
-    border: 1px solid var(--tes1, #ADBC9F);
-    background: var(--tes1, linear-gradient(108deg, rgba(173, 188, 159, 0.30) 10.91%, rgba(79, 86, 73, 0.30) 111.54%));
+    border: 1px solid var(--tes1, #adbc9f);
+    background: var(
+        --tes1,
+        linear-gradient(
+            108deg,
+            rgba(173, 188, 159, 0.3) 10.91%,
+            rgba(79, 86, 73, 0.3) 111.54%
+        )
+    );
 
     /* tes1 */
     box-shadow: 0px 8px 30px 0px rgba(0, 0, 0, 0.25);

@@ -18,20 +18,12 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        $tiers = [
-            [
-                'tier_name' => 'Beginner',
-            ],
-            [
-                'tier_name' => 'Enthusiast',
-            ],
-        ];
+        // Plant::factory()->count(100)->create();
+        // Gallery::factory()->count(100)->create();
 
-        foreach($tiers as $tier) {
-            SubsTier::create($tier);
-        }
-
-        Plant::factory()->count(100)->create();
-        Gallery::factory()->count(100)->create();
+        $this->call([
+            SubsTierSeeder::class,
+            SubsCategorySeeder::class,
+        ]);
     }
 }

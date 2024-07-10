@@ -26,10 +26,12 @@
             <div class="row  justify-content-center subscription-plan">
                 <div class="col-4 subscription-card">
                 <div class="card-body-subs">
-                    <h2 class="subscription-title ">Begineer</h2>
+                    <h2 class="subscription-title">Beginner</h2>
                     <h2 class="planty-heading-4-subs subscription-price mb-2 ">Rp 39.299,00</h2>
                     <p class="benefit-desc planty-text-content">per active user, per month</p>
-                    <div class="btn-plan"><button type="button" class="btn btn-success">Select Plan</button></div>
+                    <a href="{{route('productBeginner')}}">
+                        <div class="btn-plan"><button type="button" class="btn btn-success">Select Plan</button></div>
+                    </a>
                 </div>
             </div>
 
@@ -38,7 +40,9 @@
                     <h2 class="subscription-title ">Enthusiast</h2>
                     <h1 class="planty-heading-4-subs subscription-price mb-2 ">Rp 79.299,00</h1>
                     <p class="benefit-desc planty-text-content">per active user, per month </p>
-                    <div class="btn-plan"><button type="button" class="btn btn-success ">Select Plan</button></div>
+                    <a href="{{route('productEnthusiast')}}">
+                        <div class="btn-plan"><button type="button" class="btn btn-success">Select Plan</button></div>
+                    </a>
                 </div>
                 </div>
             </div>
