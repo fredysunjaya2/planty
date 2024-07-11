@@ -78,7 +78,7 @@
                     <li>&#10004; Surprise Gifts: rare plant seeds, stylish plant pots, or unique accessories.</li>
                 </ul>
 
-                
+
                 </div>
             </div>
             </div>

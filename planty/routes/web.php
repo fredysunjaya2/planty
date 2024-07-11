@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SubsCategoriesController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GalleriesController;
 use App\Http\Controllers\BenefitController;
@@ -12,9 +13,6 @@ Route::get('/', function () {
 
 Route::get('/fun', [BenefitController::class, 'benefit']);
 Route::get('/subs', [AccordionController::class, 'accordion']);
-
-
-
 
 Route::get('/subs/details', function () {
     return view('productdetail');
@@ -40,7 +38,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
 
 Route::get('/tutorial', function () {
     return view('tutorial');
@@ -49,14 +47,14 @@ Route::get('/tutorial', function () {
 Route::get('/diseases', function () {
     return view('disease');
 });
-Route::get('/donts', function(){
+Route::get('/donts', function () {
     return view('donts');
 });
 
-Route::get('/productDetail', function(){
-    return view('product_detail');
-});
+Route::get('/productBeginner', [SubsCategoriesController::class, 'productBeginner'])->name('productBeginner');
 
-Route::get('/paymentDetail', function(){
+Route::get('/productEnthusiast', [SubsCategoriesController::class, 'productEnthusiast'])->name('productEnthusiast');
+
+Route::get('/paymentDetail', function () {
     return view('payment_detail');
-});
+})->name('paymentDetail');
