@@ -1,66 +1,3 @@
-body {
-    font-family: "Poppins", sans-serif;
-}
-
-.navbar {
-    padding: 0;
-    background-image: linear-gradient(135deg, rgba(173, 188, 159, 0.3), rgba(79, 86, 73, 0.3));
-    box-shadow: 0px 8px 30px 0 rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(12.2px);
-    border-image: linear-gradient(225deg, rgba(173, 188, 159, 0.5), rgba(102, 102, 102, 0.5));
-    border-style: inset;
-}
-
-.nav-link {
-    font-size: 18px;
-    font-weight: 600;
-    color: white;
-}
-
-.navbar-brand img {
-    display:block;
-    width: 15%;
-}
-
-.footer {
-    background-color: rgba(18, 34, 24, 1);
-}
-
-.footer-nav-item {
-    font-family: "DM Sans", sans-serif;
-    font-weight: bold;
-    font-size: 18px;
-    color: white;
-}
-
-.footer .row ul {
-    list-style: none;
-}
-
-
-.planty-heading-1 {
-    font-size: 48px;
-    font-weight: 800;
-    color: #122218;
-}
-
-.planty-heading-1-white {
-    font-size: 48px;
-    font-weight: 800;
-    color: white;
-}
-
-
-
-
-
-.planty-text-content {
-    font-family: "DM Sans", sans-serif;
-    font-weight: normal;
-    font-size: 16px;
-    color: #122218;
-}
-
 
 
 /*--------------------------------------------- ABOUT US --------------------------------------------- */
@@ -817,11 +754,25 @@ backdrop-filter: blur(6.099999904632568px);
 }
 
 .background-top-fun {
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: auto;
+    overflow: hidden;
+    z-index: -1;
+}
 
+.background-top-fun img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+
+}
+
+.content {
+    position: relative;
+    z-index: 1;
 }
 
 .fun-heading-2{
@@ -831,7 +782,6 @@ backdrop-filter: blur(6.099999904632568px);
     font-weight: 800;
     line-height: normal;
 }
-
 
 .background-top-fun img {
     width: 100%;
@@ -923,6 +873,7 @@ backdrop-filter: blur(6.099999904632568px);
 
 .fun-why{
     margin-top: 5rem;
+
 }
 .fun-why img{
 
@@ -936,14 +887,12 @@ backdrop-filter: blur(6.099999904632568px);
     align-items: center;
 }
 
-.plan-content{
-    margin-top: 5rem;
+.plan-content {
+    margin-top: 3rem;
 }
 
-.subscription-plan{
-    display: flex;
-    justify-content: center;
-
+.subscription-plan {
+    gap: 3rem;
 }
 
 .subscription-card-group{
@@ -1014,7 +963,7 @@ backdrop-filter: blur(6.099999904632568px);
     text-align: center;
     justify-content: center;
     margin-bottom: 2rem;
-    /* margin-top: 5rem; */
+    margin-top: 5rem;
 
 }
 
@@ -1027,18 +976,30 @@ backdrop-filter: blur(6.099999904632568px);
     padding-bottom: 3rem;
 }
 
-.plan-information-title-2{
-    text-align: center;
-    justify-content: center;
-    margin-bottom: 0;
-    margin-top: 5rem;
-}
 
 .plan-information-1{
     background-image: url('/assets/subs/planinfo1.png');
+    border-radius: 15px;
+    padding: 2.4rem 2.8rem 4.2rem 2.8rem;
+    border-style: inset;
+    border-width: 1.5px;
+    background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.3), rgba(97, 130, 100, 0.3));
+    border-image: linear-gradient(to bottom left, rgba(173, 188, 159, 0.5), rgba(255, 255, 255, 0.5));
+    box-shadow: 0px 8px 30px 0 rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(12.2px);
+    top: 8.5rem;
 }
 .plan-information-2{
-background-image: url('/assets/subs/planinfo2.png');
+    background-image: url('/assets/subs/planinfo2.png');
+    border-radius: 15px;
+    padding: 2.4rem 2.8rem 4.2rem 2.8rem;
+    border-style: inset;
+    border-width: 1.5px;
+    background-image: linear-gradient(to bottom right, rgba(97, 130, 100, 0.3), rgba(97, 130, 100, 0.3));
+    border-image: linear-gradient(to bottom left, rgba(97, 130, 100, 0.5), rgba(97, 130, 100, 0.5));
+    box-shadow: 0px 8px 30px 0 rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(12.2px);
+    top: 8.5rem;
  }
 
     .subs-accordion{
@@ -1077,7 +1038,7 @@ background-image: url('/assets/subs/planinfo2.png');
     .accordion-item{
 
          background: #ADBC9F;
-         /* border: none; */
+         border: none;
          border-radius: 15px !important;
          margin: 1rem;
 
@@ -1106,7 +1067,7 @@ background-image: url('/assets/subs/planinfo2.png');
     }
     .accordion-button:focus{
     box-shadow: none;
-    border: 1px solid rgba(0,0,0,0.1);
+    /* border: 1px solid rgba(0,0,0,0.1); */
 }
 
 
