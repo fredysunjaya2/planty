@@ -14,7 +14,7 @@
 </head>
 <body>
     <div class="container-fluid m-0 p-0">
-        <div class="row col-12">
+        <div class="row col-12 p-0 m-0 d-flex justify-content-center">
             <div class="col-1"></div>
             <div class="paymentDetails col-6 mt-5 mb-5 p-3">
                 <div class="title m-4">
@@ -23,55 +23,55 @@
                 <div class="content-tab">
                     <nav>
                         <div class="nav nav-underline m-0 p-0 gap-0 d-flex justify-content-center" id="nav-tab" role="tablist">
-                          <button class="nav-link active col-4 planty-heading-4" id="nav-customerDetails-tab" data-bs-toggle="tab" data-bs-target="#nav-customerDetails" type="button" role="tab" aria-controls="nav-customerDetails" aria-selected="true" style="color: rgba(0,0,0,0.4)">Customer Details</button>
-                          <button class="nav-link col-4 planty-heading-4" id="nav-shippingInfo-tab" data-bs-toggle="tab" data-bs-target="#nav-shippingInfo" type="button" role="tab" aria-controls="nav-shippingInfo" aria-selected="false" style="color: rgba(0,0,0,0.4)">Shipping Info</button>
-                          <button class="nav-link col-4 planty-heading-4" id="nav-paymentMethod-tab" data-bs-toggle="tab" data-bs-target="#nav-paymentMethod" type="button" role="tab" aria-controls="nav-paymentMethod" aria-selected="false" style="color: rgba(0,0,0,0.4)">Payment Method</button>
+                          <button class="nav-link active col-4 planty-heading-4" id="nav-customerDetails-tab" data-bs-toggle="tab" data-bs-target="#nav-customerDetails" type="button" role="tab" aria-controls="nav-customerDetails" aria-selected="true" style="color: rgba(0,0,0,0.4);">Customer Details</button>
+                          <button class="nav-link col-4 planty-heading-4" id="nav-shippingInfo-tab" data-bs-toggle="tab" data-bs-target="#nav-shippingInfo" type="button" role="tab" aria-controls="nav-shippingInfo" aria-selected="false" style="color: rgba(0,0,0,0.4);">Shipping Info</button>
+                          <button class="nav-link col-4 planty-heading-4" id="nav-paymentMethod-tab" data-bs-toggle="tab" data-bs-target="#nav-paymentMethod" type="button" role="tab" aria-controls="nav-paymentMethod" aria-selected="false" style="color: rgba(0,0,0,0.4);">Payment Method</button>
                         </div>
                       </nav>
                       <div class="tab-content" id="nav-tabContent">
                         <div class="tab-pane fade show active ms-5 me-5 mt-4" id="nav-customerDetails" role="tabpanel" aria-labelledby="nav-customerDetails-tab" tabindex="0">
                             <div class="mb-3">
                                 <label for="inputEmail4" class="form-label planty-heading-4">Email</label>
-                                <input type="email" class="form-control" id="inputEmail4" style="height: 3.3125rem; border-radius: 0.625rem; border: 1px solid #618264;">
+                                <input type="email" class="form-control" id="inputEmail4">
                               </div>
                               <div class="mb-3">
                                 <label for="formGroupExampleInput2" class="form-label planty-heading-4">First Name</label>
-                                <input type="text" class="form-control" id="formGroupExampleInput2" style="height: 3.3125rem; border-radius: 0.625rem; border: 1px solid #618264;">
+                                <input type="text" class="form-control" id="formGroupExampleInput2">
                               </div>
                               <div class="mb-3">
                                 <label for="formGroupExampleInput" class="form-label planty-heading-4">Last Name</label>
-                                <input type="text" class="form-control" id="formGroupExampleInput" style="height: 3.3125rem; border-radius: 0.625rem; border: 1px solid #618264;">
+                                <input type="text" class="form-control" id="formGroupExampleInput">
                               </div>
                               <div class="mb-3">
                                 <label for="formGroupExampleInput3" class="form-label planty-heading-4">Phone Number</label>
-                                <input type="text" class="form-control" id="formGroupExampleInput3" style="height: 3.3125rem; border-radius: 0.625rem; border: 1px solid #618264;">
+                                <input type="text" class="form-control" id="formGroupExampleInput3">
                               </div>
                         </div>
                         <div class="tab-pane fade ms-5 me-5 mt-4" id="nav-shippingInfo" role="tabpanel" aria-labelledby="nav-shippingInfo-tab" tabindex="0">
                             <form class="row g-3">
                                 <div class="col-md-7">
                                   <label for="street" class="form-label planty-heading-4">Street</label>
-                                  <input type="text" class="form-control" id="street" style="height: 3.3125rem; border-radius: 0.625rem; border: 1px solid #618264;">
+                                  <input type="text" class="form-control" id="street">
                                 </div>
                                 <div class="col-md-5">
                                   <label for="number" class="form-label planty-heading-4">Number</label>
-                                  <input type="text" class="form-control" id="number" style="height: 3.3125rem; border-radius: 0.625rem; border: 1px solid #618264;">
+                                  <input type="text" class="form-control" id="number">
                                 </div>
                                 <div class="col-md-6">
                                     <label for="district" class="form-label planty-heading-4">District</label>
-                                    <input type="text" class="form-control" id="district" style="height: 3.3125rem; border-radius: 0.625rem; border: 1px solid #618264;">
+                                    <input type="text" class="form-control" id="district">
                                   </div>
                                   <div class="col-md-6">
                                     <label for="city" class="form-label planty-heading-4">City</label>
-                                    <input type="text" class="form-control" id="city" style="height: 3.3125rem; border-radius: 0.625rem; border: 1px solid #618264;">
+                                    <input type="text" class="form-control" id="city">
                                   </div>
                                   <div class="col-md-7">
                                     <label for="province" class="form-label planty-heading-4">Province</label>
-                                    <input type="text" class="form-control" id="province" style="height: 3.3125rem; border-radius: 0.625rem; border: 1px solid #618264;">
+                                    <input type="text" class="form-control" id="province">
                                   </div>
                                   <div class="col-md-5">
                                     <label for="postalCode" class="form-label planty-heading-4">Postal Code</label>
-                                    <input type="text" class="form-control" id="postalCode" style="height: 3.3125rem; border-radius: 0.625rem; border: 1px solid #618264;">
+                                    <input type="text" class="form-control" id="postalCode">
                                   </div>
                               </form>
                         </div>

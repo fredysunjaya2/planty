@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GalleriesController;
 
 Route::get('/', function () {
-    return view('about_us');
+    return view('index');
 });
 
 Route::get('/fun-facts', function () {
