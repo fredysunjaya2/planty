@@ -2,6 +2,10 @@
 
 use Illuminate\Http\Request;
 
+// Set memory limit to 256MB
+ini_set('memory_limit', '256M');
+set_time_limit(60); // Set waktu eksekusi maksimum menjadi 60 detik
+
 define('LARAVEL_START', microtime(true));
 
 // Determine if the application is in maintenance mode...

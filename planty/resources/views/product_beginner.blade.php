@@ -60,31 +60,8 @@
                             <div class="pricing row-4 d-flex justify-content-center align-items-center">
                                 <h3 class="me-1 planty-heading-4 opacity-50"><del><span id="oldPrice">{{ number_format($pricings[2]->price, 0, ',', '.') }}</span></del></h3>
                                 <h3 class="ms-1 planty-heading-4"><span id="discountedPrice">{{ number_format($pricings[2]->price - ($pricings[2]->price * $pricings[2]->discount), 2, ',', '.') }}</span></h3>
+                                <span id="subs_id" style="display: none"></span>
                             </div>
-                            
-                            <script>
-                                // Initial price based on default selected option
-                                var pricings = @json($pricings); // Pass the pricing data to JavaScript
-                                var selectedValue = document.getElementById('planSelect').value;
-                                document.getElementById('oldPrice').innerText = formatCurrency(pricings[selectedValue].price);
-                                document.getElementById('discountedPrice').innerText = formatCurrency(pricings[selectedValue].price - (pricings[selectedValue].price * pricings[selectedValue].discount));
-                                document.getElementById('pricePerMonth').innerText = formatCurrency((pricings[selectedValue].price - (pricings[selectedValue].price * pricings[selectedValue].discount))/pricings[selectedValue].months);
-                            
-                                // Update prices when user changes the selected option
-                                document.getElementById('planSelect').addEventListener('change', function() {
-                                    var selectedValue = this.value;
-                                    document.getElementById('oldPrice').innerText = formatCurrency(pricings[selectedValue].price);
-                                    document.getElementById('discountedPrice').innerText = formatCurrency(pricings[selectedValue].price - (pricings[selectedValue].price * pricings[selectedValue].discount));
-                                    document.getElementById('pricePerMonth').innerText = formatCurrency((pricings[selectedValue].price - (pricings[selectedValue].price * pricings[selectedValue].discount))/pricings[selectedValue].months);
-                                });
-                            
-                                // Function to format currency in JavaScript
-                                function formatCurrency(amount) {
-                                    // Format number to have thousands separator (.) and decimal separator (,)
-                                    return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(amount).replace('IDR', 'Rp');
-                                }
-                            </script>
-                            
                         </div>
                         <div class="as-gift d-flex align-items-center" style="height: 7.0625rem;">
                             <div class="form-check d-flex align-items-center">
@@ -94,12 +71,77 @@
                                 </label>
                             </div>
                         </div>
+                        <script>
+                            // Initial price based on default selected option
+                            var pricings = @json($pricings); // Pass the pricing data to JavaScript
+                            var selectedValue = document.getElementById('planSelect').value;
+                            document.getElementById('subs_id').innerText = pricings[selectedValue].id;
+                            document.getElementById('oldPrice').innerText = formatCurrency(pricings[selectedValue].price);
+                            document.getElementById('discountedPrice').innerText = formatCurrency(Math.ceil(pricings[selectedValue].price - (pricings[selectedValue].price * pricings[selectedValue].discount)));
+                            document.getElementById('pricePerMonth').innerText = formatCurrency((pricings[selectedValue].price - (pricings[selectedValue].price * pricings[selectedValue].discount))/pricings[selectedValue].months);
+                        
+                            // Update prices when user changes the selected option
+                            document.getElementById('planSelect').addEventListener('change', function() {
+                                var selectedValue = this.value;
+                                document.getElementById('subs_id').innerText = pricings[selectedValue].id;
+                                document.getElementById('oldPrice').innerText = formatCurrency(pricings[selectedValue].price);
+                                document.getElementById('discountedPrice').innerText = formatCurrency(Math.ceil(pricings[selectedValue].price - (pricings[selectedValue].price * pricings[selectedValue].discount)));
+                                document.getElementById('pricePerMonth').innerText = formatCurrency((pricings[selectedValue].price - (pricings[selectedValue].price * pricings[selectedValue].discount))/pricings[selectedValue].months);
+                            });
+                        
+                            // Function to format currency in JavaScript
+                            function formatCurrency(amount) {
+                                // Format number to have thousands separator (.) and decimal separator (,)
+                                return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(amount).replace('IDR', 'Rp');
+                            }
+                        
+                            // Function to handle payment button click
+                            function handlePayment() {
+                                var checkbox = document.getElementById('flexCheckDefault');
+                                var gift = checkbox.checked ? 'true' : 'false';
+
+                                var subsId = document.getElementById('subs_id').innerText;
+                                var oldPrice = parseCurrency(document.getElementById('oldPrice').innerText);
+                                var discountedPrice = parseCurrency(document.getElementById('discountedPrice').innerText);
+                                var discount = oldPrice - discountedPrice;
+
+                                // Generate code
+                                // var generatedCode = generateCode();
+                                
+                                document.getElementById('subsID').value = subsId;
+                                document.getElementById('oldPriceInput').value = oldPrice;
+                                document.getElementById('discountedPriceInput').value = discountedPrice;
+                                document.getElementById('discountInput').value = discount;
+                                document.getElementById('giftInput').value = gift;
+                                // document.getElementById('generatedCode').value = generatedCode;
+
+                        
+                                document.getElementById('paymentForm').submit();
+                            }
+                        
+                            // Function to parse currency in JavaScript
+                            function parseCurrency(value) {
+                                return parseFloat(value.replace(/Rp|\./g, '').replace(',', '.'));
+                            }
+
+                            // function generateCode() {
+                            //     // Generate a random code (8 characters)
+                            //     return Math.random().toString(36).substr(2, 8).toUpperCase();
+                            // }
+                        </script>
                         <hr class="border-2" style="border-color: #618264; ">
-                        <a href="{{route('paymentDetail')}}" style="text-decoration: none">
+                        <form id="paymentForm" method="POST" action="{{ route('paymentDetail') }}">
+                            @csrf
+                            <input type="hidden" id="subsID" name="subsId" value="">
+                            <input type="hidden" id="oldPriceInput" name="oldPrice" value="">
+                            <input type="hidden" id="discountedPriceInput" name="discountedPrice" value="">
+                            <input type="hidden" id="discountInput" name="discount" value="">
+                            <input type="hidden" id="giftInput" name="gift" value="">
+                            {{-- <input type="hidden" id="generatedCode" name="generatedCode" value=""> --}}
                             <div class="payment-btn d-flex justify-content-center mt-5">
-                                <button type="button" class="btn btn-success planty-heading-4 text-white" style="border-radius: 0.625rem;">Payment</button>
+                                <a href="javascript:void(0);" onclick="handlePayment()" class="btn btn-success planty-heading-4 text-white" style="border-radius: 0.625rem;">Payment</a>
                             </div>
-                        </a>
+                        </form>
                     </div>
                 </div>
             </div>

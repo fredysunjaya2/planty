@@ -14,9 +14,10 @@ return new class extends Migration
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->references('id')->on('users');
-            $table->foreignId('payment_method_id')->references('id')->on('payment_methods');
             $table->foreignId('subs_category_id')->references('id')->on('subs_categories');
-            $table->date('payment_date');
+            $table->double('discounted_price');
+            $table->enum('status', ['pending', 'success', 'failed']);
+            $table->string('snap_token')->nullable();
             $table->timestamps();
         });
     }
