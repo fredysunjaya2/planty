@@ -1,3 +1,4 @@
+<link rel="stylesheet" type="text/css" href="{{ url('/css/utils.css') }}" />
 @props([
     'value_emot',
     'value_itle',
@@ -8,7 +9,7 @@
   <div class="card-body">
     <h5 class="benefit-emot">{{ $value_emot }}</h5>
     <h6 class="planty-heading-4 benefit-title mb-2 ">{{ $value_title}}</h6>
-    <p class="benefit-desc planty-text-content">{{ $value_desc}} </p>
+    <p class="benefit-desc planty-text-sentence">{{ $value_desc}} </p>
   </div>
 </div>
 
