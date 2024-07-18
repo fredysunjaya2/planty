@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GalleriesController;
 use App\Http\Controllers\BenefitController;
 use App\Http\Controllers\AccordionController;
+use App\Http\Controllers\ContactController;
 
 Route::get('/', function () {
     return view('about_us');
@@ -13,6 +14,11 @@ Route::get('/', function () {
 
 Route::get('/fun', [BenefitController::class, 'benefit']);
 Route::get('/subs', [AccordionController::class, 'accordion']);
+Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');
+
+Route::get('/contact', function () {
+    return view('contact_us');
+});
 
 Route::get('/subs/details', function () {
     return view('productdetail');
