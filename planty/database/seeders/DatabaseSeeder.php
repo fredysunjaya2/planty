@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             SubsTierSeeder::class,
             SubsCategorySeeder::class,
+            AddressSeeder::class
         ]);
     }
 }

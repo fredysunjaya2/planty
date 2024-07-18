@@ -2,11 +2,12 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SubsCategoriesController;
+use App\Http\Controllers\TransactionsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GalleriesController;
 
 Route::get('/', function () {
-    return view('about_us');
+    return view('index');
 });
 
 Route::get('/fun-facts', function () {
@@ -109,6 +110,7 @@ Route::get('/productBeginner', [SubsCategoriesController::class, 'productBeginne
 
 Route::get('/productEnthusiast', [SubsCategoriesController::class, 'productEnthusiast'])->name('productEnthusiast');
 
-Route::get('/paymentDetail', function () {
-    return view('payment_detail');
-})->name('paymentDetail');
+Route::post('/paymentDetail', [TransactionsController::class, 'processPayment'])->name('paymentDetail');
+Route::get('/paymentDetail', [TransactionsController::class, 'checkout'])->name('checkout');
+Route::get('/paymentDetail/success/{transaction}', [TransactionsController::class, 'success'])->name('checkout-success');
+Route::get('/paymentDetail/failed/{transaction}', [TransactionsController::class, 'failed'])->name('checkout-failed');  

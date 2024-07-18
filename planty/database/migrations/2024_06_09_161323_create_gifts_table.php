@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('gifts', function (Blueprint $table) {
             $table->id();
             $table->foreignid('transaction_id')->references('id')->on('transactions');
-            $table->string('redeem_code');
-            $table->boolean('is_redeemed');
+            $table->string('redeem_code')->unique();
+            $table->boolean('is_redeemed')->default(false);
             $table->timestamps();
         });
     }
