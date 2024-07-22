@@ -1,62 +1,3 @@
-body {
-    font-family: "Poppins", sans-serif;
-}
-
-.navbar {
-    padding: 0;
-    background-image: linear-gradient(135deg, rgba(173, 188, 159, 0.3), rgba(79, 86, 73, 0.3));
-    box-shadow: 0px 8px 30px 0 rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(12.2px);
-    border-image: linear-gradient(225deg, rgba(173, 188, 159, 0.5), rgba(102, 102, 102, 0.5));
-    border-style: inset;
-}
-
-.nav-link {
-    font-size: 18px;
-    font-weight: 600;
-    color: white;
-}
-
-.navbar-brand img {
-    display:block;
-    width: 15%;
-}
-
-.footer {
-    background-color: rgba(18, 34, 24, 1);
-}
-
-.footer-nav-item {
-    font-family: "DM Sans", sans-serif;
-    font-weight: bold;
-    font-size: 18px;
-    color: white;
-}
-
-.footer .row ul {
-    list-style: none;
-}
-
-
-.planty-heading-1 {
-    font-size: 48px;
-    font-weight: 800;
-    color: #122218;
-}
-
-.planty-heading-4 {
-    font-size: 20px;
-    font-weight: 600;
-    color: #122218;
-}
-
-.planty-text-content {
-    font-family: "DM Sans", sans-serif;
-    font-weight: normal;
-    font-size: 16px;
-    color: #122218;
-}
-
 
 
 /*--------------------------------------------- ABOUT US --------------------------------------------- */
@@ -84,6 +25,8 @@ body {
 
 .about-us-image-container {
     margin-left: 20%;
+    max-width: 673px;
+    max-height: 473px;
 }
 
 .about-us-image {
@@ -230,30 +173,12 @@ body {
   gap: 1rem;
 
   border-radius: 0.9375rem;
-    border: 1px solid var(--tes1, #ADBC9F);
-    background: var(--tes1, linear-gradient(108deg, rgba(173, 188, 159, 0.30) 10.91%, rgba(79, 86, 73, 0.30) 111.54%));
+border: 1px solid var(--tes1, #ADBC9F);
+background: var(--tes1, linear-gradient(108deg, rgba(173, 188, 159, 0.30) 10.91%, rgba(79, 86, 73, 0.30) 111.54%));
 
-    /* tes1 */
-    box-shadow: 0px 8px 30px 0px rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(6.099999904632568px);
-    transition: all 0.3s ease-in;
-}
-
-.card-service:hover{
-    border-radius: 0.95388rem;
-    border: 1.017px solid var(--tes1, #ADBC9F);
-    background: var(--lin3, linear-gradient(180deg, #122218 0%, #618264 100%));
-    box-shadow: 0px 8px 30px 0px #122218;
-    backdrop-filter: blur(6.099999904632568px);
-    
-}
-
-.card-service:hover h4{
-    color: white;
-}
-
-.card-service:hover p{
-    color: white;
+/* tes1 */
+box-shadow: 0px 8px 30px 0px rgba(0, 0, 0, 0.25);
+backdrop-filter: blur(6.099999904632568px);
 }
 
 .services{
@@ -427,17 +352,8 @@ body {
     text-align: center;
     gap: 0.5rem;
     margin-left: 1rem;
-    transition: all 0.4s ease-in;
     /* padding: 1rem; */
 }
-
-.testi-card:hover{
-    border-radius: 1.25rem;
-    border: none;
-    background: #122218;
-    box-shadow: 0px 4px 10px 0px #122218;
-}
-
 .testi-card img{
     width: 3.5rem;
     height: 2.5rem;
@@ -828,4 +744,350 @@ backdrop-filter: blur(6.099999904632568px);
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+}
+/*--------------------------------------------- funfact --------------------------------------------- */
+
+.planty-heading-4-subs {
+    font-size: 20px;
+    font-weight: 600;
+    color: #122218;
+}
+
+.background-top-fun {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.background-top-fun img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+}
+
+.fun-heading-2{
+    font-family: "Poppins", sans-serif;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}
+
+.background-top-fun img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.header-funfact{
+    color: white;
+    text-decoration: white;
+    justify-content: center;
+    margin-top: -5%;
+}
+
+.header-funfact p{
+   margin-left: 15%;
+   margin-top: -10%;
+}
+
+.funfact-image-container{
+    margin-left: 40%;
+    max-width: 673px;
+    max-height: 473px;
+}
+
+.funfact-content {
+    border-radius: 15px;
+    margin-right: 55%;
+    right: 0rem;
+    padding: 2.4rem 2.8rem 4.2rem 2.8rem;
+    border-style: inset;
+    border-width: 1.5px;
+    background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.3), rgba(97, 130, 100, 0.3));
+    border-image: linear-gradient(to bottom left, rgba(173, 188, 159, 0.5), rgba(255, 255, 255, 0.5));
+    box-shadow: 0px 8px 30px 0 rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(12.2px);
+    top: 8.5rem;
+    width: 30%;
+}
+
+.background-gradient-fun {
+    width: 100%;
+    display: block;
+    height: auto;
+}
+
+.background-gradient-fun {
+    top: 50%; /* Adjust this value as needed to position the gradient */
+}
+
+.benefit {
+    margin-top: 20rem;
+   justify-content: center;
+
+}
+
+.benefit-content {
+    margin-top: 3rem;
+}
+
+.benefit-view{
+    left: 0;
+}
+
+.benefit-title{
+    display: flex;
+    flex-direction: column;
+    left: 0;
+}
+
+.benefit-container{
+    left: 0;
+    right: 0;
+}
+
+.benefit-item-container {
+    /* margin-top: 0; */
+    border-style: inset;
+    border-width: 1.5px;
+    background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.3), rgba(97, 130, 100, 0.3));
+    border-image: linear-gradient(to bottom left, rgba(173, 188, 159, 0.5), rgba(255, 255, 255, 0.5));
+    box-shadow: 0px 8px 30px 0 rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(12.2px);
+    padding: 1.5rem;
+    border-radius: 15px;
+    margin: 1rem;
+    /* margin-right: 5%; */
+}
+
+.fun-why{
+    margin-top: 5rem;
+
+}
+.fun-why img{
+
+    max-width: 537.12px;
+    max-height: 412px;
+}
+/*--------------------------------------------- subscription --------------------------------------------- */
+.header-subs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.plan-content {
+    margin-top: 3rem;
+}
+
+.subscription-plan {
+    gap: 3rem;
+}
+
+.subscription-card-group{
+    gap: 3rem;
+}
+
+.subscription-card {
+    /* margin-top: 0; */
+
+    border-style: inset;
+    border-width: 1.5px;
+    background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.3), rgba(97, 130, 100, 0.3));
+    border-image: linear-gradient(to bottom left, rgba(173, 188, 159, 0.5), rgba(255, 255, 255, 0.5));
+    box-shadow: 0px 8px 30px 0 rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(12.2px);
+    padding: 1.5rem;
+    border-radius: 15px;
+    margin: 1rem;
+   z-index: 5;
+    /* margin-right: 5%; */
+}
+.card-body-subs{
+      text-align: center;
+
+}
+
+.subscription-title {
+    font-weight: 600;
+    color: #122218;
+    margin-top: 1rem;
+}
+
+.subscription-price{
+    font-weight: 550;
+    font-size: 2.25rem;
+    color: #122218;
+    margin-top: 4rem;
+}
+
+.btn-plan{
+    margin-top: 5rem;
+    padding-bottom: 1rem;
+
+
+}
+
+
+
+.subscription-plan{
+    gap: 3rem;
+}
+
+.plan-information-content{
+    display: flex;
+    justify-content: center;
+    margin-top: -5%;
+
+}
+
+.plan-information-title-1{
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    /* margin-top: 2rem; */
+}
+
+.plan-information-title-2{
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    margin-top: 5rem;
+
+}
+
+.subs-list li{
+    list-style: none;
+    padding-left: 0;
+    margin-top: 2rem;
+}
+.subs-list ul{
+    padding-bottom: 3rem;
+}
+
+
+.plan-information-1{
+    background-image: url('/assets/subs/planinfo1.png');
+    border-radius: 15px;
+    padding: 2.4rem 2.8rem 4.2rem 2.8rem;
+    border-style: inset;
+    border-width: 1.5px;
+    background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.3), rgba(97, 130, 100, 0.3));
+    border-image: linear-gradient(to bottom left, rgba(173, 188, 159, 0.5), rgba(255, 255, 255, 0.5));
+    box-shadow: 0px 8px 30px 0 rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(12.2px);
+    top: 8.5rem;
+}
+.plan-information-2{
+    background-image: url('/assets/subs/planinfo2.png');
+    border-radius: 15px;
+    padding: 2.4rem 2.8rem 4.2rem 2.8rem;
+    border-style: inset;
+    border-width: 1.5px;
+    background-image: linear-gradient(to bottom right, rgba(97, 130, 100, 0.3), rgba(97, 130, 100, 0.3));
+    border-image: linear-gradient(to bottom left, rgba(97, 130, 100, 0.5), rgba(97, 130, 100, 0.5));
+    box-shadow: 0px 8px 30px 0 rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(12.2px);
+    top: 8.5rem;
+ }
+
+    .subs-accordion{
+        display: flex;
+        justify-content: center;
+    }
+
+
+    .accordion{
+        width: 75%;
+        border-radius: 15px;
+        margin: 1rem;
+        background: transparent;
+
+    }
+
+
+    .header-accordion{
+        text-align: center;
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+    }
+
+    .accordion-button{
+        background: transparent;
+        outline: none;
+        /* border-radius: 15px !important; */
+        font-weight: 500;
+    }
+
+     .accordion-button:focus{
+       box-shadow: none;
+
+    }
+
+    .accordion-item{
+
+         background: #ADBC9F;
+         border: none;
+         border-radius: 15px !important;
+         margin: 1rem;
+
+    }
+
+    .subs-accordion{
+        padding-bottom: 10rem;
+    }
+
+    .accordion-button:not(.colapsed) {
+        box-shadow: none;
+        /* background:linear-gradient(to bottom right, rgba(255, 255, 255, 0.3) 0%, rgba(97, 130, 100, 0.3) 100%); */
+        /* background: #ADBC9F; */
+
+    }
+
+    .accordion-button::after{
+        background-image: none;
+        content: "\f107";
+        font-family: fontawesome;
+        width: auto;
+        height: auto;
+
+
+
+    }
+    .accordion-button:focus{
+    box-shadow: none;
+    /* border: 1px solid rgba(0,0,0,0.1); */
+}
+
+
+    .accordion-button:not(.colapsed)::after{
+       background-image: none;
+    }
+
+   .accordion-button:not(.collapsed) {
+    background-color: #ADBC9F;
+    /* border-radius: 15px; */
+}
+
+
+.accordion-item:first-of-type>.accordion-header .accordion-button {
+    border-top-right-radius: 15px !important;
+    border-top-left-radius: 15px !important;
+
+}
+
+.accordion-header .accordion-button {
+    border-top-right-radius: 15px !important;
+    border-top-left-radius: 15px !important;
 }
