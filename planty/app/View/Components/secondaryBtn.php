@@ -6,13 +6,16 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class ModalTutorPopup extends Component
+class secondaryBtn extends Component
 {
     /**
      * Create a new component instance.
      */
-    public function __construct()
+    public $type;
+    public function __construct($type)
     {
+        //
+        $this->type = $type;
     }
 
     /**
@@ -20,6 +23,6 @@ class ModalTutorPopup extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.modal-tutor-popup');
+        return view('components.secondary-btn');
     }
 }

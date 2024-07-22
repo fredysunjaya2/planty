@@ -8,10 +8,10 @@
                     </div>
                     <div class="popup-head d-flex flex-column">
                         <div class="popup-title d-flex flex-row">
-                            <h2>Category Name</h2>
+                            <h2>Category 1</h2>
                             <img src="../assets/tutorial/popup.png" alt="#">
                         </div>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown </p>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been </p>
                     </div>
                 </div>
                 <div class="popup-right d-flex flex-column">
@@ -22,3 +22,4 @@
         </div>
     </div>
 </div>
+
