@@ -69,7 +69,6 @@
   justify-content: center;
   align-items: center;
   font-family: "Poppins", sans-serif;
-
   width: 20rem;
   height: 15rem;
   gap: 1rem;
@@ -150,6 +149,7 @@
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+    width: 20rem;
 }
 
 .service-text p{
