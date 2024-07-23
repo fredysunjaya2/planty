@@ -16,10 +16,10 @@
   {{--  <x-navbar>
         </x-navbar>  --}}
 
-     <div class="container-fluid content">
-        <div class="position-absolute top-0 end-0 background-gradient">
-                <img class="img-fluid" src="/assets/gradient-green-background.png">
-            </div>
+     <div class="container-fluid-subs content">
+        {{--  <div class="position-absolute top-0 end-0 background-gradient">
+                <img class="img-fluid" src="/assets/subs/Subscription-bg.png">
+            </div>  --}}
          <div class="header-subs">
             <h1 class="planty-heading-1 ">Choose Your Plan</h1>
          </div>

@@ -96,8 +96,8 @@
     padding: 10rem;
 }
 
-.container-fluid{
-    background-image: url(../assets/home/home-bg2.png);
+.container-fluid-subs{
+    background-image: url(/assets/subs/Subscription-bg.png);
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
@@ -421,13 +421,7 @@ backdrop-filter: blur(6.099999904632568px);
     line-height: normal;
 }
 
-.container-fluid{
-    background-image: url(../assets/home/home-bg2.png);
-    background-position: top;
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding-top: 7rem;
-}
+
 
 .jumbo{
     display: flex;
