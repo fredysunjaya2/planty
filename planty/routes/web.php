@@ -78,7 +78,7 @@ Route::get('/about-us', function () {
 });
 
 Route::get('/plant-care', function () {
-    return view('plant-care');
+    return view('plant_care');
 });
 
 Route::get('/gallery', [GalleriesController::class, 'readGalleries']);
@@ -113,4 +113,4 @@ Route::get('/productEnthusiast', [SubsCategoriesController::class, 'productEnthu
 Route::post('/paymentDetail', [TransactionsController::class, 'processPayment'])->name('paymentDetail');
 Route::get('/paymentDetail', [TransactionsController::class, 'checkout'])->name('checkout');
 Route::get('/paymentDetail/success/{transaction}', [TransactionsController::class, 'success'])->name('checkout-success');
-Route::get('/paymentDetail/failed/{transaction}', [TransactionsController::class, 'failed'])->name('checkout-failed');  
+Route::get('/paymentDetail/failed/{transaction}', [TransactionsController::class, 'failed'])->name('checkout-failed');

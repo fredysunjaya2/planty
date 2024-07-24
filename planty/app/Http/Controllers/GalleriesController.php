@@ -36,8 +36,8 @@ class GalleriesController extends Controller
             $categorizedData[$year][] = $item;
         }
 
-        return $categorizedData;
+        // return $categorizedData;
 
-        // return view('gallery', compact('categorizedData'));
+        return view('gallery', compact('categorizedData'));
     }
 }
