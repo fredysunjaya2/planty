@@ -1,7 +1,11 @@
+.register-container {
+    height: 100vh;
+}
+
 .register-img-container {
     padding: 0;
     margin: 0;
-    height: calc(100vh - 17px);
+    height: 100vh;
 }
 
 .register-img-container img {
@@ -19,10 +23,15 @@
 }
 
 .form-container {
-    padding: 6rem 12rem 7rem 12rem;
+    padding: 6% 8% 2rem 8%;
     color: rgb(var(--font));
     display: flex;
     flex-direction: column;
+    height: 100vh;
+}
+
+.form-container.login {
+    padding: 9% 10% 2rem 10%;
 }
 
 .form-textfield {
@@ -34,9 +43,15 @@
 .form-textfield .register-item {
     display: flex;
     flex-direction: column;
+    row-gap: 0;
 }
 
 .register-agreement-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.register-agreement {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -64,4 +79,41 @@ input {
     height: 50px;
     color: rgb(var(--white-background));
     border: none;
+}
+
+.navbar {
+    display: none;
+}
+
+@media (max-width: 992px) {
+    .navbar {
+        display: block;
+    }
+
+    .register-img-container {
+        display: none;
+    }
+
+    .form-container {
+        padding: 12% 12% 1rem 12%;
+        width: 100%;
+    }
+
+    .form-container.login {
+        padding: 20% 10% 1.5rem 10%;
+    }
+
+    .form-container h1 {
+        margin-bottom: 3rem !important;
+    }
+
+    .register .form-textfield {
+        row-gap: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .form-container {
+        padding: 20% 12% 1rem 12%;
+    }
 }

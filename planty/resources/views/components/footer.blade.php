@@ -1,5 +1,5 @@
 <div class="container-fluid footer">
-    <div class="row">
+    <div class="d-flex flex-row">
         <div class="col-5">
             <img class="img-fluid" src="/assets/planty-2.png">
         </div>

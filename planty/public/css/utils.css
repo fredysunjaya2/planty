@@ -5,6 +5,14 @@
     --white-background: 255, 255, 255;
     --font: 18, 34, 24;
     --hitam: 0, 0, 0;
+
+    --planty-heading-mobile-1-font-size: 28px;
+    --planty-heading-mobile-2-font-size: 24px;
+    --planty-heading-mobile-3-font-size: 20px;
+    --planty-heading-mobile-4-font-size: 16px;
+    --planty-heading-mobile-5-font-size: 14px;
+    --planty-heading-mobile-label-font-size: 12px;
+    --planty-heading-mobile-paragraph-font-size: 10px;
 }
 
 body {
@@ -12,7 +20,7 @@ body {
 }
 
 .navbar {
-    padding: 0;
+    padding: 0.5rem 0;
     background-image: linear-gradient(
         108deg,
         rgba(173, 188, 159, 0.3) 10.91%,
@@ -34,21 +42,27 @@ body {
     color: rgba(var(--font), 1);
 }
 
-.navbar-brand img {
-    display: block;
-    width: 15%;
+#img-logo img {
+    object-fit: contain;
+}
+
+.navbar .register-btn {
+    height: 25px;
+    border-radius: 10px;
+    background: rgb(var(--hijau-gelap));
+    color: rgb(var(--white-background));
+    border: none;
+    width: 8vw;
+    font-size: 14px;
 }
 
 .footer {
     background-color: rgba(var(--font), 1);
+    padding: 7%;
 }
 
 .footer .row ul {
     list-style: none;
-}
-
-.footer {
-    padding: 10rem;
 }
 
 .footer-list {
@@ -57,11 +71,15 @@ body {
     row-gap: 1rem;
 }
 
+.footer-list li {
+    list-style: none;
+}
+
 .footer-list.social-media {
     flex-wrap: wrap;
     flex-direction: row;
     text-align: center;
-    width: 12%;
+    width: auto;
 }
 
 .footer-list.social-media li {
@@ -116,6 +134,74 @@ body {
     font-weight: 500;
     font-size: 24px;
     color: #122218;
+}
+
+@media (min-width: 1200px) {
+    #img-logo {
+        display: block;
+        height: 85%;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    #img-logo {
+        display: block;
+        width: 6%;
+    }
+}
+
+@media (max-width: 992px) {
+    .navbar {
+        backdrop-filter: blur(25px);
+    }
+
+    #img-logo {
+        display: flex;
+        width: 90px;
+        align-items: flex-start;
+    }
+
+    #img-logo img {
+        height: auto !important;
+    }
+
+    .footer .col-5 {
+        padding-left: 2rem;
+    }
+
+    .footer .d-flex {
+        flex-direction: column !important;
+        row-gap: 3rem;
+    }
+
+    .footer-list.social-media {
+        flex-wrap: wrap;
+        text-align: left;
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .footer-list.social-media li {
+        flex-basis: 25%;
+    }
+
+    .navbar .register-btn {
+        width: 30vw;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .nav-item.profile-pic {
+        display: none;
+    }
+
+    .nav-item.profile {
+        display: block;
+    }
+}
+
+@media (max-width: 576px) {
+
 }
 
 

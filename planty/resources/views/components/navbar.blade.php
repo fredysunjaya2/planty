@@ -1,11 +1,15 @@
 <nav class="navbar fixed-top navbar-expand-lg">
-    <div class="container-fluid">
+    <div class="container-fluid position-relative pt-lg-0 pb-lg-0 pt-2 pb-2">
+        <a class="navbar-brand p-0 m-0"></a>
         <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
             class="navbar-toggler" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="container-fluid collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="ps-4 col navbar-nav column-gap-4">
+        <a class="position-absolute top-0 bottom-0 start-0 end-0 m-auto" id="img-logo" href="#">
+            <img alt="Bootstrap" src="/assets/planty.png" class="w-100 h-100">
+        </a>
+        <div class="container-fluid collapse navbar-collapse pt-lg-0 pt-3" id="navbarSupportedContent">
+            <ul class="ps-lg-4 me-auto align-items-center navbar-nav column-gap-4">
                 <li class="nav-item">
                     <a aria-current="page" class="nav-link" href="#">Home</a>
                 </li>
@@ -19,21 +23,30 @@
                     <a class="nav-link" href="#">Gallery</a>
                 </li>
             </ul>
-            <a class="navbar-brand col-5" href="#">
-                <img alt="Bootstrap" src="/assets/planty.png" class="ms-auto me-auto">
-            </a>
-            <ul class="pe-4 col navbar-nav align-items-center column-gap-4 justify-content-end">
+            <ul class="pe-lg-4 me-lg-5 navbar-nav align-items-center column-gap-4 justify-content-end">
                 <li class="nav-item">
                     <a aria-current="page" class="nav-link" href="#">About</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contact</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <img class="rounded-circle" src="/assets/user.png" style="height: 50px">
-                    </a>
-                </li>
+                @if (auth()->user() == null)
+                    <li class="nav-item">
+                        <button class="register-btn planty-heading-1" name='register' type='button'>Login</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="register-btn planty-heading-1" name='register' type='button'>Register</button>
+                    </li>
+                @else
+                    <li class="nav-item profile-pic">
+                        <a class="nav-link" href="#">
+                            <img class="rounded-circle" src="/assets/user.png" style="height: 50px">
+                        </a>
+                    </li>
+                    <li class="nav-item profile">
+                        <a class="nav-link" href="#">Profile</a>
+                    </li>
+                @endif
             </ul>
         </div>
     </div>

@@ -18,7 +18,7 @@
         <x-navbar>
 
         </x-navbar>
-        <div class='col gallery-container'>
+        <div class='container-fluid gallery-container'>
             @foreach ($categorizedData as $item_key => $item)
                 <x-gallery-item :list="$item" :year="$item_key">
                 </x-gallery-item>
