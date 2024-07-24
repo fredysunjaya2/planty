@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ url('/css/style.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url('/css/utils.css') }}" />
 
   </head>
   <body>
@@ -23,16 +24,16 @@
 
                   <div class="row header-funfact">
                     <div class="col-3 fs-1 fw-bold text-start position-absolute top-0 start-0 mt-5"><p><</p></div>
-                    <div class="col-9 header-text-fun text-center" ><h1 class="planty-heading-1-white ">Fun Facts</h1></div>
+                    <div class="col-9 header-text-fun text-center" ><h1 class="planty-heading-1 text-white">Fun Facts</h1></div>
                   </div>
 
                    <div class="col position-relative">
                     <div class="funfact-image-container">
-                        <img class="about-us-image img-fluid" src="/assets/funfact/know-image.png">
+                        <img class="img-fluid" src="/assets/funfact/know-image.png">
                     </div>
                     <div class="position-absolute funfact-content col-4">
-                        <h1 class="fun-heading-2 fw-bold">Did you Know?</h1>
-                        <p class="planty-text-content">At Planty, we believe everyone has the potential to grow a
+                        <h1 class="planty-heading-2 fw-bold">Did you Know?</h1>
+                        <p class="planty-text-paragraph">At Planty, we believe everyone has the potential to grow a
                             beautiful garden, no matter
                             their level of experience. Our mission is to bring the joy of gardening to homes
                             everywhere by providing a convenient, personalized subscription service that delivers
@@ -41,9 +42,7 @@
                 </div>
                 </div>
           </div>
-           <div class="position-absolute top-50 start-50 background-gradient">
-                <img class="img-fluid" src="/assets/gradient-green-background-3.png">
-          </div>
+
 
          <div class="container-xl position-relative benefit">
             <div class="col benefit-view">
@@ -51,8 +50,11 @@
                 <div class="row">
                         <div class="col-6 benefit-title ">
                             <div class="planty-heading-1 ">6 Benefits of Indoor Plants</div>
-                            <p class="planty-text-content">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                               Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown </p>
+                            <p class="planty-text-paragraph">Indoor plants do more than just beautify your space.
+                                 They offer a multitude of benefits that can significantly improve your quality of life,
+                                  from purifying the air you breathe to boosting your mental well-being.
+                                  Discover how these green companions can
+                                  transform your home and workplace into healthier, more vibrant environments. </p>
                         </div>
                           @foreach ($benefits as $item)
                                 <x-benefit-box >
@@ -72,13 +74,16 @@
                 </div>
             </div>
                     </div>
-                    <div class="container fun-why">
+                    <div class="container position-relative fun-why">
                       <div class="row">
                         <div class="col-4"><img class="img" src="/assets/funfact/fun-why.png"></div>
                         <div class="col-8">
                             <div class="planty-heading-1 ">Why should you start gardening?</div>
-                            <p class="planty-text-content">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                              Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown  </p>
+                            <p class="planty-text-content">Gardening offers multiple benefits for your health and home.
+                              It provides relaxing outdoor activity, fresh produce, and a connection to nature.
+                              Tending plants reduces stress, improves mood, and adds beauty to your living space.
+                              Whether you have a large yard or just a few pots, starting a garden can enrich your
+                              life and environment in meaningful ways. </p>
                                <button type="button" class="btn btn-success">Start Now</button>
                         </div>
                       </div>

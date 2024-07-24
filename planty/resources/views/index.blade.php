@@ -23,8 +23,8 @@
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic veniam consequuntur ea ab necessitatibus c</p>
             </div>
             <div class="jumbo-btn d-flex">
-            <button type="button" class="btn btn-primary">Base class</button>
-            <button type="button" class="btn btn-secondary">Base class</button>
+            <x-primary-btn type="button">Subscribe</x-primary-btn>
+            <x-secondary-btn type="button">Info</x-secondary-btn>
             </div>
           </div>
           <div class="col-5">
@@ -57,7 +57,7 @@
             <h2>Why should you join us?</h2>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
             <div class="col-2">
-              <button type="button" class="btn btn-primary">Base class</button>
+                <x-primary-btn type="button">About Us</x-primary-btn>
             </div>
           </div>
           <div class="why-img">
