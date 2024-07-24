@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Address;
 use App\Models\User;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
@@ -32,7 +33,7 @@ class RegisteredUserController extends Controller
     {
         $request->validate([
             'username' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
+            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . User::class],
             'password' => ['required', Rules\Password::defaults()],
             'password_confirmation' => ['required', 'same:password'],
             'agreement' => ['accepted'],
@@ -42,6 +43,7 @@ class RegisteredUserController extends Controller
             'username' => $request->username,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'address_id' => $address = Address::create([]),
         ]);
 
         event(new Registered($user));
