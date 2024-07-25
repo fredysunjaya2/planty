@@ -19,7 +19,7 @@
     /* background-color: green; */
     align-items: center;
     justify-content: space-between;
-    width: 65rem;
+    width: 80%;
     height: 25rem;
     /* gap: 6rem; */
 }
@@ -36,7 +36,7 @@
     font-size: 3.75rem;
     font-style: normal;
     font-weight: 800;
-    line-height: 105%;
+    /* line-height: 105%; */
 }
 
 .jumbo-text p{
@@ -116,6 +116,10 @@
     gap: 3rem;
 }
 
+.row-services .row{
+    gap: 3rem;
+}
+
 .service-h{
     width: 20rem;
   height: 15rem;
@@ -149,7 +153,6 @@
     font-style: normal;
     font-weight: 600;
     line-height: normal;
-    width: 20rem;
 }
 
 .service-text p{
@@ -229,7 +232,7 @@
 }
 
 .testi-scroll{
-    padding-bottom: 2rem;
+    padding-bottom: 3rem;
 }
 
 .testi-text{
@@ -258,7 +261,7 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    width: 36rem;
+    /* width: 36rem; */
 }
 
 .testi-card{
@@ -349,3 +352,224 @@
     font-weight: 400;
     line-height: normal;
 }
+
+@media (max-width:1360px){
+
+    .img-jumbo{
+        scale: 0.8;
+    }
+
+    .row-jumbo{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        /* background-color: #618264; */
+    }
+
+    .row-why{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .row-why h2{
+        font-size: 1.75rem;
+    }
+
+    .row-why p{
+        font: 1rem;
+    }
+
+    .row-why .col-2{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card-why {
+        width: 90%;
+        height: auto;
+        right: 0;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem 1rem;
+    }
+
+    .card-why p {
+        width: auto;
+    }
+
+    .why-img {
+        position: static;
+        scale: 0.9;
+    }
+
+
+}
+
+@media (max-width: 768px){
+
+
+    .img-jumbo{
+        display: none;
+    }
+
+    .row-jumbo{
+        width: 100%;
+    }
+
+    .row-jumbo .col-5{
+        display: none;
+    }
+
+    .row-jumbo .col-7{
+        margin: none;
+    }
+
+    .jumbo-btn{
+        justify-content: center;
+        align-items: center;
+    }
+    .row-jumbo{
+        justify-content: center;
+        align-items: center;
+    }
+
+    .jumbo-text{
+        text-align: center;
+    }
+
+    .jumbo-text h1{
+        /* font-size: var(--planty-heading-mobile-1-font-size);
+*/
+        font-size: 2rem;
+    }
+
+    .jumbo-text p{
+        font-size: 1rem;
+    }
+
+    .row-services .row{
+        justify-content: center;
+        align-items: center;
+    }
+
+    .services-title h3{
+        text-align: center;
+    }
+
+    .service-h{
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 80%;
+        max-width: 500px;
+    }
+
+    .card-service{
+        /* scale: 0.9; */
+        width: 80%;
+        max-width: 300px;
+    }
+
+    .why-img {
+        position: static;
+        scale: 0.7;
+    }
+
+    .testi-text h2{
+        font-size: 2rem;
+    }
+
+    .testi-text p{
+        font-size: 1rem;
+        width: 70%;
+    }
+
+    .testi-card{
+        scale: 0.9;
+    }
+
+
+}
+
+@media (max-width: 576px){
+    .jumbo-text h1{
+        font-size: var(--planty-heading-mobile-1-font-size);
+    }
+
+    .jumbo-text p{
+        font-size: var(--planty-heading-mobile-paragraph-font-size);
+    }
+
+    .services-title h3{
+        font-size: var(--planty-heading-mobile-3-font-size);
+    }
+
+    .services-desc p{
+        font-size: var(--planty-heading-mobile-paragraph-font-size);
+    }
+
+    .service-text h4{
+        font-size: var(--planty-heading-mobile-label-font-size);
+    }
+
+    .service-text p{
+        font-size: var(--planty-heading-mobile-paragraph-font-size);
+    }
+
+    .card-why h2{
+        font-size: var(--planty-heading-mobile-3-font-size);
+    }
+
+    .card-why p{
+        font-size: var(--planty-heading-mobile-paragraph-font-size);
+    }
+
+    .testi-text h2{
+        font-size: var(--planty-heading-mobile-3-font-size);
+    }
+
+    .testi-text p{
+        font-size: var(--planty-heading-mobile-paragraph-font-size);
+    }
+
+    .services{
+        margin-top: 3rem;
+    }
+
+    .row-services .row{
+        gap: 2rem;
+    }
+
+    .why{
+        margin-top: 10rem;
+        padding-bottom: 5rem;
+    }
+
+    .testi{
+        /* height: 25rem; */
+        height: 60%;
+        gap: 0rem;
+    }
+
+    .testi-card{
+        scale: 0.725;
+    }
+
+    
+
+    .home-container.container-fluid{
+        background-image: url("/assets/home/home-mobile.png");
+        background-position: top;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding-top: 5rem;
+    }
+
+}
+
+
+

@@ -28,13 +28,13 @@
             </div>
           </div>
           <div class="col-5">
-            <img src="{{ asset('/assets/home/jumbo-img.png') }}" alt="" class="jumbo-img">
+            <img class="img-jumbo" src="{{ asset('/assets/home/jumbo-img.png') }}" alt="" class="jumbo-img">
           </div>
         </div>
       </section>
       <section class="services d-flex">
         <div class="row-services d-flex flex-column">
-          <div class="row d-flex gap-4">
+          <div class="row d-flex">
             <div class="col-6 service-h d-flex flex-column">
               <div class="services-title">
                 <h3>Our Services</h3>
@@ -45,7 +45,7 @@
             </div>
             <x-service-card serviceTitle="Gift a Subscription"></x-service-card>
           </div>
-          <div class="row d-flex gap-4">
+          <div class="row d-flex">
             <x-service-card serviceTitle="Unique Gardening Experience"></x-service-card>
             <x-service-card serviceTitle="Free Delivery"></x-service-card>
           </div>
