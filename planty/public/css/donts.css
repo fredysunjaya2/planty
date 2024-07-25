@@ -52,7 +52,7 @@
 }
 
 .mistake-card:hover img {
-    filter: brightness(100000%);
+    filter: brightness(1000000000%);
 }
 
 .content-desc {
