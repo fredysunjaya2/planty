@@ -886,7 +886,22 @@ backdrop-filter: blur(6.099999904632568px);
 }
 
 .subscription-plan {
-    gap: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem; /* Adjust this value to control space between plans */
+}
+
+.subscription-plan > div {
+    flex: 1;
+    min-width: 300px; /* Adjust this value based on your design preferences */
+    max-width: 500px; /* Adjust this value based on your design preferences */
+}
+
+@media (max-width: 768px) {
+    .subscription-plan > div {
+        flex-basis: 100%;
+    }
 }
 
 .subscription-card-group{
@@ -934,10 +949,6 @@ backdrop-filter: blur(6.099999904632568px);
 }
 
 
-
-.subscription-plan{
-    gap: 3rem;
-}
 
 .plan-information-content{
     display: flex;
@@ -995,6 +1006,13 @@ backdrop-filter: blur(6.099999904632568px);
     backdrop-filter: blur(12.2px);
     top: 8.5rem;
  }
+
+ /* Adjust the top property to align the information sections */
+.plan-information-1,
+.plan-information-2 {
+    top: 100%; /* This will position the info right below the card */
+    margin-top: 1rem; /* Add some space between card and info */
+}
 
     .subs-accordion{
         display: flex;
@@ -1085,3 +1103,4 @@ backdrop-filter: blur(6.099999904632568px);
     border-top-right-radius: 15px !important;
     border-top-left-radius: 15px !important;
 }
+
