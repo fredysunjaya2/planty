@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     padding-top: 10rem;
-    margin-bottom: 4rem;
+    padding-bottom: 4rem;
 }
 
 .plant-care-img {
@@ -14,18 +14,18 @@
     display: flex;
     text-align: center;
     row-gap: 1rem;
-    padding: 4rem 10rem 4rem 10rem;
+    padding: 4rem 14% 4rem 14%;
     display: flex;
     justify-content: center;
     border-bottom: 1px solid #000000;
 }
 
 .plant-care-item:first-child {
-    padding: 0rem 10rem 4rem 10rem;
+    padding-top: 0;
 }
 
 .plant-care-item:last-child {
-    padding: 4rem 10rem 0rem 10rem;
+    padding-bottom: 0;
     border-bottom: none;
 }
 
@@ -34,4 +34,58 @@
     color: rgb(var(--white-background));
     background-color: rgb(var(--hijau-gelap));
     width: 25%;
+}
+
+@media (max-width: 992px) {
+    .plant-care-img {
+        display: none;
+    }
+
+    .plant-care-list {
+        width: 100%;
+        background-image: url("/assets/plant-care/plant-care-background.jpeg");
+        background-size: cover;
+        padding: 10rem 15% 15rem 15%;
+        row-gap: 3rem;
+    }
+
+    .plant-care-item {
+        border-radius: 0.9375rem;
+        background: linear-gradient(
+            108deg,
+            rgba(var(--white-background), 0.3) 10.91%,
+            rgba(var(--hijau-gelap), 0.3) 111.54%
+        );
+        box-shadow: 0px 8px 30px 0px rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(6.099999904632568px);
+        padding: 4rem 5% 4rem 5%;
+    }
+
+    .plant-care-item:first-child {
+        padding-top: 4rem;
+    }
+
+    .plant-care-item:last-child {
+        padding-bottom: 4rem;
+    }
+
+    .plant-care-item > * {
+        color: white;
+    }
+
+    .plant-care-item .btn {
+        width: 50%;
+    }
+
+    .plant-care-item h1 {
+        font-size: 36px;
+    }
+
+    .plant-care-item p {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 576px) {
+
 }

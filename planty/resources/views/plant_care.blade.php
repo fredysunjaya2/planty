@@ -16,7 +16,7 @@
 
     <body>
         <x-navbar></x-navbar>
-        <div class="row plant-care-container">
+        <div class="d-flex flex-row plant-care-container">
             <div class="col-6 plant-care-img">
                 <img class="w-100 h-100 object-fit-cover"
                     src= "{{ asset('assets/plant-care/plant-care-background.jpeg') }}">

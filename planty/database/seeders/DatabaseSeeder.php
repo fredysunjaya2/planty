@@ -18,8 +18,8 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        // Plant::factory()->count(100)->create();
-        // Gallery::factory()->count(100)->create();
+        Plant::factory()->count(100)->create();
+        Gallery::factory()->count(100)->create();
 
         $this->call([
             SubsTierSeeder::class,

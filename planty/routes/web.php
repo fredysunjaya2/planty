@@ -30,7 +30,7 @@ Route::get('/about-us', function () {
 });
 
 Route::get('/plant-care', function () {
-    return view('plant-care');
+    return view('plant_care');
 });
 
 Route::get('/gallery', [GalleriesController::class, 'readGalleries']);
