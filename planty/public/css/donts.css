@@ -81,3 +81,11 @@
     box-shadow: 0px 8px 30px 0px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(6.099999904632568px);
 }
+
+.section-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Atau sesuaikan dengan kebutuhan */
+}

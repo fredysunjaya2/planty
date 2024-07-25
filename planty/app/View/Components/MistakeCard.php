@@ -13,9 +13,11 @@ class MistakeCard extends Component
      */
 
     public $mistakeLogo;
-    public function __construct($mistakeLogo)
+    public $href;
+    public function __construct($mistakeLogo, $href)
     {
         $this->mistakeLogo = $mistakeLogo;
+        $this->href = $href;
     }
 
     /**
