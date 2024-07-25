@@ -5,6 +5,14 @@
     --white-background: 255, 255, 255;
     --font: 18, 34, 24;
     --hitam: 0, 0, 0;
+
+    --planty-heading-mobile-1-font-size: 28px;
+    --planty-heading-mobile-2-font-size: 24px;
+    --planty-heading-mobile-3-font-size: 20px;
+    --planty-heading-mobile-4-font-size: 16px;
+    --planty-heading-mobile-5-font-size: 14px;
+    --planty-heading-mobile-label-font-size: 12px;
+    --planty-heading-mobile-paragraph-font-size: 10px;
 }
 
 body {

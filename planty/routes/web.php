@@ -1,4 +1,4 @@
-<?php
+    <?php
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SubsCategoriesController;
@@ -14,14 +14,14 @@ Route::get('/', function () {
 });
 
 Route::get('/fun', [BenefitController::class, 'benefit']);
-Route::get('/subs', [AccordionController::class, 'accordion']);
+Route::get('/subscription', [AccordionController::class, 'accordion'])->name('subscription');
 Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');
 
 Route::get('/contact', function () {
     return view('contact_us');
 });
 
-Route::get('/subs/details', function () {
+Route::get('/subscription/details', function () {
     return view('productdetail');
 });
 
@@ -65,4 +65,4 @@ Route::get('/productEnthusiast', [SubsCategoriesController::class, 'productEnthu
 Route::post('/paymentDetail', [TransactionsController::class, 'processPayment'])->name('paymentDetail');
 Route::get('/paymentDetail', [TransactionsController::class, 'checkout'])->name('checkout');
 Route::get('/paymentDetail/success/{transaction}', [TransactionsController::class, 'success'])->name('checkout-success');
-Route::get('/paymentDetail/failed/{transaction}', [TransactionsController::class, 'failed'])->name('checkout-failed');  
+Route::get('/paymentDetail/failed/{transaction}', [TransactionsController::class, 'failed'])->name('checkout-failed');

@@ -207,7 +207,7 @@
 }
 
 .ask-us {
-    height: 40rem;
+    /* height: 40rem; */
     padding: 10rem;
     padding-right: 5rem;
 }
@@ -242,7 +242,7 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    width: 35rem;
+    /* width: 35rem; */
 }
 
 .popup {
@@ -379,4 +379,11 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+}
+
+@media (max-width: 576px){
+    .row-ask{
+        display: flex;
+        flex-direction: column;
+    }
 }
