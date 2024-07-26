@@ -9,6 +9,8 @@ use App\Http\Controllers\BenefitController;
 use App\Http\Controllers\AccordionController;
 use App\Http\Controllers\ContactController;
 
+require __DIR__ . '/auth.php';
+
 Route::get('/', function () {
     return view('index');
 });
@@ -41,11 +43,11 @@ Route::get('/dashboard', function () {
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::post('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::post('/profile2', [ProfileController::class, 'addressUpdate'])->name('address.update'); // temporary routing
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__ . '/auth.php';
 
 Route::get('/tutorial', function () {
     return view('tutorial');
@@ -54,9 +56,14 @@ Route::get('/tutorial', function () {
 Route::get('/diseases', function () {
     return view('disease');
 });
+
 Route::get('/donts', function () {
     return view('donts');
 });
+
+Route::get('/profile', function () {
+    return view('profile');
+})->name('profile');
 
 Route::get('/productBeginner', [SubsCategoriesController::class, 'productBeginner'])->name('productBeginner');
 
