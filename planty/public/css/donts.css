@@ -1,5 +1,4 @@
 * {
-    scroll-behavior: smooth;
     margin: 0;
     padding: 0;
 }
@@ -10,6 +9,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0;
+    overflow-x: hidden;
 }
 
 .jumbotron {
@@ -88,4 +88,71 @@
     align-items: center;
     justify-content: center;
     height: 100vh; /* Atau sesuaikan dengan kebutuhan */
+}
+
+@media (max-width: 1200px) {
+    .mistake-card {
+        scale: 0.7;
+    }
+}
+
+@media (max-width: 992px) {
+    .mistake-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .mistake-card {
+        scale: 0.7;
+    }
+
+    .mistakes p {
+        font-size: var(--planty-heading-mobile-3-font-size);
+    }
+}
+
+@media (max-width: 576px) {
+    .content-desc {
+        width: 20.70969rem !important;
+        height: 15.9375rem !important;
+    }
+
+    .content-pic {
+        width: 17.5rem !important;
+        height: 11.625rem !important;
+    }
+
+    .mistake-title {
+        font-size: var(--planty-heading-mobile-3-font-size) !important;
+    }
+
+    .mistake-desc {
+        font-size: var(--planty-heading-mobile-paragraph-font-size) !important;
+    }
+
+    .mistake-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .mistake-card {
+        scale: 0.7;
+    }
+
+    .card-body p {
+        font-size: var(--planty-heading-mobile-4-font-size);
+    }
+
+    .jumbotron-container h1 {
+        font-size: var(--planty-heading-mobile-1-font-size);
+    }
+
+    .mistakes p {
+        font-size: var(--planty-heading-mobile-3-font-size);
+    }
+
+    .mistake-pic {
+        margin: 0 !important;
+        height: 15rem !important;
+    }
 }
