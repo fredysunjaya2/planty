@@ -15,8 +15,7 @@ class AddressSeeder extends Seeder
         //
         \DB::table('addresses')->insert([
             [
-                'street' => 'Beginner Street',
-                'number' => 212,
+                'street_number' => 'Beginner Street 212',
                 'country' => 'indonesia',
                 'district' => 'serpong',
                 'city' => 'sentul',
