@@ -194,7 +194,6 @@ body {
 
     .our-values-list-container {
         overflow: scroll;
-        overflow: auto; /* Enable scrolling within the container */
         -ms-overflow-style: none; /* IE and Edge */
         scrollbar-width: none; /* Firefox */
     }

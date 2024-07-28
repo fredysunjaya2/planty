@@ -67,68 +67,10 @@
                             <div class="form-check d-flex align-items-center">
                                 <input class="form-check-input rounded-0" style="width: 1.625rem; height: 1.4375rem;" type="checkbox" value="" id="flexCheckDefault">
                                 <label class="form-check-label planty-heading-4 ms-2" for="flexCheckDefault">
-                                  Give Beginner as a gift
+                                    Give Beginner as a gift
                                 </label>
                             </div>
                         </div>
-                        <script>
-                            // Initial price based on default selected option
-                            var pricings = @json($pricings); // Pass the pricing data to JavaScript
-                            var selectedValue = document.getElementById('planSelect').value;
-                            document.getElementById('subs_id').innerText = pricings[selectedValue].id;
-                            document.getElementById('oldPrice').innerText = formatCurrency(pricings[selectedValue].price);
-                            document.getElementById('discountedPrice').innerText = formatCurrency(Math.ceil(pricings[selectedValue].price - (pricings[selectedValue].price * pricings[selectedValue].discount)));
-                            document.getElementById('pricePerMonth').innerText = formatCurrency((pricings[selectedValue].price - (pricings[selectedValue].price * pricings[selectedValue].discount))/pricings[selectedValue].months);
-                        
-                            // Update prices when user changes the selected option
-                            document.getElementById('planSelect').addEventListener('change', function() {
-                                var selectedValue = this.value;
-                                document.getElementById('subs_id').innerText = pricings[selectedValue].id;
-                                document.getElementById('oldPrice').innerText = formatCurrency(pricings[selectedValue].price);
-                                document.getElementById('discountedPrice').innerText = formatCurrency(Math.ceil(pricings[selectedValue].price - (pricings[selectedValue].price * pricings[selectedValue].discount)));
-                                document.getElementById('pricePerMonth').innerText = formatCurrency((pricings[selectedValue].price - (pricings[selectedValue].price * pricings[selectedValue].discount))/pricings[selectedValue].months);
-                            });
-                        
-                            // Function to format currency in JavaScript
-                            function formatCurrency(amount) {
-                                // Format number to have thousands separator (.) and decimal separator (,)
-                                return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(amount).replace('IDR', 'Rp');
-                            }
-                        
-                            // Function to handle payment button click
-                            function handlePayment() {
-                                var checkbox = document.getElementById('flexCheckDefault');
-                                var gift = checkbox.checked ? 'true' : 'false';
-
-                                var subsId = document.getElementById('subs_id').innerText;
-                                var oldPrice = parseCurrency(document.getElementById('oldPrice').innerText);
-                                var discountedPrice = parseCurrency(document.getElementById('discountedPrice').innerText);
-                                var discount = oldPrice - discountedPrice;
-
-                                // Generate code
-                                // var generatedCode = generateCode();
-                                
-                                document.getElementById('subsID').value = subsId;
-                                document.getElementById('oldPriceInput').value = oldPrice;
-                                document.getElementById('discountedPriceInput').value = discountedPrice;
-                                document.getElementById('discountInput').value = discount;
-                                document.getElementById('giftInput').value = gift;
-                                // document.getElementById('generatedCode').value = generatedCode;
-
-                        
-                                document.getElementById('paymentForm').submit();
-                            }
-                        
-                            // Function to parse currency in JavaScript
-                            function parseCurrency(value) {
-                                return parseFloat(value.replace(/Rp|\./g, '').replace(',', '.'));
-                            }
-
-                            // function generateCode() {
-                            //     // Generate a random code (8 characters)
-                            //     return Math.random().toString(36).substr(2, 8).toUpperCase();
-                            // }
-                        </script>
                         <hr class="border-2" style="border-color: #618264; ">
                         <form id="paymentForm" method="POST" action="{{ route('paymentDetail') }}">
                             @csrf

@@ -14,6 +14,7 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ url('/css/style.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ url('/css/utils.css') }}" />
+    <script src="https://kit.fontawesome.com/51ee64f08e.js" crossorigin="anonymous"></script>
 
 </head>
 
@@ -32,10 +33,15 @@
             <div class="row  justify-content-center subscription-plan">
                 <div class="col-4 subscription-card">
                     <div class="card-body-subs">
-                        <h2 class="planty-heading-2 subscription-title ">Beginner</h2>
+                        <h2 class="planty-heading-2 subscription-title ">Beginner
+
+                        </h2>
                         <h2 class="planty-heading-4 subscription-price mb-2 ">Rp 39.299,00</h2>
                         <p class="benefit-desc planty-text-sentence">per active user, per month</p>
-                        <a href="{{route('productBeginner')}}"><div class="btn-plan"><button type="button" class="btn btn-success">Select Plan</button></div></a>
+                        <a href="{{ route('product-detail', 'product-beginner') }}">
+                            <div class="btn-plan"><button type="button" class="btn btn-success">Select Plan</button>
+                            </div>
+                        </a>
                     </div>
                 </div>
 
@@ -44,7 +50,10 @@
                         <h2 class=" planty-heading-2 subscription-title ">Enthusiast</h2>
                         <h1 class="planty-heading-4 subscription-price mb-2 ">Rp 79.299,00</h1>
                         <p class="benefit-desc planty-text-sentence ">per active user, per month </p>
-                        <a href="{{route('productEnthusiast')}}"><div class="btn-plan"><button type="button" class="btn btn-success">Select Plan</button></div></a>
+                        <a href="{{ route('product-detail', 'product-enthusiast') }}">
+                            <div class="btn-plan"><button type="button" class="btn btn-success">Select Plan</button>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -132,7 +141,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
-    <script src="https://kit.fontawesome.com/51ee64f08e.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

@@ -15,6 +15,10 @@ class SubsCategory extends Model
 
     protected $with = ['subsTier'];
 
+    public function getRouteKeyName() {
+        return 'slug';
+    }
+
     public function subsTier(): BelongsTo {
         return $this->belongsTo(SubsTier::class);
     }

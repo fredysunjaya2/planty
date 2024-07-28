@@ -111,7 +111,7 @@
             </div>
             <div class="d-flex flex-row mb-3">
                 <div class="profile-item">
-                    <label for="street_number" class="d-block planty-text m-0">Street Number</label>
+                    <label for="street_number" class="d-block planty-text m-0">Street, Number</label>
                     <input name="street_number" type="text" value="{{ auth()->user()->address->street_number }}"
                         class="planty-text-sentence m-0" disabled>
                 </div>
