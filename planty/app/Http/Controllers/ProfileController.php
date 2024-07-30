@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProfileUpdateRequest;
+use App\Models\Transaction;
+use DateInterval;
+use DateTime;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -21,6 +24,29 @@ class ProfileController extends Controller
         ]);
     }
 
+    public function index(): View
+    {
+        $transaction = Transaction::join('users', 'users.id', '=', 'transactions.user_id')
+            ->join('subs_categories', 'subs_categories.id', '=', 'transactions.subs_category_id')
+            ->select('*', 'transactions.id as transaction_id')
+            ->where('transactions.user_id', '=', auth()->user()->id)
+            ->where('transactions.status', '=', 'success')
+            ->orderBy('transactions.created_at', 'desc')
+            ->first();
+
+        $date = new DateTime($transaction->created_at);
+        $date->add(new DateInterval('P' . strval($transaction->months) . 'M'));
+        $curDate = now();
+
+        if ($date >= $curDate) {
+            $status = 'Subscribed';
+        } else {
+            $status = 'Not Subscribed';
+        }
+
+        return view('profile', compact('status', 'date'));
+    }
+
     /**
      * Update the user's profile information.
      */
@@ -37,25 +63,6 @@ class ProfileController extends Controller
         $request->user()->fill($validatedData);
 
         $request->user()->save();
-
-        return Redirect::route('profile')->with('status', 'profile-updated');
-    }
-
-    public function addressUpdate(Request $request): RedirectResponse
-    {
-        $validatedData = $request->validate([
-            'street_number' => 'string|max:255',
-            'city' => 'string|max:255',
-            'country' => 'string|max:255',
-            'village' => 'string|max:255',
-            'district' => 'string|max:255',
-            'postal_code' => 'string|max:255',
-            // Add other validation rules here
-        ]);
-
-        $request->user()->address->fill($validatedData);
-
-        $request->user()->address->save();
 
         return Redirect::route('profile')->with('status', 'profile-updated');
     }

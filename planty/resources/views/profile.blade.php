@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Planty</title>
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
@@ -26,12 +27,13 @@
             class="d-flex flex-row align-items-center justify-content-center profile-box profile-header column-gap-5 mb-5 mt-5">
             <img class="rounded-circle profile-pic" src="{{ asset('/assets/user.png') }}">
             <p class="planty-heading-2 username m-0">{{ auth()->user()->username }}</p>
-            <form action="" method="post" enctype="multipart/form-data" class="ms-auto d-flex flex-row">
+            <form method="POST" class="ms-auto d-flex flex-row" id="redeem-code-form">
+                @csrf
                 <div class="d-flex flex-column">
                     <label for="redeem-code" class="form-label planty-heading-4 m-0">Redeem Code</label>
                     <div class="d-flex flex-row column-gap-4">
-                        <input type="text" name="redeem-code" class="form-control" id="redeem-code">
-                        <x-primary-btn type="submit">Redeem</x-primary-btn>
+                        <input type="text" name="redeem_code" class="form-control" id="redeem-code">
+                        <x-primary-btn type="button" id="redeem-button">Redeem</x-primary-btn>
                     </div>
                 </div>
             </form>
@@ -86,13 +88,13 @@
                 </div>
                 <div class="profile-item">
                     <p class="planty-text m-0">Bill</p>
-                    <p class="planty-text-sentence m-0">Lorem Ipsum</p>
+                    <p class="planty-text-sentence m-0">{{ $date->format('Y-m-d') }}</p>
                 </div>
             </div>
             <div class="d-flex flex-row">
                 <div class="profile-item">
                     <p class="planty-text m-0">Status</p>
-                    <p class="planty-text-sentence m-0">Lorem Ipsum</p>
+                    <p class="planty-text-sentence m-0">{{ $status }}</p>
                 </div>
             </div>
         </div>
@@ -111,7 +113,7 @@
             </div>
             <div class="d-flex flex-row mb-3">
                 <div class="profile-item">
-                    <label for="street_number" class="d-block planty-text m-0">Street Number</label>
+                    <label for="street_number" class="d-block planty-text m-0">Street, Number</label>
                     <input name="street_number" type="text" value="{{ auth()->user()->address->street_number }}"
                         class="planty-text-sentence m-0" disabled>
                 </div>
@@ -138,7 +140,7 @@
                     <label for="district" class="d-block planty-text m-0">District</label>
                     <input name="district" type="text" value="{{ auth()->user()->address->district }}"
                         class="planty-text-sentence m-0" disabled>
-                </div>
+                </div>/redeem-code',
                 <div class="profile-item">
                     <label for="postal_code" class="d-block planty-text m-0">Postal Code</label>
                     <input name="postal_code" type="text" value="{{ auth()->user()->address->postal_code }}"
@@ -150,9 +152,11 @@
 
     <x-footer>
     </x-footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    <script script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+        crossorigin="anonymous"></script>
     <script src="{{ asset('/js/profile.js') }}"></script>
 </body>
 
