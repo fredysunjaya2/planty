@@ -4,13 +4,14 @@
     use App\Http\Controllers\ProfileController;
     use App\Http\Controllers\SubsCategoriesController;
     use App\Http\Controllers\TransactionsController;
+    use App\Mail\GiftMail;
     use Illuminate\Support\Facades\Route;
     use App\Http\Controllers\GalleriesController;
     use App\Http\Controllers\BenefitController;
     use App\Http\Controllers\AccordionController;
     use App\Http\Controllers\ContactController;
     use App\Http\Controllers\GiftsController;
-    use App\Http\Controllers\PaymentMethodsController;
+    use Illuminate\Support\Facades\Mail;
 
     require __DIR__ . '/auth.php';
 
@@ -32,13 +33,13 @@
 
     Route::get('/about-us', function () {
         return view('about_us');
-    });
+    })->name('about-us');
 
     Route::get('/plant-care', function () {
         return view('plant_care');
-    });
+    })->name('plant-care');
 
-    Route::get('/gallery', [GalleriesController::class, 'readGalleries']);
+    Route::get('/gallery', [GalleriesController::class, 'readGalleries'])->name('gallery');
 
     Route::get('/dashboard', function () {
         return view('dashboard');
@@ -64,10 +65,18 @@
         return view('donts');
     });
 
+    Route::get('/send-mail', function () {
+        $redeemCode = "HJLASHJL";
 
+        Mail::to('roberttheherocentury@gmail.com')->send(
+            new GiftMail($redeemCode)
+        );
+
+        return "success";
+    });
 
     Route::get('/product-detail/{productType}', [SubsCategoriesController::class, 'productDetail'])->name('product-detail');
-    Route::post('/payment-detail/{product}', [PaymentMethodsController::class, 'paymentDetail'])->name('payment-detail');
+    Route::post('/payment-detail/{product}', [TransactionsController::class, 'paymentDetail'])->name('payment-detail');
     Route::post('/redeem-code', [GiftsController::class, 'redeemCode'])->name('redeem-code');
     Route::post('/process-payment', [TransactionsController::class, 'processPayment'])->name('process-payment');
     Route::get('/process-payment/success/{token}/{isGift}/{isRedeemed}', [TransactionsController::class, 'paymentSuccess'])->name('payment-success');

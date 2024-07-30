@@ -1,4 +1,28 @@
 var transaction;
+var breakpoint = window.matchMedia("(max-width: 992px)");
+
+function handleMediaQuery(e) {
+    var container = document.querySelector('.order-summary-container');
+    var newContainer = document.querySelector('.paymentDetails');
+
+    if(e.matches) {
+        var btn = document.querySelector('.payment-btn');
+        var temp = container.removeChild(btn);
+        newContainer.appendChild(temp);
+    } else {
+        if(newContainer.querySelector('.payment-btn') != null) {
+            var btn = document.querySelector('.payment-btn');
+            var temp = newContainer.removeChild(btn);
+            container.appendChild(temp);
+        }
+    }
+}
+
+breakpoint.addEventListener("change", handleMediaQuery);
+
+document.addEventListener('DOMContentLoaded', function () {
+    handleMediaQuery(breakpoint);
+});
 
 document.getElementById('pay-button').addEventListener('click', function (e) {
     e.preventDefault();
@@ -52,7 +76,14 @@ function windowPayment() {
     // SnapToken acquired from previous step
     window.snap.pay(transaction.snap_token, {
         onSuccess: function (result) {
-            window.location.href = '/process-payment/success/' + transaction.token + "/" + gift["isGift"] + "/" + gift["isRedeemed"];
+            if(gift["isGift"] != "false") {
+                document.querySelector('.modal-btn').click();
+                document.querySelector('.modal-footer button').addEventListener('click', function() {
+                    window.location.href = '/process-payment/success/' + transaction.token + "/" + gift["isGift"] + "/" + gift["isRedeemed"];
+                });
+            } else {
+                window.location.href = '/process-payment/success/' + transaction.token + "/" + gift["isGift"] + "/" + gift["isRedeemed"];
+            }
         },
         onPending: function (result) {
             /* You may add your own js here, this is just example */

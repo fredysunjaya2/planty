@@ -5,6 +5,6 @@
 </head>
 <body>
     <h1>Congratulations!</h1>
-    <p>Your gift code is: {{ $redeemCode }}</p>
+    <p>Your gift code is: {{ $redeem_code }}</p>
 </body>
 </html>

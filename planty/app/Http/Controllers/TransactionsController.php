@@ -32,6 +32,14 @@ class TransactionsController extends Controller
         return $code;
     }
 
+    public function paymentDetail(SubsCategory $product, Request $request)
+    {
+        $gift = $request->has('gift') ? 'true' : 'false';
+        $redeemed = $request->has('redeem_code') ? $request->redeem_code : 'false';
+
+        return view('payment_detail', ["product" => $product, "gift" => $gift, "redeemed" => $redeemed]);
+    }
+
     public function processPayment(Request $request)
     {
 
@@ -95,17 +103,6 @@ class TransactionsController extends Controller
         return json_encode($transaction);
     }
 
-
-    private function sendGiftEmail($transaction, $redeemCode)
-    {
-        $user = $transaction->user;
-
-        Mail::send('emails.gift', ['redeemCode' => $redeemCode], function ($message) use ($user) {
-            $message->to($user->email);
-            $message->subject('Your Gift Code');
-        });
-    }
-
     public function paymentSuccess($token, $isGift, $isRedeemed)
     {
         $transactionUpdate = Transaction::where('transactions.token', '=', $token)->first();
@@ -117,6 +114,10 @@ class TransactionsController extends Controller
                 'redeem_code' => $giftCode,
                 'is_redeemed' => false,
             ]);
+
+            Mail::to(Auth::user()->email)->send(
+                new GiftMail($giftCode)
+            );
         }
 
         if ($isRedeemed != "false") {
