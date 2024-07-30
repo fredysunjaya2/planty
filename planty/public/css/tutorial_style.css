@@ -1,5 +1,6 @@
 * {
     scroll-behavior: smooth;
+    /* overflow-x: hidden; */
 }
 
 .jumbo {
@@ -66,7 +67,7 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    width: 50rem;
+    width: 60%;
 }
 
 /* .container {
@@ -78,10 +79,10 @@
 }
 
 .tutor-scroll {
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     gap: 3rem;
-    padding-left: 20rem;
+    padding-left: 15%;
 }
 
 .tutor-card {
@@ -208,14 +209,22 @@
 
 .ask-us {
     /* height: 40rem; */
-    padding: 10rem;
-    padding-right: 5rem;
+    padding: 8rem;
 }
+
+/* .row-ask{
+    flex-wrap: wrap;
+} */
 
 .askus-img {
     justify-content: center;
     align-items: center;
     /* background-color: gray; */
+}
+
+.askus-img img{
+    width: 100%;
+    /* height: 100%; */
 }
 
 .askus-desc {
@@ -381,9 +390,149 @@
     line-height: normal;
 }
 
-@media (max-width: 576px){
+@media (max-width: 1200px) {
+
+    .modal{
+        --bs-modal-width:auto;
+    }
+
+    .modal-dialog {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+    }
+
+    .popup{
+        width: 80%;
+        height: auto;
+        padding: 2rem;
+    }
+
+    .popup-content{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .popup-left{
+        justify-content: center;
+        align-items: center;
+        height: auto;
+    }
+
+    .popup-vid{
+        display: flex;
+        justify-content: center;
+    }
+
+    .popup-vid iframe{
+        width: 100%;
+        height: auto;
+    }
+
+    .popup-head{
+        width: 80%;
+        height: auto;
+        padding-top: none;
+        padding: 1rem;
+    }
+
+    .popup-head p{
+        width: 80%;
+    }
+
+    .popup-right{
+        width: 80%;
+        height: auto;
+        padding-top: none;
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 768px){
     .row-ask{
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
     }
+
+    .ask-us{
+        padding: 3rem;
+    }
+
+    .askus-img{
+        width: 100%;
+    }
+
+    .askus-desc{
+        width: 90%;
+    }
+
+    .tutor {
+        height: auto;
+    }
+
+
+}
+
+@media (max-width: 576px){
+
+    .tutorial-container.container-fluid{
+        background-image: url("/assets/tutorial/tutor-mobile.png");
+        background-position: top;
+        background-repeat: no-repeat;
+        background-size: cover;
+        /* padding-top: 7rem; */
+    }
+
+    .jumbo-text h2{
+        font-size: var(--planty-heading-mobile-1-font-size);
+    }
+
+    .jumbo-desc h3{
+        font-size: var(--planty-heading-mobile-3-font-size);
+    }
+
+    .jumbo-desc p{
+        font-size: var(--planty-heading-mobile-paragraph-font-size);
+    }
+
+    .askus-desc h4{
+        font-size: var(--planty-heading-mobile-2-font-size);
+    }
+
+    .askus-desc p{
+        font-size: var(--planty-heading-mobile-paragraph-font-size);
+    }
+
+    .popup-head p{
+        font-size: var(--planty-heading-mobile-paragraph-font-size);
+    }
+
+    .popup-head h2{
+        font-size: var(--planty-heading-mobile-3-font-size);
+    }
+
+    .popup-right h2{
+        font-size: var(--planty-heading-mobile-3-font-size);
+    }
+
+    .popup-right p{
+        font-size: var(--planty-heading-mobile-paragraph-font-size);
+    }
+
+    .tutor-card{
+        scale: 0.75;
+        /* width: 17.5625rem;
+        height: 21.375rem; */
+    }
+
+    .tutor-scroll{
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
 }

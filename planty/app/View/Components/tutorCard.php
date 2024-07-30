@@ -12,9 +12,13 @@ class tutorCard extends Component
      * Create a new component instance.
      */
     public $catName;
-    public function __construct($catName)
+    public $catId;
+    public $catImg;
+    public function __construct($catName, $catImg, $catId)
     {
         $this->catName = $catName;
+        $this->catImg = $catImg;
+        $this->catId = $catId;
     }
 
     /**
