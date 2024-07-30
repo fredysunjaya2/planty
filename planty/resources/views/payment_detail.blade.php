@@ -133,7 +133,11 @@
                             </div>
                             <div class="planty-text-sentence" id="discountValue">
                                 {{-- {{ $discount }} --}}
-                                {{ 'Rp ' . number_format($product->price * $product->discount, 2, ',', '.') }}
+                                @if ($redeemed == 'false')
+                                    {{ 'Rp ' . number_format($product->price * $product->discount, 2, ',', '.') }}
+                                @else
+                                    {{ 'Rp ' . number_format($product->price, 2, ',', '.') }}
+                                @endif
                             </div>
                         </div>
                         <div class="row-3 d-flex justify-content-between my-2">
@@ -153,7 +157,11 @@
                             </div>
                             <div class="planty-heading-4" id="totalValue">
                                 {{-- {{ $discountedPrice }} --}}
+                                @if ($redeemed == 'false')
                                 {{ 'Rp ' . number_format($product->price - $product->price * $product->discount, 2, ',', '.') }}
+                                @else
+                                {{ 'Rp ' . number_format(0, 2, ',', '.') }}
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -176,7 +184,10 @@
             "isGift": {{ $gift }},
             "subs_id": {{ $product->id }},
             "discounted_price": {{ $product->price - $product->price * $product->discount }},
+            "isRedeemed": "{{ $redeemed }}",
+
         };
+        console.log(gift);
     </script>
     <script src="{{ asset('/js/payment_detail.js') }}"></script>
 </body>

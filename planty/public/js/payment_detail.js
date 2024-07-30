@@ -1,37 +1,36 @@
+var transaction;
+
 document.getElementById('pay-button').addEventListener('click', function (e) {
     e.preventDefault();
 
-    $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-    });
+    if (transaction != null) {
+        windowPayment();
+    } else {
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
 
-    $.ajax({
-        url: '/process-payment',
-        data: JSON.stringify(gift),
-        type: 'POST',
-        success: function (response) {
-            const transaction = JSON.parse(response);
+        $.ajax({
+            url: '/process-payment',
+            data: JSON.stringify(gift),
+            type: 'POST',
+            success: function (response) {
+                transaction = JSON.parse(response);
 
-            // SnapToken acquired from previous step
-            window.snap.pay(transaction.snap_token, {
-                onSuccess: function (result) {
-                    console.log(transaction.token);
-                    window.location.href = '/process-payment/success/' + transaction.token;
-                },
-                onPending: function (result) {
-                    /* You may add your own js here, this is just example */
-                    // document.getElementById('result-json').innerHTML += JSON.stringify(result, null, 2);
-                },
-                // Optional
-                onError: function (result) { }
-            });
-        },
-        error: function (xhr, status, error) {
-            console.error(error);
-        }
-    });
+                if (gift["isRedeemed"] == "false") {
+                    windowPayment();
+                } else {
+                    window.location.href = '/process-payment/success/' + transaction.token + "/" + gift["isGift"] + "/" + gift["isRedeemed"];
+                }
+            },
+            error: function (xhr, status, error) {
+                console.error(error);
+            }
+        });
+    }
+
 });
 
 
@@ -48,3 +47,23 @@ document.addEventListener("DOMContentLoaded", function () {
         shippingTab.style.opacity = '1';
     }
 });
+
+function windowPayment() {
+    // SnapToken acquired from previous step
+    window.snap.pay(transaction.snap_token, {
+        onSuccess: function (result) {
+            window.location.href = '/process-payment/success/' + transaction.token + "/" + gift["isGift"] + "/" + gift["isRedeemed"];
+        },
+        onPending: function (result) {
+            /* You may add your own js here, this is just example */
+            // document.getElementById('result-json').innerHTML += JSON.stringify(result, null, 2);
+        },
+        // Optional
+        onError: function (result) {
+            window.location.href = '/process-payment/failed/' + transaction.token;
+        },
+        onClose: function (result) {
+            window.snap.hide();
+        }
+    });
+}

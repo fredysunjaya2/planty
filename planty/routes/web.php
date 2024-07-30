@@ -9,6 +9,7 @@
     use App\Http\Controllers\BenefitController;
     use App\Http\Controllers\AccordionController;
     use App\Http\Controllers\ContactController;
+    use App\Http\Controllers\GiftsController;
     use App\Http\Controllers\PaymentMethodsController;
 
     require __DIR__ . '/auth.php';
@@ -25,9 +26,9 @@
         return view('contact_us');
     });
 
-    Route::get('/subscription/details', function () {
-        return view('productdetail');
-    });
+    // Route::get('/subscription/details', function () {
+    //     return view('productdetail');
+    // });
 
     Route::get('/about-us', function () {
         return view('about_us');
@@ -67,8 +68,10 @@
 
     Route::get('/product-detail/{productType}', [SubsCategoriesController::class, 'productDetail'])->name('product-detail');
     Route::post('/payment-detail/{product}', [PaymentMethodsController::class, 'paymentDetail'])->name('payment-detail');
+    Route::post('/redeem-code', [GiftsController::class, 'redeemCode'])->name('redeem-code');
     Route::post('/process-payment', [TransactionsController::class, 'processPayment'])->name('process-payment');
-    Route::get('/process-payment/success/{token}', [TransactionsController::class, 'paymentSuccess'])->name('payment-success');
+    Route::get('/process-payment/success/{token}/{isGift}/{isRedeemed}', [TransactionsController::class, 'paymentSuccess'])->name('payment-success');
+    Route::get('/process-payment/failed/{token}', [TransactionsController::class, 'paymentFailed'])->name('payment-success');
 
 // Route::get('/productBeginner', [SubsCategoriesController::class, 'productBeginner'])->name('productBeginner');
 // Route::get('/productEnthusiast', [SubsCategoriesController::class, 'productEnthusiast'])->name('productEnthusiast');

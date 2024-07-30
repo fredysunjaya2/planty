@@ -8,9 +8,11 @@ use Illuminate\Http\Request;
 class PaymentMethodsController extends Controller
 {
     //
-    public function paymentDetail(SubsCategory $product, Request $request) {
-        $gift = is_null($request->gift) ? 0 : 1;
+    public function paymentDetail(SubsCategory $product, Request $request)
+    {
+        $gift = $request->has('gift') ? 'true' : 'false';
+        $redeemed = $request->has('redeem_code') ? $request->redeem_code : 'false';
 
-        return view('payment_detail', compact('product', 'gift'));
+        return view('payment_detail', ["product" => $product, "gift" => $gift, "redeemed" => $redeemed]);
     }
 }
