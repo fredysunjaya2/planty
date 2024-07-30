@@ -136,6 +136,60 @@ body {
     color: #122218;
 }
 
+
+.primaryBtn {
+    display: inline-flex;
+    border: none;
+    height: 3.125rem;
+    padding: 0.625rem 1.25rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.625rem;
+    background: #618264;
+    color: #fff;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.primaryBtn:hover {
+    border: 2px solid var(--tes1, #adbc9f);
+    color: #618264;
+    background: #fff;
+    box-shadow: 0px 8px 30px 0px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(6.099999904632568px);
+}
+
+.secondaryBtn {
+    display: inline-flex;
+    border: none;
+    height: 3.125rem;
+    padding: 0.625rem 1.25rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.625rem;
+    background: #adbc9f;
+    color: #122218;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.secondaryBtn:hover {
+    border: 2px solid var(--tes1, #adbc9f);
+    color: #adbc9f;
+    background: #122218;
+    box-shadow: 0px 8px 30px 0px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(6.099999904632568px);
+}
+
+
 @media (min-width: 1200px) {
     #img-logo {
         display: block;
@@ -201,56 +255,17 @@ body {
 }
 
 @media (max-width: 576px) {
-}
+    .primaryBtn{
+        height: 1.53125rem;
+        padding: 0.30625rem 0.6125rem;
+        border-radius: 0.30625rem;
+        font-size: var(--planty-heading-mobile-paragraph-font-size);
+    }
 
-.primaryBtn {
-    display: inline-flex;
-    border: none;
-    height: 3.125rem;
-    padding: 0.625rem 1.25rem;
-    justify-content: center;
-    align-items: center;
-    border-radius: 0.625rem;
-    background: #618264;
-    color: #fff;
-    text-align: center;
-    font-family: Poppins;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-}
-
-.primaryBtn:hover {
-    border: 2px solid var(--tes1, #adbc9f);
-    color: #618264;
-    background: #fff;
-    box-shadow: 0px 8px 30px 0px rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(6.099999904632568px);
-}
-
-.secondaryBtn {
-    display: inline-flex;
-    border: none;
-    height: 3.125rem;
-    padding: 0.625rem 1.25rem;
-    justify-content: center;
-    align-items: center;
-    border-radius: 0.625rem;
-    background: #adbc9f;
-    color: #122218;
-    text-align: center;
-    font-family: Poppins;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-}
-
-.secondaryBtn:hover {
-    border: 2px solid var(--tes1, #adbc9f);
-    color: #adbc9f;
-    background: #122218;
-    box-shadow: 0px 8px 30px 0px rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(6.099999904632568px);
+    .secondaryBtn{
+        height: 1.53125rem;
+        padding: 0.30625rem 0.6125rem;
+        border-radius: 0.30625rem;
+        font-size: var(--planty-heading-mobile-paragraph-font-size);
+    }
 }
