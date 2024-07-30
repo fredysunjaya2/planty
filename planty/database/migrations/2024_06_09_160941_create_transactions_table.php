@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
+            $table->string('token')->unique();
             $table->foreignId('user_id')->references('id')->on('users');
             $table->foreignId('subs_category_id')->references('id')->on('subs_categories');
             $table->double('discounted_price');

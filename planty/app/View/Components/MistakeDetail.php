@@ -12,9 +12,11 @@ class MistakeDetail extends Component
      * Create a new component instance.
      */
     public $mistakeTitle;
-    public function __construct($mistakeTitle)
+    public $mistakePic;
+    public function __construct($mistakeTitle, $mistakePic)
     {
         $this->mistakeTitle = $mistakeTitle;
+        $this->mistakePic = $mistakePic;
     }
 
     /**

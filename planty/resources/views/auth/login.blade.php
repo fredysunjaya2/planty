@@ -35,7 +35,7 @@
                 method="POST">
 
                 @csrf
-                <h1 class="planty-heading-1 text-center mb-2">Register</h1>
+                <h1 class="planty-heading-1 text-center mb-2">Login</h1>
                 <div class="form-textfield">
                     <div class="planty-heading-4 register-item">
                         <label class='p-0' for='email'>Email</label>

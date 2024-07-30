@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('subs_tiers', function (Blueprint $table) {
             $table->id();
+            $table->string('slug');
             $table->string('tier_name');
             $table->timestamps();
         });

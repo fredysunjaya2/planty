@@ -12,6 +12,10 @@ class SubsTier extends Model
 
     protected $guarded = [];
 
+    public function getRouteKeyName() {
+        return 'slug';
+    }
+
     public function subsCategories(): HasMany{
         return $this->hasMany(SubsCategory::class);
     }

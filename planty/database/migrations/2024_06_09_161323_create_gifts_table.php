@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('gifts', function (Blueprint $table) {
             $table->id();
-            $table->foreignid('transaction_id')->references('id')->on('transactions');
+            $table->foreignid('transaction_id')->references('id')->on('transactions')->onUpdate('cascade')->onDelete('cascade');
             $table->string('redeem_code')->unique();
             $table->boolean('is_redeemed')->default(false);
             $table->timestamps();
