@@ -2,6 +2,8 @@
     padding-top: 10rem;
     padding-left: 7%;
     padding-right: 7%;
+    background-image: url('/assets/ProfileBackground.png');
+    background-size: cover;
 }
 
 .profile-container .profile-pic {
@@ -27,7 +29,7 @@
 }
 
 .edit-btn {
-    padding: 0.5rem 2rem;
+    padding: 0.5% 2.5%;
     height: fit-content;
     border-radius: 15px;
     background-color: rgb(var(--white-background));
@@ -71,4 +73,59 @@
     padding-left: 10px;
     padding-right: 10px;
     width: 50%;
+}
+
+@media (max-width: 992px) {
+
+    .edit-btn {
+        padding: 1% 4%;
+    }
+
+
+}
+@media (max-width: 768px) {
+    .profile-container {
+        background-image: url('/assets/ProfileBackgroundMobile.png');
+    }
+
+    .profile-container .profile-pic {
+        width: 15%;
+    }
+
+    .profile-header {
+        flex-direction: column !important;
+        row-gap: 0.5rem;
+    }
+
+    .profile-header label {
+        display: none;
+    }
+
+    #redeem-code-form {
+        margin-left: 0 !important;
+    }
+
+    .redeem-code-btn-container {
+        flex-direction: column !important;
+        align-items: center;
+        row-gap: 1rem;
+    }
+
+    .redeem-code-btn-container button {
+        width: fit-content;
+    }
+}
+
+@media (max-width: 576px) {
+    .profile-container .planty-text {
+        font-size: 18px;
+    }
+
+    .profile-container .planty-text-sentence {
+        font-size: 14px;
+    }
+
+    .edit-btn {
+        padding: 1.5% 6%;
+    }
 }

@@ -1,6 +1,7 @@
 var editProfileBtn = document.querySelector(".profile-personal-info .edit-btn");
 var submitProfileBtn = document.querySelector(".profile-personal-info .submit-btn");
-var redeemCode;
+var redeemField = document.getElementById('redeem-code');
+var redeemCode = redeemField.value;
 
 editProfileBtn.addEventListener('click', function () {
     var textFields = document.querySelectorAll(".profile-personal-info .profile-item input");
@@ -37,7 +38,7 @@ editProfileBtn2.addEventListener('click', function () {
     textFields[0].disabled ? submitProfileBtn2.classList.remove('enabled') : submitProfileBtn2.classList.add('enabled');
 });
 
-document.getElementById('redeem-code').addEventListener('change', function (e) {
+redeemField.addEventListener('change', function (e) {
     redeemCode = this.value;
 });
 
@@ -57,9 +58,14 @@ document.getElementById('redeem-button').addEventListener('click', function (e) 
         success: function (response) {
             result = JSON.parse(response);
 
-            redeemForm = document.getElementById('redeem-code-form');
-            redeemForm.action = document.location.origin + '/payment-detail/' + result["slug"];
-            redeemForm.submit();
+            if(result == 'false') {
+                document.querySelector('.modal-btn').click();
+            } else {
+                redeemForm = document.getElementById('redeem-code-form');
+                redeemForm.action = document.location.origin + '/payment-detail/' + result["slug"];
+                redeemForm.submit();
+            }
+
         },
         error: function (xhr, status, error) {
             console.log(error);

@@ -13,7 +13,12 @@ class GiftsController extends Controller
     {
         $data = $request->json()->all();
 
-        $gift = Gift::where('redeem_code','=', $data["redeem_code"])->first();
+        $gift = Gift::where('redeem_code','=', $data["redeem_code"])
+        ->where('is_redeemed', '=', 0)->first();
+
+        if($gift == null) {
+            return json_encode('false');
+        }
 
         $product = $gift->transaction->subsCategory;
 
