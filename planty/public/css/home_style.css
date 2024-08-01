@@ -153,6 +153,7 @@
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+    width: 20rem;
 }
 
 .service-text p{
@@ -472,6 +473,20 @@
         /* scale: 0.9; */
         width: 80%;
         max-width: 300px;
+    }
+
+    .service-text{
+        width: 90%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .service-text h4{
+        width: 100%;
+    }
+
+    .service-text p{
+        width: 80%;
     }
 
     .why-img {
