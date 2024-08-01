@@ -1,5 +1,6 @@
     <?php
 
+    use App\Http\Controllers\AboutusController;
     use App\Http\Controllers\AddressesController;
     use App\Http\Controllers\ProfileController;
     use App\Http\Controllers\SubsCategoriesController;
@@ -21,6 +22,8 @@
 
     Route::get('/fun', [BenefitController::class, 'benefit']);
     Route::get('/subscription', [AccordionController::class, 'accordion'])->name('subscription');
+    Route::get('/about-us', [AboutusController::class, 'values'])->name('about-us');
+
     Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');
 
     Route::get('/contact', function () {
@@ -31,9 +34,9 @@
     //     return view('productdetail');
     // });
 
-    Route::get('/about-us', function () {
-        return view('about_us');
-    })->name('about-us');
+    // Route::get('/about-us', function () {
+    //     return view('about_us');
+    // })->name('about-us');
 
     Route::get('/plant-care', function () {
         return view('plant_care');

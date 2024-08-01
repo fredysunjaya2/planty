@@ -34,27 +34,61 @@
         <div class="row our-values">
             <div class="text-center our-values-desc">
                 <h1 class="planty-heading-1">Our Values</h1>
-                <p class="planty-text-paragraph">Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                    when an unknown printer t
+                <p class="planty-text-paragraph">
+                    At Planty, we're committed to nurturing both plants and people. Our core values guide everything we do, from plant care to customer service.t
                 </p>
             </div>
             <div class="col our-values-list-container justify-content-center">
                 <div class="row row-cols-lg-3 row-cols-2 row-gap-5 m-0 justify-content-center our-values-list">
-                    @for ($i = 0; $i < 6; $i++)
+
+                    @foreach ($values as $item)
+                        <x-our-value-box value_img="{{ $item['img'] }}" value_name="{{ $item['name'] }}" value_desc="{{ $item['desc'] }}"></x-our-value-box>
+                    @endforeach
+
+                    {{-- @for ($i = 0; $i < 6; $i++)
                         @php
-                            $value_img = '/assets/aboutus/our-values-1.png';
+                            $values = [
+                                [
+                                    'name' => 'Sustainability',
+                                    'desc' => 'We prioritize eco-friendly practices in all aspects of our business, from packaging to plant care.',
+                                    'img' => '/assets/aboutus/our-values-1.png'
+                                ],
+                                [
+                                    'name' => 'Education',
+                                    'desc' => 'We empower our customers with knowledge to become successful, eco-conscious plant parents.',
+                                    'img' => '/assets/aboutus/our-values-2.png'
+                                ],
+                                [
+                                    'name' => 'Community',
+                                    'desc' => 'We foster a supportive network of plant enthusiasts, promoting shared learning and sustainable practices.',
+                                    'img' => '/assets/aboutus/our-values-3.png'
+                                ],
+                                [
+                                    'name' => 'Innovation',
+                                    'desc' => 'We continuously seek and implement cutting-edge, sustainable solutions in plant care and business operations.',
+                                    'img' => '/assets/aboutus/our-values-4.png'
+                                ],
+                                [
+                                    'name' => 'Quality',
+                                    'desc' => 'We ensure the highest standards in plant health and product excellence, prioritizing long-lasting, sustainable results.',
+                                    'img' => '/assets/aboutus/our-values-5.png'
+                                ],
+                                [
+                                    'name' => 'Responsibility',
+                                    'desc' => 'We commit to ethical sourcing, fair labor practices, and reducing our environmental impact at every step.',
+                                    'img' => '/assets/aboutus/our-values-6.png'
+                                ]
+                            ];
                         @endphp
-                        <x-our-value-box :value_img="$value_img">
+                        <x-our-value-box :value_img="$values[$i]['img']">
                             <x-slot:value_name>
-                                Sustainability
+                                {{ $values[$i]['name'] }}
                             </x-slot:value_name>
                             <x-slot:value_desc>
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                Lorem Ipsum has been the industry's standard dummy
+                                {{ $values[$i]['desc'] }}
                             </x-slot:value_desc>
                         </x-our-value-box>
-                    @endfor
+                    @endfor --}}
                 </div>
             </div>
         </div>
@@ -76,11 +110,13 @@
             </div>
             <div class="col justify-content-center our-team-list-container">
                 <div class="our-team-list row row-cols-lg-3 row-cols-2 row-gap-5 m-0 justify-content-center">
-                    @for ($i = 0; $i < 5; $i++)
-                        @php
+                    @foreach ($team as $member)
+                        <x-our-team-box team_img="{{ $member['img'] }}" team_name="{{ $member['name'] }}" team_nim="{{ $member['nim'] }}"></x-our-team-box>
+                    @endforeach
+                        {{-- @php
                             $team_img = '/assets/aboutus/our-team-1.png';
-                        @endphp
-                        <x-our-team-box :team_img="$team_img">
+                        @endphp --}}
+                        {{-- <x-our-team-box :team_img="$team_img">
                             <x-slot:team_name>
                                 Fredy Sunjaya
                             </x-slot:team_name>
@@ -88,7 +124,7 @@
                                 NIM
                             </x-slot:team_nim>
                         </x-our-team-box>
-                    @endfor
+                    @endfor --}}
                 </div>
             </div>
         </div>
