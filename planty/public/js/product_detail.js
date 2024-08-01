@@ -52,30 +52,6 @@ function formatCurrency(amount) {
     return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(amount).replace('IDR', 'Rp');
 }
 
-// Function to handle payment button click
-function handlePayment() {
-    var checkbox = document.getElementById('flexCheckDefault');
-    var gift = checkbox.checked ? 'true' : 'false';
-
-    var subsId = document.getElementById('subs_id').innerText;
-    var oldPrice = parseCurrency(document.getElementById('oldPrice').innerText);
-    var discountedPrice = parseCurrency(document.getElementById('discountedPrice').innerText);
-    var discount = oldPrice - discountedPrice;
-
-    // Generate code
-    // var generatedCode = generateCode();
-
-    document.getElementById('subsID').value = subsId;
-    document.getElementById('oldPriceInput').value = oldPrice;
-    document.getElementById('discountedPriceInput').value = discountedPrice;
-    document.getElementById('discountInput').value = discount;
-    document.getElementById('giftInput').value = gift;
-    // document.getElementById('generatedCode').value = generatedCode;
-
-
-    document.getElementById('paymentForm').submit();
-}
-
 // Function to parse currency in JavaScript
 function parseCurrency(value) {
     return parseFloat(value.replace(/Rp|\./g, '').replace(',', '.'));

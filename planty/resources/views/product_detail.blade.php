@@ -18,86 +18,85 @@
 </head>
 
 <body>
-    <div class="container-fluid m-0 p-0" style="width: 100%; height: 100vh">
-        <div class="row col-12 m-0 p-0">
-            <div class="col-5">
-                <img src="../assets/beginner_kit.png" alt=""
-                    style="object-fit: cover; width: 100%; height: 100%">
-            </div>
-            <div class="container-content col-7 d-flex">
-                <div class="content" style="margin: 6.5625rem 3.375rem 6.5625rem 3.375rem">
-                    <a href="{{ route('subscription') }}" style="color: #122218">
-                        <div class="back-btn">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="1.9375rem" height="1.9375rem"
-                                fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd"
-                                    d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8" />
-                            </svg>
+    <x-navbar></x-navbar>
+    <div class="d-flex flex-row m-0 p-0 w-100 product-detail-container">
+        <div class="col-5 h-100 product-detail-img">
+            <img src="{{ asset('/assets/beginner_kit.png') }}" alt="" class="w-100 h-100" style="object-fit: cover;">
+        </div>
+        <div class="container-content col d-flex h-100 align-items-start">
+            <div class="content d-flex flex-column justify-content-center">
+                <a href="{{ route('subscription') }}" style="color: #122218" class="back-btn">
+                    <div class="back-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40px" fill="currentColor"
+                            class="bi bi-arrow-left" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8" />
+                        </svg>
+                    </div>
+                </a>
+                <form method="POST" enctype="multipart/form-data" id="formProduct" class="box-content mt-3"
+                    style="padding-left: 5%">
+                    @csrf
+                    <div class="title d-flex w-100 justify-content-between align-items-center flex-wrap">
+                        <div class="tier">
+                            <h1 class="planty-heading-1">{{ $pricings[0]->subsTier->tier_name }}</h1>
+                            <p class="planty-text-sentence">subscription plan</p>
                         </div>
-                    </a>
-                    <form method="POST" enctype="multipart/form-data" id="formProduct" class="box-content" style="margin-left: 2.5rem">
-                        @csrf
-                        <div class="title d-flex col-12">
-                            <div class="tier row col-6">
-                                <h1 class="planty-heading-1">{{ $pricings[0]->subsTier->tier_name }}</h1>
-                                <p class="planty-text-sentence">subscription plan</p>
-                            </div>
-                            <div class="price d-flex col-6 justify-content-end align-items-center planty-text-sentence">
-                                <h2 class="planty-heading-2"><span
-                                        id="pricePerMonth">{{ number_format(($pricings[2]->price - $pricings[2]->price * $pricings[2]->discount) / $pricings[2]->months, 2, ',', '.') }}</span>
-                                </h2>
-                                /Month
-                            </div>
+                        <div class="price ms-auto planty-text-sentence">
+                            <h2 class="planty-heading-2"><span
+                                    id="pricePerMonth">{{ number_format(($pricings[2]->price - $pricings[2]->price * $pricings[2]->discount) / $pricings[2]->months, 2, ',', '.') }}</span>
+                            </h2>
+                            /Month
                         </div>
-                        <div class="description d-flex row justify-center mt-3"
-                            style="width: 40.25rem; height: 22.75rem; padding: 2.3125rem 2.875rem 2.3125rem 2.875rem">
-                            <div class="plan row-8">
-                                <h3 class="planty-heading-4">Delivered Monthly</h3>
-                                <p class="planty-text-sentence">Receive 1 kit of Beginner each month directly to your
-                                    door shipped within 12-48 hours of processed payment. Plan doesn’t auto renews.</p>
-                                <h3 class="planty-heading-4">Recurring Plan</h3>
-                                <select id="planSelect" class="form-select" aria-label="Default select example" name="subs-category">
-                                    @foreach ($pricings as $item)
-                                        <option value="{{ route('payment-detail', ($item->slug) . '-' . $item->months . "-months") }}">
-                                            @if ($item->months == 1)
-                                            <p class="planty-text-sentence">{{ $item->months . " month prepaid" }}</p>
-                                            @else
-                                            <p class="planty-text-sentence">{{ $item->months . " months prepaid" }}</p>
-                                            <p class="planty-heading-4">{{ "(save " . $item->discount * 100 . "%)" }}</p>
-                                            @endif
-                                        </option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            <div class="pricing row-4 d-flex justify-content-center align-items-center">
-                                <h3 class="me-1 planty-heading-4 opacity-50 strikethrough-price"><del><span
-                                            id="oldPrice">{{ number_format($pricings[2]->price, 0, ',', '.') }}</span></del>
-                                </h3>
-                                <h3 class="ms-1 planty-heading-4"><span
-                                        id="discountedPrice">{{ number_format($pricings[2]->price - $pricings[2]->price * $pricings[2]->discount, 2, ',', '.') }}</span>
-                                </h3>
-                            </div>
+                    </div>
+                    <div class="description d-flex flex-column justify-center row-gap-4 mt-4">
+                        <div class="plan row-8">
+                            <h3 class="planty-heading-4">Delivered Monthly</h3>
+                            <p class="planty-text-sentence">Receive 1 kit of Beginner each month directly to your
+                                door shipped within 12-48 hours of processed payment. Plan doesn’t auto renews.</p>
+                            <h3 class="planty-heading-4">Recurring Plan</h3>
+                            <select id="planSelect" class="form-select package-option" aria-label="Default select example"
+                                name="subs-category">
+                                @foreach ($pricings as $item)
+                                    <option
+                                        value="{{ route('payment-detail', $item->slug . '-' . $item->months . '-months') }}">
+                                        @if ($item->months == 1)
+                                            <p class="planty-text-sentence">{{ $item->months . ' month prepaid' }}</p>
+                                        @else
+                                            <p class="planty-text-sentence">{{ $item->months . ' months prepaid' }}</p>
+                                            <p class="planty-heading-4">{{ '(save ' . $item->discount * 100 . '%)' }}
+                                            </p>
+                                        @endif
+                                    </option>
+                                @endforeach
+                            </select>
                         </div>
-                        <div class="as-gift d-flex align-items-center" style="height: 7.0625rem;">
-                            <div class="form-check d-flex align-items-center">
-                                <input class="form-check-input rounded-0" style="width: 1.625rem; height: 1.4375rem;"
-                                    type="checkbox" id="flexCheckDefault" name="gift">
-                                <label class="form-check-label planty-heading-4 ms-2" for="flexCheckDefault">
-                                    Give as a gift
-                                </label>
-                            </div>
+                        <div class="pricing row-4 d-flex justify-content-center align-items-center">
+                            <h3 class="me-1 planty-heading-4 opacity-50 strikethrough-price"><del><span
+                                        id="oldPrice">{{ number_format($pricings[2]->price, 0, ',', '.') }}</span></del>
+                            </h3>
+                            <h3 class="ms-1 planty-heading-4"><span
+                                    id="discountedPrice">{{ number_format($pricings[2]->price - $pricings[2]->price * $pricings[2]->discount, 2, ',', '.') }}</span>
+                            </h3>
                         </div>
-                        <hr class="border-2" style="border-color: #618264; ">
-                        <div class="payment-btn d-flex justify-content-center mt-5">
-                            <button type="submit"
-                                class="btn btn-success planty-heading-4 text-white"
-                                style="border-radius: 0.625rem;">Payment</button>
-                        </div>
-                    </form>
-                </div>
+                    </div>
+                    <div class="as-gift d-flex align-items-center">
+                        <input class="form-check-input rounded-0" style="width: 20px; height:20px;"
+                            type="checkbox" id="flexCheckDefault" name="gift">
+                        <label class="form-check-label planty-heading-4 ms-2" for="flexCheckDefault">
+                            Give as a gift
+                        </label>
+                    </div>
+                    <hr class="border-2 m-0" style="border-color: #618264; ">
+                    <div class="payment-btn d-flex justify-content-center mt-3">
+                        <button type="submit" class="btn btn-success planty-heading-4 text-white"
+                            style="border-radius: 0.625rem;">Payment</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
+    <x-footer></x-footer>
     <script>
         var pricings = @json($pricings); // Pass the pricing data to JavaScript
     </script>

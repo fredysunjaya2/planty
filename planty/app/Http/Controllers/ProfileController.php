@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProfileUpdateRequest;
+use App\Models\Transaction;
+use DateInterval;
+use DateTime;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -23,7 +26,25 @@ class ProfileController extends Controller
 
     public function index(): View
     {
-        return view('profile');
+        $transaction = Transaction::join('users', 'users.id', '=', 'transactions.user_id')
+            ->join('subs_categories', 'subs_categories.id', '=', 'transactions.subs_category_id')
+            ->select('*', 'transactions.id as transaction_id')
+            ->where('transactions.user_id', '=', auth()->user()->id)
+            ->where('transactions.status', '=', 'success')
+            ->orderBy('transactions.created_at', 'desc')
+            ->first();
+
+        $date = new DateTime($transaction->created_at);
+        $date->add(new DateInterval('P' . strval($transaction->months) . 'M'));
+        $curDate = now();
+
+        if ($date >= $curDate) {
+            $status = 'Subscribed';
+        } else {
+            $status = 'Not Subscribed';
+        }
+
+        return view('profile', compact('status', 'date'));
     }
 
     /**

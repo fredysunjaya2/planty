@@ -13,11 +13,9 @@ class GiftMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $details;
-    public function __construct($details)
+    public function __construct(protected $details)
     {
         //
-        $this->details = $details;
     }
 
     /**
@@ -37,6 +35,9 @@ class GiftMail extends Mailable
     {
         return new Content(
             view: 'emails.gift',
+            with: [
+                'redeem_code' => $this->details,
+            ],
         );
     }
 
