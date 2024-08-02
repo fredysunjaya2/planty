@@ -14,6 +14,7 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" rel="stylesheet">
     <link href="{{ asset('/css/utils.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('/css/about_us_style.css') }}" rel="stylesheet" type="text/css" />
+
 </head>
 
 <body>
@@ -21,7 +22,7 @@
     </x-navbar>
     <div class="container-fluid w-100 about-us-page-content">
         <div class="row about-us align-items-center justify-content-center">
-            <img class="about-us-image img-fluid px-0" src={{ asset('/assets/aboutus/about-us-1.png') }}>
+            <img class="about-us-image img-fluid col-lg-6 px-0" src={{ asset('/assets/aboutus/about-us-1.png') }}>
             <div class="about-us-content col-4">
                 <h1 class="planty-heading-1">About Us</h1>
                 <p class="planty-text-paragraph">At Planty, we believe everyone has the potential to grow a

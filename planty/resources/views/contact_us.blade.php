@@ -17,10 +17,10 @@
 
 <body>
     <div class='contact-container'>
-        <div class='contact-img-container'>
-            <img src="{{ asset('/assets/contactus/contactus.png') }}" alt="Plants and hand" class="img-fluid">
+        <div class='contact-img-container col-md-12 col-sm-12 col-xs-12'>
+            <img src="{{ asset('/assets/contactus/contactus.png') }}" alt="Plants and hand" class="img-fluid d-flex">
         </div>
-        <div class="form-container">
+        <div class="form-container form-container col-md-12 col-sm-12 col-lg-6 d-flex flex-column justify-content-center">
             <h1 class="planty-heading-1 text-center">Contact Us</h1>
             <form id="contactForm" action="{{ route('contact.submit') }}" method="POST">
                 @csrf
@@ -29,9 +29,9 @@
                         <label for='email'>Email</label>
                         <input id='email' name='email' required type='email'>
                     </div>
-                    <div class="planty-heading-4 contact-item">
+                    <div class="planty-heading-4 contact-item ">
                         <label for='type'>Type</label>
-                        <select id='type' name='type' required class="form-select">
+                        <select id='type' name='type' required class="form-select ">
                             <option value="" selected disabled>Select an issue type</option>
                             <option value="complain">Complain</option>
                             <option value="technical issue">Technical Issue</option>
@@ -47,9 +47,9 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-5"></div>
-                    <div class="col-2"><button class="mt-4 contact-btn planty-heading-4" type='submit'>Send</button></div>
-                    <div class="col-5"></div>
+                    <div class="col-2 offset-5 justify-content-center align-items-center d-flex">
+                        <button class="contact-btn planty-heading-4" type='submit'>Send</button>
+                    </div>
                 </div>
 
             </form>
@@ -57,7 +57,7 @@
     </div>
 
         <!-- Popup Modal -->
-        <div class="modal fade" id="thankYouModal" tabindex="-1" aria-labelledby="thankYouModalLabel" aria-hidden="true">
+        <div class="modal fade justify-content-center align-items-center m-0" id="thankYouModal" tabindex="-1" aria-labelledby="thankYouModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
