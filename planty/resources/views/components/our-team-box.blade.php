@@ -1,7 +1,7 @@
 @props([
     'team_img',
     'team_name',
-    'team_desc',
+    'team_nim',
 ])
 
 <div class="col px-4 our-team-box">

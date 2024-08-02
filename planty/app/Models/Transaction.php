@@ -13,7 +13,7 @@ class Transaction extends Model
 
     protected $guarded = [];
 
-    protected $with = ['user', 'subsCategory', 'paymentMethod', 'gift'];
+    protected $with = ['user', 'subsCategory'];
 
     public function user(): BelongsTo {
         return $this->belongsTo(User::class);
@@ -21,10 +21,6 @@ class Transaction extends Model
 
     public function subsCategory(): BelongsTo {
         return $this->belongsTo(SubsCategory::class);
-    }
-
-    public function paymentMethod(): BelongsTo {
-        return $this->belongsTo(PaymentMethod::class);
     }
 
     public function gift(): HasOne {

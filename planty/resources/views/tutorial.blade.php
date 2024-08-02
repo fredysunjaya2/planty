@@ -18,6 +18,9 @@
 <section class="tutorial-container container-fluid p-0">
     <section class= "jumbo">
         <div class="jumbo-text d-flex flex-column">
+            <div class="jumbo-back">
+                <a href="#"><img class ='back-btn' src="../assets/tutorial/back.png" alt=""></a>
+            </div>
             <div class="jumbo-header ">
                 <h2>Planting Tutorial</h2>
             </div>
@@ -29,10 +32,10 @@
     </section>
     <section class="tutor">
         <div class="tutor-scroll d-flex overflow-x-scroll">
-            <x-tutor-card catName="1">Lorem Ipsum is simply dummy text of the printing and typesetting industry</x-tutor-card>
-            <x-tutor-card catName="2">Lorem Ipsum is simply dummy text of the printing and typesetting industry</x-tutor-card>
-            <x-tutor-card catName="3">Lorem Ipsum is simply dummy text of the printing and typesetting industry</x-tutor-card>
-            <x-tutor-card catName="4">Lorem Ipsum is simply dummy text of the printing and typesetting industry</x-tutor-card>
+            <x-tutor-card catCol="card1"  catId="1" catImg="{{asset('/assets/tutorial/category-img.png')}}" catName="Succulents">Low-maintenance, drought-resistant plants ideal for beginners or busy individuals.</x-tutor-card>
+            <x-tutor-card catCol="card2" catId="2" catImg="{{asset('/assets/tutorial/category-img2.png')}}" catName="Herbs"> Easy-to-grow aromatic plants perfect for kitchen gardens and culinary use.</x-tutor-card>
+            <x-tutor-card catCol="card3" catId="3" catImg="{{asset('/assets/tutorial/category-img3.png')}}" catName="Flowers">Colorful, mood-boosting plants to brighten up any space.</x-tutor-card>
+            <x-tutor-card catCol="card4" catId="4" catImg="{{asset('/assets/tutorial/category-img4.png')}}" catName="Vegetables"> Nutritious and rewarding plants for home gardeners of all levels.</x-tutor-card>
         </div>
     </section>
     <section class="ask-us">
@@ -64,12 +67,24 @@
                             <h2>Category 1</h2>
                             <img src="../assets/tutorial/popup.png" alt="#">
                         </div>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been </p>
+                        <p>
+                            Easy-to-grow aromatic plants perfect for kitchen gardens and culinary use.
+                        </p>
                     </div>
                 </div>
                 <div class="popup-right d-flex flex-column">
                     <h2>Step by Step</h2>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum h</p>
+                    <p>
+                        Choose a sunny spot indoors or outdoors
+
+                            Fill containers with well-draining potting mix
+
+                            Sow seeds or plant seedlings, spacing appropriately
+
+                            Water regularly, keeping soil moist but not waterlogged
+
+                            Harvest outer leaves as needed, encouraging bushier growth
+                    </p>
                 </div>
             </div>
         </div>
@@ -89,12 +104,24 @@
                             <h2>Category 2</h2>
                             <img src="../assets/tutorial/popup.png" alt="#">
                         </div>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been </p>
+                        <p>
+                            Easy-to-grow aromatic plants perfect for kitchen gardens and culinary use.
+                        </p>
                     </div>
                 </div>
                 <div class="popup-right d-flex flex-column">
                     <h2>Step by Step</h2>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum h</p>
+                    <p>
+                        Choose a sunny spot indoors or outdoors
+
+                            Fill containers with well-draining potting mix
+
+                            Sow seeds or plant seedlings, spacing appropriately
+
+                            Water regularly, keeping soil moist but not waterlogged
+
+                            Harvest outer leaves as needed, encouraging bushier growth
+                    </p>
                 </div>
             </div>
         </div>
@@ -114,12 +141,24 @@
                             <h2>Category 3</h2>
                             <img src="../assets/tutorial/popup.png" alt="#">
                         </div>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been </p>
+                        <p>
+                            Easy-to-grow aromatic plants perfect for kitchen gardens and culinary use.
+                        </p>
                     </div>
                 </div>
                 <div class="popup-right d-flex flex-column">
                     <h2>Step by Step</h2>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum h</p>
+                    <p>
+                        Choose a sunny spot indoors or outdoors
+
+                            Fill containers with well-draining potting mix
+
+                            Sow seeds or plant seedlings, spacing appropriately
+
+                            Water regularly, keeping soil moist but not waterlogged
+
+                            Harvest outer leaves as needed, encouraging bushier growth
+                    </p>
                 </div>
             </div>
         </div>
@@ -139,12 +178,24 @@
                             <h2>Category 4</h2>
                             <img src="../assets/tutorial/popup.png" alt="#">
                         </div>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been </p>
+                        <p>
+                            Easy-to-grow aromatic plants perfect for kitchen gardens and culinary use.
+                        </p>
                     </div>
                 </div>
                 <div class="popup-right d-flex flex-column">
                     <h2>Step by Step</h2>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum h</p>
+                    <p>
+                        Choose a sunny spot indoors or outdoors
+
+                            Fill containers with well-draining potting mix
+
+                            Sow seeds or plant seedlings, spacing appropriately
+
+                            Water regularly, keeping soil moist but not waterlogged
+
+                            Harvest outer leaves as needed, encouraging bushier growth
+                    </p>
                 </div>
             </div>
         </div>

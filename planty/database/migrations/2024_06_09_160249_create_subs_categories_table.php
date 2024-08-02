@@ -12,6 +12,7 @@ return new class extends Migration {
     {
         Schema::create('subs_categories', function (Blueprint $table) {
             $table->id();
+            $table->string('slug');
             $table->foreignid('subs_tier_id')->references('id')->on('subs_tiers');
             $table->integer('months');
             $table->double('price');

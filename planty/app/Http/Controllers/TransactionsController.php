@@ -8,6 +8,7 @@ use App\Mail\GiftMail;
 use App\Models\Transaction;
 use Illuminate\Support\Str;
 use App\Models\SubsCategory;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
@@ -15,82 +16,14 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 
 class TransactionsController extends Controller
-{    
-    public function processPayment(Request $request)
+{
+    private function generateTransactionToken()
     {
+        do {
+            $token = Str::random(32);
+        } while (Transaction::where('token', $token)->exists());
 
-        $subsCategory = SubsCategory::join('transactions', 'transactions.subs_category_id', '=', 'subs_categories.id')
-                            ->select('subs_categories.*')
-                            ->where('subs_categories.id', '=', $request->input('subsId'))
-                            ->first();
-
-        $data = $request->all();
-        $gift = $data['gift'];
-        // $generatedCode = $data['generatedCode'];
-        
-        $transaction = Transaction::create([
-            'user_id' => Auth::user()->id,
-            'subs_category_id' => $data['subsId'],
-            'discounted_price' => $data['discountedPrice'],
-            'status' => 'pending',
-        ]);
-        
-        if ($gift == 'true') {
-            $giftCode = $this->generateUniqueCode();
-            Gift::create([
-                'transaction_id' => $transaction->id,
-                'redeem_code' => $giftCode,
-                'is_redeemed' => false,
-            ]);
-        }
-
-        // Set your Merchant Server Key
-        \Midtrans\Config::$serverKey = config('midtrans.serverKey');
-        // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
-        \Midtrans\Config::$isProduction = false;
-        // Set sanitization on (default)
-        \Midtrans\Config::$isSanitized = true;
-        // Set 3DS transaction for credit card to true
-        \Midtrans\Config::$is3ds = true;
-
-        $params = array(
-            'transaction_details' => array(
-                'order_id' => rand(),
-                'gross_amount' => $data['discountedPrice'],
-            ),
-            'customer_details' => array(
-                'email' => Auth::user()->email,
-            'first_name' => Auth::user()->first_name,
-                'last_name' => Auth::user()->last_name,
-                'phone' => Auth::user()->phone_number, 
-                'shipping_address' => array(
-                    'address' => Auth::user()->address->street. ' Number '.Auth::user()->address->number.', '.Auth::user()->address->district.', '.Auth::user()->address->village.', '.Auth::user()->address->city.', '.Auth::user()->address->country,
-                    'postal_code' => Auth::user()->address->postal_code
-                )
-            )
-        );
-        
-        
-        $snapToken = \Midtrans\Snap::getSnapToken($params);
-        
-        $transaction->snap_token = $snapToken;
-        $transaction->save();
-
-        // Kirim email setelah pembayaran berhasil
-        // if ($this->isPaymentSuccessful($transaction)) {
-        //     $gift = Gift::where('transaction_id', $transaction->id)->first();
-        //     if ($gift) {
-        //         $this->sendGiftEmail($gift);
-        //     }
-        // }
-
-        // return redirect()->route('checkout');
-        
-        $product = $transaction;
-        // dd($gift);
-
-
-        return view('payment_detail',  compact('product', 'gift'));
+        return $token;
     }
 
     private function generateUniqueCode()
@@ -99,75 +32,114 @@ class TransactionsController extends Controller
         return $code;
     }
 
-    private function isPaymentSuccessful($transaction)
+    public function paymentDetail(SubsCategory $product, Request $request)
     {
-        try {
-            $status = \Midtrans\Transaction::status($transaction->order_id);
+        $gift = $request->has('gift') ? 'true' : 'false';
+        $redeemed = $request->has('redeem_code') ? $request->redeem_code : 'false';
 
-            if ($status->transaction_status == 'capture' || $status->transaction_status == 'settlement') {
-                $transaction->status = 'success';
-                $transaction->save();
+        return view('payment_detail', ["product" => $product, "gift" => $gift, "redeemed" => $redeemed]);
+    }
 
-                $gift = Gift::where('transaction_id', $transaction->id)->first();
-                if ($gift) {
-                    $this->sendGiftEmail($transaction, $gift->redeem_code);
-                }
+    public function processPayment(Request $request)
+    {
 
-                return true;
-            } else {
-                $transaction->status = $status->transaction_status;
-                $transaction->save();
+        $data = $request->json()->all();
 
-                return false;
-            }
-        } catch (\Exception $e) {
-            \Log::error($e->getMessage());
-            return false;
+        $subsCategory = SubsCategory::join('transactions', 'transactions.subs_category_id', '=', 'subs_categories.id')
+            ->select('subs_categories.*')
+            ->where('subs_categories.id', '=', $request->input('subsId'))
+            ->first();
+
+        $transaction = Transaction::create([
+            'user_id' => Auth::user()->id,
+            'token' => '',
+            'subs_category_id' => $data["subs_id"],
+            'discounted_price' => $data["discounted_price"],
+            'status' => 'pending',
+        ]);
+
+        if ($data["isRedeemed"] == "false") {
+            // Set your Merchant Server Key
+            \Midtrans\Config::$serverKey = env('MIDTRANS_SERVER_KEY');
+            // Set to Development/Sandbox Environment (default). Set to true fmidtrans.serverKeyor Production Environment (accept real transaction).
+            \Midtrans\Config::$isProduction = false;
+            // Set sanitization on (default)midtrans.serverKey
+            \Midtrans\Config::$isSanitized = true;
+            // Set 3DS transaction for credit card to truemidtrans.serverKey
+            \Midtrans\Config::$is3ds = true;
+
+            $params = [
+                'transaction_details' => [
+                    'order_id' => rand(),
+                    'gross_amount' => ceil($data['discounted_price']),
+                ],
+                'items_details' => [
+                    'id' => $transaction->subs_category_id,
+                    'price' => $transaction->discounted_price,
+                    'quantity' => 1,
+                    "name" => Str::headline($transaction->subsCategory->slug),
+                ],
+                'customer_details' => [
+                    'email' => Auth::user()->email,
+                    'first_name' => Auth::user()->first_name,
+                    'last_name' => Auth::user()->last_name,
+                    'phone' => Auth::user()->phone_number,
+                    'shipping_address' => [
+                        'address' => Auth::user()->address->street_number . ', ' . Auth::user()->address->district . ', ' . Auth::user()->address->village . ', ' . Auth::user()->address->city . ', ' . Auth::user()->address->country,
+                        'postal_code' => Auth::user()->address->postal_code
+                    ]
+                ]
+            ];
+
+            $snapToken = \Midtrans\Snap::getSnapToken($params);
+            $transaction->snap_token = $snapToken;
+        } else {
+            $transaction->status = "success";
         }
-    }
 
-    private function sendGiftEmail($transaction, $redeemCode)
-    {
-        $user = $transaction->user;
-    
-        Mail::send('emails.gift', ['redeemCode' => $redeemCode], function ($message) use ($user) {
-            $message->to($user->email);
-            $message->subject('Your Gift Code');
-        });
-    }
-
-    public function checkout($transaction)
-    {
-        $product = Transaction::where('transactions.id' , '=' , $transaction)->first();
-        // $isGift = $gift;
-        dd($product);
-        // $gift = Gift::where('gifts.transaction_id', '=', $transaction->id);
-
-        // if($gift != null) {
-        //     $gift = true;
-        // } else {
-        //     $gift = false;
-        // } 
-
-        // return view('payment_detail',  compact('transaction', 'product', 'gift'));
-    }
-
-    public function success($transaction){
-        // $transaction->status = 'success';
-
-        $transactionUpdate = Transaction::where('transactions.id' , '=', $transaction)->first();
-        $transactionUpdate->status = "success";
-        $transactionUpdate->save();
-        
-        dd($transactionUpdate); 
-
-        // return view('index');
-    }
-
-    public function failed(Transaction $transaction){
-        $transaction->status = 'failed';
+        $transaction->token = $this->generateTransactionToken();
         $transaction->save();
 
-        return view('subscription');
+        return json_encode($transaction);
+    }
+
+    public function paymentSuccess($token, $isGift, $isRedeemed)
+    {
+        $transactionUpdate = Transaction::where('transactions.token', '=', $token)->first();
+
+        if ($isGift != "false") {
+            $giftCode = $this->generateUniqueCode();
+            Gift::create([
+                'transaction_id' => $transactionUpdate->id,
+                'redeem_code' => $giftCode,
+                'is_redeemed' => false,
+            ]);
+
+            Mail::to(Auth::user()->email)->send(
+                new GiftMail($giftCode)
+            );
+        }
+
+        if ($isRedeemed != "false") {
+            $giftUpdate = Gift::where('redeem_code', '=', $isRedeemed)->first();
+
+            $giftUpdate->is_redeemed = true;
+            $giftUpdate->save();
+        }
+
+        $transactionUpdate->status = "success";
+        $transactionUpdate->save();
+
+        return redirect()->route('index');
+    }
+
+    public function paymentFailed($token)
+    {
+
+        $transactionUpdate = Transaction::where('transactions.token', '=', $token)->first();
+        $transactionUpdate->status = "failed";
+        $transactionUpdate->save();
+
+        return redirect()->route('index');
     }
 }

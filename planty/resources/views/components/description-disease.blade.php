@@ -1,9 +1,9 @@
 <div class="desc d-flex position-relative align-items-center justify-content-center" style="width: 37rem; height: 28rem;">
     <div class="image-disease">
+        <img src="{{ $diseasepic }}" class="image p-0 m-0" style="width: 100%; height: 100%; object-fit: cover" alt="">
     </div>
     <div class="desc-disease row">
-        <h1 style="color: #122218; font-family: Poppins, sans-serif; font-weight:600; font-size:2rem; padding-left:15rem">Downy Mildew</h1>
-        <p style="color: #122218; font-family: DM Sans, sans-serif; font-weight:400; font-size:1rem; padding-left:15rem">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown</p>
-        <p style="color: #122218; font-family: DM Sans, sans-serif; font-weight:400; font-size:1rem; padding-left:15rem">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown</p>
+        <h1 class="planty-heading-3" style="color: #122218; padding-left:15rem">{{ $disease }}</h1>
+        <p class="planty-text-paragraph" style="color: #122218; padding-left:15rem">{{ $slot }}</p>
     </div>
 </div>

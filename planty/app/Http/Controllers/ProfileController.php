@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProfileUpdateRequest;
+use App\Models\Transaction;
+use DateInterval;
+use DateTime;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -21,20 +24,47 @@ class ProfileController extends Controller
         ]);
     }
 
+    public function index(): View
+    {
+        $transaction = Transaction::join('users', 'users.id', '=', 'transactions.user_id')
+            ->join('subs_categories', 'subs_categories.id', '=', 'transactions.subs_category_id')
+            ->select('*', 'transactions.id as transaction_id')
+            ->where('transactions.user_id', '=', auth()->user()->id)
+            ->where('transactions.status', '=', 'success')
+            ->orderBy('transactions.created_at', 'desc')
+            ->first();
+
+        $date = new DateTime($transaction->created_at);
+        $date->add(new DateInterval('P' . strval($transaction->months) . 'M'));
+        $curDate = now();
+
+        if ($date >= $curDate) {
+            $status = 'Subscribed';
+        } else {
+            $status = 'Not Subscribed';
+        }
+
+        return view('profile', compact('status', 'date'));
+    }
+
     /**
      * Update the user's profile information.
      */
-    public function update(ProfileUpdateRequest $request): RedirectResponse
+    public function update(Request $request): RedirectResponse
     {
-        $request->user()->fill($request->validated());
+        $validatedData = $request->validate([
+            'first_name' => 'required|string|max:255',
+            'last_name' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'phone_number' => 'required|string|max:255',
+            // Add other validation rules here
+        ]);
 
-        if ($request->user()->isDirty('email')) {
-            $request->user()->email_verified_at = null;
-        }
+        $request->user()->fill($validatedData);
 
         $request->user()->save();
 
-        return Redirect::route('profile.edit')->with('status', 'profile-updated');
+        return Redirect::route('profile')->with('status', 'profile-updated');
     }
 
     /**

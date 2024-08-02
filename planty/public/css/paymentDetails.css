@@ -1,6 +1,13 @@
+.payment-detail-container {
+    height: 100vh;
+    padding: 10rem 10% 0 10%;
+    background-image: url('/assets/PaymentDetailsBackground.png');
+    background-size: cover;
+}
+
 .paymentDetails {
-    width: 46rem;
-    height: 51.25rem;
+    width: 47%;
+    height: 95%;
 
     border-radius: 0.9375rem;
     border: 1px solid var(--tes1, #adbc9f);
@@ -22,4 +29,33 @@
     height: 3.3125rem;
     border-radius: 0.625rem;
     border: 1px solid #618264;
+}
+
+.order-summary-container {
+    width: 47%;
+    /* padding-left: 5%; */
+}
+
+@media (max-width: 992px) {
+    .payment-detail-container {
+        background-image: url('/assets/PaymentDetailsBackgroundMobile.png');
+        flex-direction: column-reverse !important;
+        align-items: center;
+        height: auto;
+        padding: 10rem 15% 10rem 15%;
+        row-gap: 3rem;
+    }
+
+    .paymentDetails {
+        width: auto;
+        padding-bottom: 3rem !important;
+    }
+
+    .order-summary-container {
+        width: auto;
+    }
+
+    .titleOrder {
+        text-align: center;
+    }
 }

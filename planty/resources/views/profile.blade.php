@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Planty</title>
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
@@ -21,25 +22,161 @@
     </x-navbar>
 
     <div class="container-fluid profile-container">
-        <h1 class="planty-heading-1">My Profile</h1>
-        <div class="row">
-            <img class="rounded-circle" src="{{ asset('user.png') }}" style="height: 50px">
-            <p>{{ auth()->user()->username }}</p>
-            <form action="" method="post" enctype="multipart/form-data" class="">
-                <div class="d-flex flex-col">
-                    <label for="redeem-code" class="form-label">Redeem Code</label>
-                    <input type="text" name="redeem-code" class="form-control">
+        <h1 class="planty-heading-1 text-center">My Profile</h1>
+        <div class="d-flex flex-row align-items-center justify-content-center profile-box profile-header column-gap-5 mb-5 mt-5">
+            <img class="rounded-circle profile-pic" src="{{ asset('/assets/user.png') }}">
+            <p class="planty-heading-2 username m-0">{{ auth()->user()->username }}</p>
+            <form method="POST" class="ms-auto d-flex flex-row" id="redeem-code-form">
+                @csrf
+                <div class="d-flex flex-column">
+                    <label for="redeem-code" class="form-label planty-heading-4 m-0">Redeem Code</label>
+                    <div class="d-flex flex-row column-gap-4 redeem-code-btn-container">
+                        <input type="text" name="redeem_code" class="form-control" id="redeem-code" placeholder="Redeem Code">
+                        <x-primary-btn type="button" id="redeem-button">Redeem</x-primary-btn>
+                    </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Redeem</button>
             </form>
         </div>
+        <form class="d-flex flex-column profile-box profile-personal-info mb-5" method="POST"
+            action="{{ route('profile.update') }}" enctype="multipart/form-data">
+            @csrf
+            <div class="header d-flex flex-row justify-content-between">
+                <p class="planty-heading-3">Personal Information</p>
+                <button type="button" class="d-flex flex-row align-items-center column-gap-3 edit-btn">
+                    <p class="m-0 planty-heading-4">Edit</p>
+                    <img src="{{ asset('/assets/edit.svg') }}">
+                </button>
+                <button type="submit" class="d-flex flex-row align-items-center column-gap-3 submit-btn">
+                    <p class="m-0 planty-heading-4">OK</p>
+                </button>
+            </div>
+            <div class="d-flex flex-row mb-3 column-gap-3">
+                <div class="profile-item">
+                    <label for="first_name" class="d-block planty-text m-0 w-100">First Name</label>
+                    <input name="first_name" type="text" value="{{ auth()->user()->first_name }}"
+                        class="planty-text-sentence m-0 w-100" disabled>
+                </div>
+                <div class="profile-item">
+                    <label for="last_name" class="d-block planty-text m-0 w-100">Last Name</label>
+                    <input name="last_name" type="text" value="{{ auth()->user()->last_name }}"
+                        class="planty-text-sentence m-0 w-100" disabled>
+                </div>
+            </div>
+            <div class="d-flex flex-row column-gap-3">
+                <div class="profile-item">
+                    <label for="email" class="d-block planty-text m-0 w-100">Email Address</label>
+                    <input name="email" type="email" value="{{ auth()->user()->email }}"
+                        class="planty-text-sentence m-0 w-100" disabled>
+                </div>
+                <div class="profile-item">
+                    <label for="phone_number" class="d-block planty-text m-0 w-100">Phone Number</label>
+                    <input name="phone_number" type="tel"
+                        pattern="^\+?(\d{1,4}[-.\s]?)?(\(?\d{1,4}\)?[-.\s]?)?(\d{1,4}[-.\s]?){1,4}$"
+                        value="{{ auth()->user()->phone_number }}" class="planty-text-sentence m-0 w-100" disabled>
+                </div>
+            </div>
+        </form>
+        <div class="d-flex flex-column profile-box profile-subscription mb-5">
+            <div class="header d-flex flex-row justify-content-between">
+                <p class="planty-heading-3">Subscription</p>
+            </div>
+            <div class="d-flex flex-row mb-3 column-gap-3">
+                <div class="profile-item">
+                    <p class="planty-text m-0 w-100">Username</p>
+                    <p class="planty-text-sentence m-0 w-100">{{ auth()->user()->username }}</p>
+                </div>
+                <div class="profile-item">
+                    <p class="planty-text m-0 w-100">Bill</p>
+                    <p class="planty-text-sentence m-0 w-100">{{ $date->format('Y-m-d') }}</p>
+                </div>
+            </div>
+            <div class="d-flex flex-row column-gap-3">
+                <div class="profile-item">
+                    <p class="planty-text m-0 w-100">Status</p>
+                    <p class="planty-text-sentence m-0 w-100">{{ $status }}</p>
+                </div>
+            </div>
+        </div>
+        <form class="d-flex flex-column profile-box profile-address mb-5" method="POST"
+            action="{{ route('address.update') }}" enctype="multipart/form-data">
+            @csrf
+            <div class="header d-flex flex-row justify-content-between">
+                <p class="planty-heading-3">Address</p>
+                <button type="button" class="d-flex flex-row align-items-center column-gap-3 edit-btn">
+                    <p class="m-0 planty-heading-4">Edit</p>
+                    <img src="{{ asset('/assets/edit.svg') }}">
+                </button>
+                <button type="submit" class="d-flex flex-row align-items-center column-gap-3 submit-btn">
+                    <p class="m-0 planty-heading-4">OK</p>
+                </button>
+            </div>
+            <div class="d-flex flex-row mb-3 column-gap-3">
+                <div class="profile-item">
+                    <label for="street_number" class="d-block planty-text m-0 w-100">Street, Number</label>
+                    <input name="street_number" type="text" value="{{ auth()->user()->address->street_number }}"
+                        class="planty-text-sentence m-0 w-100" disabled>
+                </div>
+                <div class="profile-item">
+                    <label for="city" class="d-block planty-text m-0 w-100">City</label>
+                    <input name="city" type="text" value="{{ auth()->user()->address->city }}"
+                        class="planty-text-sentence m-0 w-100" disabled>
+                </div>
+            </div>
+            <div class="d-flex flex-row mb-3 column-gap-3">
+                <div class="profile-item">
+                    <label for="country" class="d-block planty-text m-0 w-100">Country</label>
+                    <input name="country" type="text" value="{{ auth()->user()->address->country }}"
+                        class="planty-text-sentence m-0 w-100" disabled>
+                </div>
+                <div class="profile-item">
+                    <label for="village" class="d-block planty-text m-0 w-100">Village</label>
+                    <input name="village" type="text" value="{{ auth()->user()->address->village }}"
+                        class="planty-text-sentence m-0 w-100" disabled>
+                </div>
+            </div>
+            <div class="d-flex flex-row column-gap-3">
+                <div class="profile-item">
+                    <label for="district" class="d-block planty-text m-0 w-100">District</label>
+                    <input name="district" type="text" value="{{ auth()->user()->address->district }}"
+                        class="planty-text-sentence m-0 w-100" disabled>
+                </div>
+                <div class="profile-item">
+                    <label for="postal_code" class="d-block planty-text m-0 w-100">Postal Code</label>
+                    <input name="postal_code" type="text" value="{{ auth()->user()->address->postal_code }}"
+                        class="planty-text-sentence m-0 w-100" disabled>
+                </div>
+            </div>
+        </form>
     </div>
-
     <x-footer>
     </x-footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    <button type="button" class="btn btn-primary d-none modal-btn" data-bs-toggle="modal"
+        data-bs-target="#staticBackdrop">
+        Launch static backdrop modal
+    </button>
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content redeem-code-dialog">
+                <div class="modal-header border-0">
+                    <h1 class="modal-title planty-heading-2" id="staticBackdropLabel">Wrong!!!</h1>
+                </div>
+                <div class="modal-body pt-0 pb-0">
+                    <p class="planty-text-sentence m-0">Redeem Code is Wrong</p>
+                </div>
+                <div class="modal-footer border-0">
+                    <x-primary-btn type="button" data-bs-dismiss="modal">OK</x-primary-btn>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+        crossorigin="anonymous"></script>
+    <script src="{{ asset('/js/profile.js') }}"></script>
 </body>
 
 </html>

@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class SubsTierSeeder extends Seeder
 {
@@ -12,9 +13,15 @@ class SubsTierSeeder extends Seeder
      */
     public function run(): void
     {
-        \DB::table('subs_tiers')->insert([
-            ['tier_name' => 'Beginner'],
-            ['tier_name' => 'Enthusiast'],
+        DB::table('subs_tiers')->insert([
+            [
+                'tier_name' => 'Beginner',
+                'slug' => 'product-beginner',
+            ],
+            [
+                'tier_name' => 'Enthusiast',
+                'slug' => 'product-enthusiast',
+            ],
         ]);
     }
 }

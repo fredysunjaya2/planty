@@ -12,10 +12,12 @@ class serviceCard extends Component
      * Create a new component instance.
      */
     public $serviceTitle;
-    
-    public function __construct($serviceTitle)
+    public $serviceImg;
+
+    public function __construct($serviceTitle, $serviceImg)
     {
         $this->serviceTitle = $serviceTitle;
+        $this->serviceImg = $serviceImg;
     }
 
     /**

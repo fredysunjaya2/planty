@@ -27,9 +27,10 @@
                                 <h2 class="planty-heading-2 subscription-title">Beginner</h2>
                                 <h2 class="planty-heading-4 subscription-price mb-2">Rp 39.299,00</h2>
                                 <p class="benefit-desc planty-text-sentence">per active user, per month</p>
-                                <div class="btn-plan ">
-                                    <x-primary-btn type="button">Select plan</x-primary-btn>
-                                </div>
+                                <a href="{{ route('product-detail', 'product-beginner') }}">
+                            <div class="btn-plan"><button type="button" class="btn btn-success">Select Plan</button>
+                            </div>
+                        </a>
                             </div>
                         </div>
                         <div class="plan-information-1 col-sm-12">
