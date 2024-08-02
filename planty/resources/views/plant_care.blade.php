@@ -22,7 +22,13 @@
                     src= "{{ asset('assets/plant-care/plant-care-background.jpeg') }}">
             </div>
             <div class="col-6 plant-care-list">
-                @php
+
+                @foreach ($content as $item)
+                    <x-plant-care-item plant_care_title="{{$item['name']}}" plant_care_desc="{{$item['desc']}}">
+
+                    </x-plant-care-item>
+                @endforeach
+                {{-- @php
                     $titleList = ['Tutorial', 'Fun Facts', 'Diseases', "Don'ts"];
                 @endphp
                 @for ($i = 0; $i < 4; $i++)
@@ -39,7 +45,7 @@
                             scelerisque in dictum. Enim blandit volutpat maecenas volutpat blandit.
                         </x-slot:plant_care_desc>
                     </x-plant-care-item>
-                @endfor
+                @endfor --}}
             </div>
         </div>
         <x-footer></x-footer>

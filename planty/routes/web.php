@@ -2,6 +2,7 @@
 
     use App\Http\Controllers\AboutusController;
     use App\Http\Controllers\AddressesController;
+    use App\Http\Controllers\PlantcareController;
     use App\Http\Controllers\ProfileController;
     use App\Http\Controllers\SubsCategoriesController;
     use App\Http\Controllers\TransactionsController;
@@ -23,6 +24,7 @@
     Route::get('/fun', [BenefitController::class, 'benefit']);
     Route::get('/subscription', [AccordionController::class, 'accordion'])->name('subscription');
     Route::get('/about-us', [AboutusController::class, 'values'])->name('about-us');
+    Route::get('/plant-care', [PlantcareController::class, 'content'])->name('plant-care');
 
     Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');
 
@@ -38,9 +40,9 @@
     //     return view('about_us');
     // })->name('about-us');
 
-    Route::get('/plant-care', function () {
-        return view('plant_care');
-    })->name('plant-care');
+    // Route::get('/plant-care', function () {
+    //     return view('plant_care');
+    // })->name('plant-care');
 
     Route::get('/gallery', [GalleriesController::class, 'readGalleries'])->name('gallery');
 
