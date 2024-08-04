@@ -64,7 +64,7 @@
                     </div>
                     <div class="popup-head d-flex flex-column">
                         <div class="popup-title d-flex flex-row">
-                            <h2>Category 1</h2>
+                            <h2>Succulents</h2>
                             <img src="../assets/tutorial/popup.png" alt="#">
                         </div>
                         <p>
@@ -101,8 +101,8 @@
                     </div>
                     <div class="popup-head d-flex flex-column">
                         <div class="popup-title d-flex flex-row">
-                            <h2>Category 2</h2>
-                            <img src="../assets/tutorial/popup.png" alt="#">
+                            <h2>Herbs</h2>
+                            <img  id="popup-img2" src="../assets/tutorial/popup2.png" alt="#">
                         </div>
                         <p>
                             Easy-to-grow aromatic plants perfect for kitchen gardens and culinary use.
@@ -138,8 +138,8 @@
                     </div>
                     <div class="popup-head d-flex flex-column">
                         <div class="popup-title d-flex flex-row">
-                            <h2>Category 3</h2>
-                            <img src="../assets/tutorial/popup.png" alt="#">
+                            <h2>Flowers</h2>
+                            <img id="popup-img3" src="../assets/tutorial/popup3.png" alt="#">
                         </div>
                         <p>
                             Easy-to-grow aromatic plants perfect for kitchen gardens and culinary use.
@@ -175,8 +175,8 @@
                     </div>
                     <div class="popup-head d-flex flex-column">
                         <div class="popup-title d-flex flex-row">
-                            <h2>Category 4</h2>
-                            <img src="../assets/tutorial/popup.png" alt="#">
+                            <h2>Vegetables</h2>
+                            <img id="popup-img4" src="../assets/tutorial/popup4.png" alt="#">
                         </div>
                         <p>
                             Easy-to-grow aromatic plants perfect for kitchen gardens and culinary use.

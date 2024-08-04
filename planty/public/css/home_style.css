@@ -46,6 +46,7 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    width: 70%;
 }
 
 .jumbo-btn{
@@ -71,7 +72,7 @@
   font-family: "Poppins", sans-serif;
   width: 20rem;
   height: 15rem;
-  gap: 1rem;
+  gap: 0.4rem;
 
   border-radius: 0.9375rem;
     border: 1px solid var(--tes1, #ADBC9F);
@@ -143,6 +144,12 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+
+}
+
+.service-text{
+    justify-content: center;
+    align-items: center;
 }
 
 .service-text h4{
@@ -164,6 +171,7 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    width: 70%;
 }
 
 .why{
@@ -264,7 +272,7 @@
     line-height: normal;
     /* width: 36rem; */
 }
-
+/*
 .testi-card{
     border-radius: 1.25rem;
     border: 1.5px solid #FFF;
@@ -274,10 +282,9 @@
     width: 19rem;
     height: 20rem;
     text-align: center;
-    gap: 0.5rem;
+    gap: 1rem;
     margin-left: 1rem;
     transition: all 0.4s ease-in;
-    /* padding: 1rem; */
 }
 
 .testi-card:hover{
@@ -346,6 +353,99 @@
 }
 
 .pp-tier{
+    color: #FFF;
+    font-family: "DM Sans";
+    font-size: 0.625rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+} */
+
+.testi-card {
+    border-radius: 1.25rem;
+    border: 1.5px solid #FFF;
+    background: linear-gradient(185deg, rgba(255, 255, 255, 0.30) 6.27%, rgba(173, 188, 159, 0.30) 97.12%);
+    box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(6.099999904632568px);
+    width: 19rem;
+    height: 20rem;
+    text-align: center;
+    gap: 1rem;
+    margin-left: 1rem;
+    transition: all 0.4s ease-in;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.testi-card:hover {
+    border-radius: 1.25rem;
+    border: none;
+    background: #122218;
+    box-shadow: 0px 4px 10px 0px #122218;
+}
+
+.testi-card img {
+    width: 3.5rem;
+    height: 2.5rem;
+    margin-left: 2rem;
+    margin-top: 1rem;
+}
+
+.testi-card p {
+    width: 16rem;
+    color: #FFF;
+    font-family: "DM Sans";
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    margin-top: 0.2rem;
+    flex-grow: 1;
+}
+
+.testi-profile {
+    justify-content: center;
+    align-items: center;
+    margin-top: 0rem;
+    padding: 0;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.testi-profile img {
+    width: 2.75rem;
+    height: 2.75rem;
+    margin-left: 4rem;
+    margin-top: 0rem;
+}
+
+.testi-profile-text {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 0;
+}
+
+.testi-profile-text p {
+    margin: 0;
+}
+
+.pp-name {
+    margin: 0;
+    color: #FFF;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.8125rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.pp-tier {
     color: #FFF;
     font-family: "DM Sans";
     font-size: 0.625rem;
@@ -472,7 +572,7 @@
     .card-service{
         /* scale: 0.9; */
         width: 80%;
-        max-width: 300px;
+        max-width: 380px;
     }
 
     .service-text{
