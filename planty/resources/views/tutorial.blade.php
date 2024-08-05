@@ -16,11 +16,11 @@
 <body>
 <x-navbar></x-navbar>
 <section class="tutorial-container container-fluid p-0">
-    <section class= "jumbo">
+    <section class= "jumbo d-flex flex-column">
+        <a href="{{route('plant-care')}}" class="back d-flex align-self-start">
+            <img src="../assets/Vector.svg" alt="">
+        </a>
         <div class="jumbo-text d-flex flex-column">
-            <div class="jumbo-back">
-                <a href="#"><img class ='back-btn' src="../assets/tutorial/back.png" alt=""></a>
-            </div>
             <div class="jumbo-header ">
                 <h2>Planting Tutorial</h2>
             </div>
@@ -39,7 +39,7 @@
         </div>
     </section>
     <section class="ask-us">
-        <div class="row-ask d-flex">
+        <div class="row-ask d-flex gap-5">
             <div class="col-6 askus-img d-flex">
                 <img src="../assets/tutorial/askus.png" alt="">
             </div>

@@ -34,15 +34,22 @@ class ProfileController extends Controller
             ->orderBy('transactions.created_at', 'desc')
             ->first();
 
-        $date = new DateTime($transaction->created_at);
-        $date->add(new DateInterval('P' . strval($transaction->months) . 'M'));
-        $curDate = now();
+        if($transaction != null) {
+            $date = new DateTime($transaction->created_at);
+            $date->add(new DateInterval('P' . strval($transaction->months) . 'M'));
+            $curDate = now();
 
-        if ($date >= $curDate) {
-            $status = 'Subscribed';
+            if ($date >= $curDate) {
+                $status = 'Subscribed';
+            } else {
+                $status = 'Not Subscribed';
+                $date = '-';
+            }
         } else {
             $status = 'Not Subscribed';
+            $date = '-';
         }
+
 
         return view('profile', compact('status', 'date'));
     }

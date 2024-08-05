@@ -3,7 +3,7 @@
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
-    padding-top: 7rem;
+    padding-top: 10rem;
 }
 
 .jumbo{
@@ -46,7 +46,7 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    width: 70%;
+    width: 35rem;
 }
 
 .jumbo-btn{
@@ -56,7 +56,7 @@
 .row-jumbo .col-5{
     display: flex;
     align-items: center;
-    justify-content: end;
+    justify-content: center;
 }
 
 .jumbo-img{
@@ -456,6 +456,11 @@
 
 @media (max-width:1360px){
 
+    .jumbo-text p{
+        width: 70%;
+        text-align: left;
+    }
+
     .img-jumbo{
         scale: 0.8;
     }
@@ -512,6 +517,10 @@
 
 @media (max-width: 768px){
 
+    .jumbo-text p{
+        width: 100%;
+        text-align: center;
+    }
 
     .img-jumbo{
         display: none;
@@ -540,6 +549,8 @@
 
     .jumbo-text{
         text-align: center;
+        justify-content: center;
+        align-items: center;
     }
 
     .jumbo-text h1{
@@ -665,7 +676,6 @@
     }
 
     .testi{
-        /* height: 25rem; */
         height: 60%;
         gap: 0rem;
     }
@@ -673,8 +683,6 @@
     .testi-card{
         scale: 0.725;
     }
-
-
 
     .home-container.container-fluid{
         background-image: url("/assets/home/home-mobile2.png");

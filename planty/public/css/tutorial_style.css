@@ -11,7 +11,7 @@
     /* width: 90rem; */
     height: 45.0625rem;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     /* padding-top: 2rem; */
 }
@@ -37,8 +37,14 @@
     height: 2rem;
 }
 
+.back{
+    padding-left: 5%;
+    padding-top: 7rem;
+}
+
 
 .jumbo-text {
+    padding-top: 5rem;
     justify-content: center;
     align-items: center;
     text-align: center;
