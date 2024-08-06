@@ -16,12 +16,13 @@
 </head>
 
 <body>
-    <div class='contact-container'>
-        <div class='contact-img-container col-md-12 col-sm-12 col-xs-12'>
-            <img src="{{ asset('/assets/contactus/contactus.png') }}" alt="Plants and hand" class="img-fluid d-flex">
+    <x-navbar></x-navbar>
+    <div class='row container-fluid contact-container p-0 m-0'>
+        <div class='col-5 contact-img-container position-relative'>
+            <img src="{{ asset('/assets/contactus/contactus.png') }}" alt="Plants and hand">
         </div>
-        <div class="form-container form-container col-md-12 col-sm-12 col-lg-6 d-flex flex-column justify-content-center">
-            <h1 class="planty-heading-1 text-center">Contact Us</h1>
+        <div class="col-7 form-container contact">
+            <h1 class="planty-heading-1 text-center mb-2">Contact Us</h1>
             <form id="contactForm" action="{{ route('contact.submit') }}" method="POST">
                 @csrf
                 <div class="form-textfield">
@@ -29,9 +30,9 @@
                         <label for='email'>Email</label>
                         <input id='email' name='email' required type='email'>
                     </div>
-                    <div class="planty-heading-4 contact-item ">
+                    <div class="planty-heading-4 contact-item">
                         <label for='type'>Type</label>
-                        <select id='type' name='type' required class="form-select ">
+                        <select id='type' name='type' required>
                             <option value="" selected disabled>Select an issue type</option>
                             <option value="complain">Complain</option>
                             <option value="technical issue">Technical Issue</option>
@@ -46,15 +47,15 @@
                         <textarea id='message' name='message' required></textarea>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-2 offset-5 justify-content-center align-items-center d-flex">
-                        <button class="contact-btn planty-heading-4" type='submit'>Send</button>
-                    </div>
-                </div>
-
+                <button class="mt-5 contact-btn planty-heading-4" type='submit'>Send</button>
             </form>
         </div>
     </div>
+
+    <!-- Keep the existing modal and script tags -->
+</body>
+
+</html>
 
         <!-- Popup Modal -->
         <div class="modal fade justify-content-center align-items-center m-0" id="thankYouModal" tabindex="-1" aria-labelledby="thankYouModalLabel" aria-hidden="true">

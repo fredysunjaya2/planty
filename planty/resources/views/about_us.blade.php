@@ -35,8 +35,8 @@
         <div class="row our-values">
             <div class="text-center our-values-desc">
                 <h1 class="planty-heading-1">Our Values</h1>
-                <p class="planty-text-paragraph">
-                    At Planty, we're committed to nurturing both plants and people. Our core values guide everything we do, from plant care to customer service.t
+                <p class="planty-text-paragraph col-8 offset-2">
+                    At Planty, we're committed to nurturing both plants and people. Our core values guide everything we do, from plant care to customer service.
                 </p>
             </div>
             <div class="col our-values-list-container justify-content-center">

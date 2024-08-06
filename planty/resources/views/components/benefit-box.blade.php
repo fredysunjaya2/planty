@@ -7,7 +7,7 @@
 <div class="col-3 benefit-item-container justify-content-center align-items-center d-flex" style="width: 18rem;">
   <div class="card-body">
     <h5 class="benefit-emot">{{ $value_emot }}</h5>
-    <h6 class="planty-heading-4 benefit-title mb-2 ">{{ $value_title}}</h6>
+    <h4 class="planty-heading-4 benefit-title mb-2 ">{{ $value_title}}</h4>
     <p class="benefit-desc planty-text-sentence">{{ $value_desc}} </p>
   </div>
 </div>

@@ -8,14 +8,22 @@ body{
 
 }
 
+
+
 .header-subs{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 12%;
+    margin-bottom: 12%;
+}
+
+.benefit-wrapper{
+    display: none;
 }
 
 .plan-content {
-    margin-top: 4rem;
+    margin-top: 10rem;
 }
 
 .subscription-plan {
@@ -171,9 +179,14 @@ body{
     flex-direction: column;
     height: 100%;
     max-width: 34.375rem;
-    max-height: 54.375rem;
+    max-height: 44.375rem;
 
 
+}
+.subs-info{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
 }
 
     .subs-accordion{
@@ -194,7 +207,7 @@ body{
 
     .header-accordion{
         text-align: center;
-        margin-top: 5rem;
+        margin-top: 20rem;
         margin-bottom: 5rem;
     }
 
@@ -204,10 +217,16 @@ body{
         /* border-radius: 15px !important; */
         font-weight: 500;
     }
+    .accordion-body {
+        border-top: 1px solid rgba(173, 188, 159, 0.40); /* Adjust color as needed */
+    }
 
      .accordion-button:focus{
        box-shadow: none;
 
+    }
+    .accordion-button::after{
+        color: black;
     }
 
     .accordion-item{
@@ -241,10 +260,9 @@ body{
         font-family: fontawesome;
         width: auto;
         height: auto;
-
-
-
     }
+
+
     .accordion-button:focus{
     box-shadow: none;
     /* border: 1px solid rgba(0,0,0,0.1); */
