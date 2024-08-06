@@ -14,9 +14,15 @@ class GalleriesController extends Controller
     {
         $plants = Gallery::join('plants', 'galleries.plant_id', '=', 'plants.id')
             ->join('subs_tiers', 'galleries.subs_tier_id', '=', 'subs_tiers.id')
-            ->select('galleries.id', 'plant_name', 'plant_description', 'plant_img', 'tier_name',
-            DB::raw('YEAR(archive_date) as archive_year'),
-            DB::raw('MONTHNAME(archive_date) as archive_month'))
+            ->select(
+                'galleries.id',
+                'plant_name',
+                'plant_description',
+                'plant_img',
+                'tier_name',
+                DB::raw('YEAR(archive_date) as archive_year'),
+                DB::raw('MONTHNAME(archive_date) as archive_month')
+            )
             ->orderBy('archive_date', 'desc')->get();
 
         // Initialize an empty array to hold the categorized data

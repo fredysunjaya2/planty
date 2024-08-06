@@ -205,6 +205,6 @@
 
 
 </section>
-<x-footer>s</x-footer>
+<x-footer></x-footer>
 </body>
 </html>

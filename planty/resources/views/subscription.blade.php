@@ -16,7 +16,7 @@
         </x-navbar>
         <div class="container-fluid-subs content">
             <div class="header-subs text-center">
-                <h1 class="planty-heading-1">Choose Your Plan</h1>
+                <h1 class="planty-heading-1 ">Choose Your Plan.</h1>
             </div>
 
             <div class="container position-relative plan-content">
@@ -28,9 +28,10 @@
                                 <h2 class="planty-heading-4 subscription-price mb-2">Rp 39.299,00</h2>
                                 <p class="benefit-desc planty-text-sentence">per active user, per month</p>
                                 <a href="{{ route('product-detail', 'product-beginner') }}">
-                            <div class="btn-plan"><button type="button" class="btn btn-success">Select Plan</button>
-                            </div>
-                        </a>
+                                    <div class="btn-plan">
+                                        <x-primary-btn type="button">Select plan</x-primary-btn>
+                                    </div>
+                                </a>
                             </div>
                         </div>
                         <div class="plan-information-1 col-sm-12">
@@ -38,13 +39,30 @@
                                 <div class="plan-information-title-1">
                                     <p class="planty-text-sentence">start your plant journey with easy-to-care-for plants and comprehensive guidance.</p>
                                 </div>
-                                <ul class="planty-text-sentence">
-                                    <li>&#10004; Monthly Plant Delivery: A beginner-friendly plant</li>
-                                    <li>&#10004; Plant Care Guide: Detailed instructions on how to care for the plant</li>
-                                    <li>&#10004; Basic Gardening Tools: small trowel, pruning shears, and a watering can</li>
-                                    <li>&#10004; Exclusive Online Access: Access to a library of tutorial videos</li>
-                                    <li>&#10004; Eco-Friendly Packaging</li>
-                                </ul>
+                                <div class="planty-text-sentence subs-info">
+                                    <p>&#10004;</p>
+                                    <p>Monthly Plant Delivery: A beginner-friendly plant</p>
+                                </div>
+                                <div class="planty-text-sentence subs-info">
+                                    <p>&#10004;</p>
+                                    <p>Plant Care Guide: Detailed instructions on how to care for the plant </p>
+                                </div>
+                                <div class="planty-text-sentence subs-info">
+                                    <p>&#10004;</p>
+                                    <p>Basic Gardening Tools: small trowel, pruning shears, and a watering can</p>
+                                </div>
+                                <div class="planty-text-sentence subs-info">
+                                    <p>&#10004;</p>
+                                    <p>Exclusive Online Access: Access to a library of tutorial videos</p>
+                                </div>
+                                <div class="planty-text-sentence subs-info">
+                                    <p>&#10004;</p>
+                                    <p>Eco-Friendly Packaging</p>
+                                </div>
+
+
+
+
                             </div>
                         </div>
                     </div>
@@ -55,9 +73,10 @@
                                 <h2 class="planty-heading-2 subscription-title">Enthusiast</h2>
                                 <h2 class="planty-heading-4 subscription-price mb-2">Rp 79.299,00</h2>
                                 <p class="benefit-desc planty-text-sentence">per active user, per month</p>
-                                <div class="btn-plan justify-content-center align-items-center ">
-                                    <x-primary-btn type="button">Select plan</x-primary-btn>
-                                </div>
+                                 <a href="{{ route('product-detail', 'product-enthusiast') }}">
+                            <div class="btn-plan"><x-secondary-btn type="button">Select plan</x-secondary-btn>
+                            </div>
+                        </a>
                             </div>
                         </div>
                         <div class="plan-information-2 col-sm-12">
@@ -65,15 +84,36 @@
                                 <div class="plan-information-title-2">
                                     <p class="planty-text-sentence">expand your collection and knowledge with a variety of plants and advanced resources.</p>
                                 </div>
-                                <ul class="planty-text-sentence">
-                                    <li>&#10004; Monthly Plant Delivery: A unique and exotic plant species</li>
-                                    <li>&#10004; Advanced Plant Care Guide: In-depth care instructions with troubleshooting tips</li>
-                                    <li>&#10004; Advanced Gardening Tools: precision pruner, soil tester, and ergonomic hand rake</li>
-                                    <li>&#10004; Exclusive Online Access: Access to an expanded library of tutorial videos</li>
-                                    <li>&#10004; Eco-Friendly Packaging</li>
-                                    <li>&#10004; Seasonal Tips</li>
-                                    <li>&#10004; Surprise Gifts: rare plant seeds, stylish plant pots, or unique accessories</li>
-                                </ul>
+                                 <div class="planty-text-sentence subs-info">
+                                    <p>&#10004;</p>
+                                    <p>Monthly Plant Delivery: A unique and exotic plant species</p>
+                                </div>
+                                 <div class="planty-text-sentence subs-info">
+                                    <p>&#10004;</p>
+                                    <p>Advanced Plant Care Guide: In-depth care instructions with troubleshooting tips</p>
+                                </div>
+                                 <div class="planty-text-sentence subs-info">
+                                    <p>&#10004;</p>
+                                    <p>Advanced Gardening Tools: precision pruner, soil tester, and ergonomic hand rake</p>
+                                </div>
+                                 <div class="planty-text-sentence subs-info">
+                                    <p>&#10004;</p>
+                                    <p>Exclusive Online Access: Access to an expanded library of tutorial videos</p>
+                                </div>
+                                 <div class="planty-text-sentence subs-info">
+                                    <p>&#10004;</p>
+                                    <p>Eco-Friendly Packaging</p>
+                                </div>
+                                 <div class="planty-text-sentence subs-info">
+                                    <p>&#10004;</p>
+                                    <p>Seasonal Tips</p>
+                                </div>
+                                 <div class="planty-text-sentence subs-info">
+                                    <p>&#10004;</p>
+                                    <p>Surprise Gifts: rare plant seeds, stylish plant pots, or unique accessories</p>
+                                </div>
+
+
                             </div>
                         </div>
                     </div>

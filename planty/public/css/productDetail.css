@@ -4,10 +4,11 @@
 }
 
 .product-detail-container {
-    height: 100vh;
+    height: 100%;
 }
 
 .container-content {
+    width: 100%;
     border: 1px solid var(--tes1, #adbc9f);
     background: var(
         --tes1,
@@ -24,7 +25,7 @@
 }
 
 .content {
-    padding: 6rem 15% 0% 5%;
+    padding: 6rem 10% 0% 5%;
 }
 
 .description {
