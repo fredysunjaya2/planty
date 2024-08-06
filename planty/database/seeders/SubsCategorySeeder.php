@@ -16,7 +16,7 @@ class SubsCategorySeeder extends Seeder
     {
         DB::table('subs_categories')->insert([
             [
-                'slug' => Str::of('Product Beginner 1 Month')->slug('-'),
+                'slug' => Str::of('Product Beginner 1 Months')->slug('-'),
                 'subs_tier_id' => '1',
                 'months' => 1,
                 'price' => 39299.00,
@@ -37,7 +37,7 @@ class SubsCategorySeeder extends Seeder
                 'discount' => 0.16,
             ],
             [
-                'slug' => Str::of('Product Enthusiast 1 Month')->slug('-'),
+                'slug' => Str::of('Product Enthusiast 1 Months')->slug('-'),
                 'subs_tier_id' => '2',
                 'months' => 1,
                 'price' => 79299.00,

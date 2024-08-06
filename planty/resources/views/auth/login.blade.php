@@ -17,6 +17,7 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" rel="stylesheet">
     <link href="{{ asset('/css/utils.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('/css/register_style.css') }}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body>
@@ -33,33 +34,44 @@
         </div>
         <form action="{{ route('login') }}" class="col-7 form-container login" enctype="multipart/form-data"
             method="POST">
-
             @csrf
             <h1 class="planty-heading-1 text-center mb-2">Login</h1>
             <div class="form-textfield">
                 <div class="planty-heading-4 register-item">
                     <label class='p-0' for='email'>Email</label>
-                    <input autocomplete="email" id='email' name='email' required type='text'>
+                    <input autocomplete="email" id='email' name='email' required type='text' value="{{ old('email') }}">
                     <x-input-error :messages="$errors->get('email')" class="m-0 text-danger fs-6 planty-text-paragraph" />
                 </div>
                 <div class="planty-heading-4 register-item">
                     <label class='p-0' for='password'>Password</label>
-                    <input autocomplete="new-password" id='password' name='password' required type='password'>
+                    <div class="d-flex pass-show-hide justify-content-between gap-2 position-relative">
+                        <input autocomplete="new-password" id='password' name='password' style="width: 100%" required type='password' value="{{ old('password') }}">
+                        <span id="togglePassword" class="position-absolute end-0 me-3 my-auto" style="cursor: pointer;">
+                            <i class="fa fa-eye" aria-hidden="true"></i>
+                        </span>
+                    </div>
                     <x-input-error :messages="$errors->get('password')" class="m-0 text-danger fs-6 planty-text-paragraph" />
                 </div>
             </div>
-            <div class='register-agreement-container'>
+            <div class='register-agreement-container mb-5'>
                 <div class='register-agreement'>
-                    <input id='remember_me' name='remember' type='checkbox' value='False'>
+                    <input id='remember_me' name='remember' type='checkbox' value='False' {{ old('remember') ? 'checked' : '' }}>
                     <label class='planty-text-paragraph'>{{ __('Remember me') }}</label>
                 </div>
-                <x-input-error :messages="$errors->get('agreement')" class="m-0 text-danger fs-6 planty-text-paragraph" />
             </div>
-            <button class="mt-5 register-btn planty-heading-4" name='login' type='submit'>Login</button>
-            <p class="text-center mt-2 planty-text-paragraph">Dont have an account?<a class="text-black"
-                    href="{{ route('register') }}">Register</a></p>
+            <x-primary-btn type="submit">Login</x-primary-btn>
+            <p class="text-center mt-2 planty-text-paragraph">Don't have an account?<a class="text-black"
+                    href="{{ route('register') }}"> Register</a></p>
         </form>
     </div>
+    <script>
+        document.getElementById('togglePassword').addEventListener('click', function(e) {
+            const passwordInput = document.getElementById('password');
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+            this.innerHTML = type === 'password' ? '<i class="fa fa-eye" aria-hidden="true"></i>' : '<i class="fa fa-eye-slash" aria-hidden="true"></i>';
+        });
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
