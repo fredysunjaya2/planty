@@ -4,8 +4,8 @@
           <img src="{{$mistakeLogo}}" class="img-fluid" style="width: 100% ;height: 3rem; object-fit: cover" alt="..."></img>
       </div>
       <div class="col-6 align-content-center text-wrap">
-          <div class="card-body p-0 m-0 ">
-              <p class="planty-heading-4 card-title m-0 p-0 text-wrap">{{$slot}}</p>
+          <div class="card-body p-0 m-0 ps-3">
+              <p class="planty-heading-4 card-title m-0 p-0 text-wrap text-start">{{$slot}}</p>
           </div>
       </div>
   </div>

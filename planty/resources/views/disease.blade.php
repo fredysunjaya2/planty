@@ -14,9 +14,9 @@
 <body>
     <x-navbar></x-navbar>
     <div class="container-fluid position-relative d-flex row m-0 p-0 pb-5" style="background-image: url('../assets/gradient-disease-background.png'); background-size: cover; object-fit:cover">
-        <div class="background-container d-flex row align-items-center justify-content-center m-0 p-0" style="background-image: url('../assets/diseases-jumbotron.png'); background-size: contain; width:100%; height:100vh; object-fit:cover">
-            <a href="#">
-                <img src="../assets/Vector.svg" alt="" class="ps-5 pt-5">
+        <div class="background-container d-flex row align-items-center justify-content-center m-0 p-0" style="background-image: url('../assets/diseases-jumbotron.png'); background-size: cover; width:100%; height:100vh; object-fit:cover; background-repeat:no-repeat">
+            <a href="{{route('plant-care')}}" class="back">
+                <img src="../assets/Vector.svg" alt="">
             </a>
             <div class="title row text-center pb-5">
                 <h1 class="text-white planty-heading-1">Plant Diseases</h1>

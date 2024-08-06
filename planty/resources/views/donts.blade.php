@@ -17,10 +17,12 @@
     {{-- navbar-start --}}
     <x-navbar></x-navbar>
     {{-- navbar-ending --}}
-    <div class="page-container container-fluid p-0">
-
+    <div class="page-container container-fluid p-0 d-flex row m-0 p-0">
+        <a href="{{route('plant-care')}}" class="back">
+            <img src="../assets/Vector.svg" alt="">
+        </a>
         {{-- jumbotron-start --}}
-        <div class="jumbotron jumbotron-fluid" style="height: 48.9375rem;">
+        <div class="jumbotron jumbotron-fluid">
             <div class="jumbotron-container container text-center text-white justify-content-between d-flex flex-column" style="height: 60%">
               <h1 class="planty-heading-1 display-4" style="color: white; text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);">Don'ts</h1>
               <div class="mistakes">
@@ -39,18 +41,18 @@
 
         {{-- START CONTENT COMPONENT --}}
         <div class="content-container" style="height: 100%">
-            <div id="neglecting-ingredients" class="div-content row d-flex flex-row justify-content-center align-items-center my-5 py-5">
+            <div id="neglecting-ingredients" class="div-content row d-flex flex-row justify-content-center align-items-center my-5 py-5 gap-5">
                 @component('components.mistake-detail', ['mistakeTitle' => 'Neglecting Ingredients', 'mistakePic' => '../assets/donts/neglectingIngredientsDetail.jpg'])
                     This refers to overlooking proper nutrition and soil composition. Plants need balanced nutrients to thrive. Neglecting fertilization or using the wrong type can result in poor growth and increased vulnerability to pests and diseases. Similarly, using inappropriate soil or failing to replenish soil nutrients over time can hinder plant health. Regular fertilization and occasional repotting with fresh, nutrient-rich soil help ensure your plants have all they need for healthy growth.
                 @endcomponent
             </div>
             
-            <div id="overwatering-plants" class="div-content row d-flex flex-row-reverse justify-content-center align-items-center my-5 py-5" >
+            <div id="overwatering-plants" class="div-content row d-flex flex-row-reverse justify-content-center align-items-center my-5 py-5 gap-5">
                 @component('components.mistake-detail', ['mistakeTitle' => 'Overwatering Plants', 'mistakePic' => '../assets/donts/overwateringPlantsDetail.webp'])
                     Overwatering is a common mistake that can suffocate roots and lead to root rot. Many plants prefer soil that dries slightly between waterings. Signs of overwatering include yellowing leaves and wilting despite wet soil. To avoid this, always check soil moisture before watering and ensure proper drainage for your plants.
                 @endcomponent
             </div>
-            <div id="ignoring-light-requirements" class="div-content row d-flex flex-row justify-content-center align-items-center my-5 py-5">
+            <div id="ignoring-light-requirements" class="div-content row d-flex flex-row justify-content-center align-items-center my-5 py-5 gap-5">
                 @component('components.mistake-detail', ['mistakeTitle' => 'Ignoring Light Requirements', 'mistakePic' => '../assets/donts/IgnoringLightRequirementsDetail.jpg'])
                     Different plants have varying light needs. Placing a shade-loving plant in direct sunlight can cause leaf burn, while putting a sun-loving plant in a dark corner leads to weak, leggy growth. Research each plant's light requirements and adjust their positions accordingly. Remember that light conditions change with seasons, so you may need to move plants throughout the year.
                 @endcomponent

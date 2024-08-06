@@ -8,4 +8,4 @@
     <div class="mistake-desc planty-text-paragraph row text-center mx-3">
         {{$slot}}
     </div>
-</div>
+</div> 
