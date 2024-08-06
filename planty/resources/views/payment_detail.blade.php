@@ -46,7 +46,7 @@
 
 
                 <div class="tab-content" id="nav-tabContent">
-                    <div class="tab-pane fade show active ms-5 me-5 mt-4" id="nav-customerDetails" role="tabpanel"
+                    <div class="tab-pane fade show active ms-5 me-5 mt-4 mb-4" id="nav-customerDetails" role="tabpanel"
                         aria-labelledby="nav-customerDetails-tab" tabindex="0">
                         <div class="row g-4">
                             <div class="">
@@ -74,7 +74,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="tab-pane fade ms-5 me-5 mt-4" id="nav-shippingInfo" role="tabpanel"
+                    <div class="tab-pane fade ms-5 me-5 mt-4 mb-4" id="nav-shippingInfo" role="tabpanel"
                         aria-labelledby="nav-shippingInfo-tab" tabindex="0">
                         <div class="row g-3">
                             <div class="col-md-12">
@@ -165,8 +165,9 @@
                     </div>
                 </div>
                 <div class="payment-btn d-flex justify-content-center mt-5">
-                    <button id="pay-button" type="button" class="btn btn-success planty-heading-4 text-white"
-                        style="width: 7.0625rem; height: 3.125rem; border-radius: 0.625rem; background: #618264;">Pay</button>
+                    {{-- <button id="pay-button" type="button" class="btn btn-success planty-heading-4 text-white"
+                        style="width: 7.0625rem; height: 3.125rem; border-radius: 0.625rem; background: #618264;">Pay</button> --}}
+                    <x-primary-btn type="button" id="pay-button">Pay</x-primary-btn>
                 </div>
 
         </div>

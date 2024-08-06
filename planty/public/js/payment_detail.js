@@ -76,7 +76,7 @@ function windowPayment() {
     // SnapToken acquired from previous step
     window.snap.pay(transaction.snap_token, {
         onSuccess: function (result) {
-            if(gift["isGift"] != "false") {
+            if(gift["isGift"]) {
                 document.querySelector('.modal-btn').click();
                 document.querySelector('.modal-footer button').addEventListener('click', function() {
                     window.location.href = '/process-payment/success/' + transaction.token + "/" + gift["isGift"] + "/" + gift["isRedeemed"];

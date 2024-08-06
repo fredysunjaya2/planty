@@ -16,7 +16,7 @@
         </x-navbar>
         <div class="container-fluid-subs content">
             <div class="header-subs text-center">
-                <h1 class="planty-heading-1 ">Choose Your Plan</h1>
+                <h1 class="planty-heading-1 ">Choose Your Plan.</h1>
             </div>
 
             <div class="container position-relative plan-content">
@@ -28,9 +28,10 @@
                                 <h2 class="planty-heading-4 subscription-price mb-2">Rp 39.299,00</h2>
                                 <p class="benefit-desc planty-text-sentence">per active user, per month</p>
                                 <a href="{{ route('product-detail', 'product-beginner') }}">
-                            <div class="btn-plan"><x-primary-btn type="button">Select plan</x-primary-btn>
-                            </div>
-                        </a>
+                                    <div class="btn-plan">
+                                        <x-primary-btn type="button">Select plan</x-primary-btn>
+                                    </div>
+                                </a>
                             </div>
                         </div>
                         <div class="plan-information-1 col-sm-12">
@@ -73,7 +74,7 @@
                                 <h2 class="planty-heading-4 subscription-price mb-2">Rp 79.299,00</h2>
                                 <p class="benefit-desc planty-text-sentence">per active user, per month</p>
                                  <a href="{{ route('product-detail', 'product-enthusiast') }}">
-                            <div class="btn-plan"><x-primary-btn type="button">Select plan</x-primary-btn>
+                            <div class="btn-plan"><x-secondary-btn type="button">Select plan</x-secondary-btn>
                             </div>
                         </a>
                             </div>
