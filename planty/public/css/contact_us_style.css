@@ -1,67 +1,54 @@
+/* contact us */
 .contact-container {
-    display: flex;
     height: 100vh;
 }
 
 .contact-img-container {
-    flex: 1;
-    min-height: 300px;
-    position: relative;
-    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    height: 100vh;
 }
 
 .contact-img-container img {
     width: 100%;
     height: 100%;
-    object-fit:cover;
-    top: 0;
-    left: 0;
-}
-
-.form-group {
-    margin-bottom: 1.5rem;
+    object-fit: cover;
+    display: block;
 }
 
 .form-container {
-    flex: 1;
-    padding: 4rem;
-    color: #000000;
+    padding: 6% 8% 2rem 8%;
+    color: rgb(var(--font));
     display: flex;
     flex-direction: column;
+    height: 100vh;
+}
+
+.form-container.contact {
     justify-content: center;
-    background-color: #ffffff;
 }
 
 .form-textfield {
     display: flex;
+    row-gap: 2rem;
     flex-direction: column;
-    gap: 1.5rem;
 }
 
 .form-textfield .contact-item {
     display: flex;
     flex-direction: column;
+    row-gap: 0;
 }
 
 input, textarea, select {
+    border-radius: 10px;
+    border: 1px solid #618264;
+    background: #F1F3F2;
+    height: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
     width: 100%;
-    padding: 12px;
-    border: 2px solid #618264;
-    border-radius: 8px;
-    background-color: #f8f8f8;
-    font-family: 'Poppins', sans-serif;
-    font-size: 1rem;
-    color: #000000;
-    box-sizing: border-box; /* Pastikan padding tidak menambah ukuran total */
 }
-
-label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-    color: #000000;
-}
-
 
 textarea {
     height: 150px;
@@ -69,113 +56,39 @@ textarea {
 }
 
 .contact-btn {
-    border-radius: 8px;
-    background: #618264;
+    border-radius: 10px;
+    background: rgb(var(--hijau-gelap));
     height: 50px;
-    color: #ffffff;
+    color: rgb(var(--white-background));
     border: none;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    padding: 0 2.5rem;
-    align-self: center;
-    margin-top: 1rem;
+    width: 100%;
 }
 
-.contact-btn:hover {
-    background: #4a6b4a;
-}
-
-h1 {
-    margin-bottom: 2rem;
-    text-align: center;
-    font-size: 2.5rem;
-    font-weight: bold;
-}
-
-@media (max-width: 991.8px) {
-    .contact-container {
-        flex-direction: column;
+@media (max-width: 992px) {
+    .navbar {
+        display: block;
     }
 
     .contact-img-container {
-        height: 30vh;
+        display: none;
     }
 
     .form-container {
-        padding: 2rem;
+        padding: 12% 12% 1rem 12%;
+        width: 100%;
+    }
+
+    .form-container h1 {
+        margin-bottom: 3rem !important;
+    }
+
+    .contact .form-textfield {
+        row-gap: 1rem;
     }
 }
 
-
-
-/* modal  */
-.modal-content {
-    border-radius: 20px;
-    border: none;
-}
-
-.modal-header {
-    border-bottom: none;
-    padding: 1rem 1rem 0;
-}
-
-.modal-body {
-    padding: 1rem 1rem 2rem;
-}
-
-.modal-title {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    color: #333;
-}
-
-.btn-close {
-    opacity: 1;
-}
-
-.btn-close:focus {
-    box-shadow: none;
-}
-
-
-select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    background-image: url("data:image/svg+xml;utf8,<svg fill='%23618264' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
-    background-repeat: no-repeat;
-    background-position: right 12px center;
-    padding-right: 40px;
-}
-
-
-select:focus {
-    outline: none;
-    border-color: #4a6b4a;
-}
-
-select:not(:focus):not(:hover) {
-    border: 2px solid #618264;
-}
-
-
-input:focus, textarea:focus, select:focus {
-    outline: none;
-    border-color: #4a6b4a;
-    box-shadow: 0 0 0 3px rgba(97, 130, 100, 0.1);
-}
-
-select:-moz-focusring {
-    color: transparent;
-    text-shadow: 0 0 0 #000000;
-}
-
-
-select::-ms-expand {
-    display: none;
-}
-
-
-.form-select {
-    border: 2px solid #618264 !important;
+@media (max-width: 576px) {
+    .form-container {
+        padding: 20% 12% 1rem 12%;
+    }
 }
