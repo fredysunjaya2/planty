@@ -24,4 +24,5 @@ class GiftsController extends Controller
 
         return json_encode($product);
     }
+
 }

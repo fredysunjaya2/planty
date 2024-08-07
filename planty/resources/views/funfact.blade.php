@@ -2,60 +2,58 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
     <title>Planty</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{ url('/css/style.css') }}" />
-    <link rel="stylesheet" type="text/css" href="{{ url('/css/utils.css') }}" />
-
-  </head>
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" rel="stylesheet">
+    <link href="{{ asset('/css/utils.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('/css/funfact.css') }}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
   <body>
-  {{--  <x-navbar>
-        </x-navbar>  --}}
+  <x-navbar>
+        </x-navbar>
 
-  <div class="container-fluid content ">
-       <div class="position-absolute background-top-fun">
-            <img  src="/assets/funfact/background-top.png">
+  <div class="container-fluid content">
+         <div class="position-absolute background-top-fun">
+           <img src="/assets/funfact/background-top.png" class="img-fluid w-100">
+        </div>
+        <div class="row d-flex justify-content-center align-items-center ">
+            <a href="{{route('plant-care')}}" class="back text-start top-0 start-0">
+                <img src="../assets/Vector.svg" alt="">
+            </a>
+            <div class="text-center row">
+                <h1 class="planty-heading-1 text-white">Fun Facts</h1>
             </div>
-            <div class="col funfact">
-                <div class="col position-relative">
 
-                  <div class="row header-funfact">
-                    <div class="col-3 fs-1 fw-bold text-start position-absolute top-0 start-0 mt-5"><p><</p></div>
-                    <div class="col-9 header-text-fun text-center" ><h1 class="planty-heading-1 text-white">Fun Facts</h1></div>
-                  </div>
-
-                   <div class="col position-relative">
-                    <div class="funfact-image-container">
-                        <img class="img-fluid" src="/assets/funfact/know-image.png">
-                    </div>
-                    <div class="position-absolute funfact-content col-4">
-                        <h1 class="planty-heading-2 fw-bold">Did you Know?</h1>
-                        <p class="planty-text-paragraph">At Planty, we believe everyone has the potential to grow a
-                            beautiful garden, no matter
-                            their level of experience. Our mission is to bring the joy of gardening to homes
-                            everywhere by providing a convenient, personalized subscription service that delivers
-                            all the tools, seeds, and knowledge you need right to your doorstep.</p>
-                    </div>
+             <div class="row content-wrapper position-relative">
+                <div class="col-9 content-text mt-5 d-flex ">
+                    <h2 class="planty-heading-2 fw-bold">Did you Know?</h2>
+                    <p class="planty-text-paragraph">At Planty, we believe everyone has the potential to grow a
+                                    beautiful garden, no matter
+                                    their level of experience. Our mission is to bring the joy of gardening to homes
+                                    everywhere by providing a convenient, personalized subscription service that delivers
+                                    all the tools, seeds, and knowledge you need right to your doorstep.</p>
                 </div>
-                </div>
-          </div>
+                <img class="img-fluid col-lg-6 px-0 content-image" src="/assets/funfact/know-image.png">
 
-
-         <div class="container-xl position-relative benefit">
-            <div class="col benefit-view">
-              <div class="row justify-content-center  benefit-content gy-5 column-gap-5 benefit-container">
-                <div class="row">
-                        <div class="col-6 benefit-title ">
-                            <div class="planty-heading-1 ">6 Benefits of Indoor Plants</div>
+            </div>
+            <div class="benefit-1 justify-content-center align-items-center d-flex">
+                <div class="row benefit-wrapper container d-flex flex-col">
+                        <div class="col-lg-6 col-sm-12 benefit-title text-start mt-3">
+                            <h2 class="planty-heading-2 fw-bold"> 6 Benefits of Indoor Plants</h2>
                             <p class="planty-text-paragraph">Indoor plants do more than just beautify your space.
                                  They offer a multitude of benefits that can significantly improve your quality of life,
                                   from purifying the air you breathe to boosting your mental well-being.
                                   Discover how these green companions can
                                   transform your home and workplace into healthier, more vibrant environments. </p>
                         </div>
+
                           @foreach ($benefits as $item)
                                 <x-benefit-box >
                                         <x-slot:value_emot>
@@ -70,36 +68,63 @@
                                     </x-benefit-box>
                           @endforeach
 
-                          </div>
-                </div>
-            </div>
                     </div>
-                    <div class="container position-relative fun-why">
-                      <div class="row">
-                        <div class="col-4"><img class="img" src="/assets/funfact/fun-why.png"></div>
-                        <div class="col-8">
-                            <div class="planty-heading-1 ">Why should you start gardening?</div>
-                            <p class="planty-text-content">Gardening offers multiple benefits for your health and home.
+            </div>
+
+              <div class="benefit-2 justify-content-center align-items-center d-flex">
+                <div class="row benefit-wrapper container d-flex flex-col ">
+                        <div class="col-lg-6 col-sm-12 benefit-title text-center">
+                            <h2 class="planty-heading-2 fw-bold"> 6 Benefits of Indoor Plants</h2>
+                            <p class="planty-text-paragraph">Indoor plants do more than just beautify your space.
+                                 They offer a multitude of benefits that can significantly improve your quality of life,
+                                  from purifying the air you breathe to boosting your mental well-being.
+                                  Discover how these green companions can
+                                  transform your home and workplace into healthier, more vibrant environments. </p>
+                        </div>
+                        <div class="benefit-item">
+                          @foreach ($benefits as $item)
+                                <x-benefit-box >
+                                        <x-slot:value_emot>
+                                           <h1>{!! $item['emot'] !!}</h1>
+                                        </x-slot:value_emot>
+                                        <x-slot:value_title>
+                                            {!! $item['title'] !!}
+                                        </x-slot:value_title>
+                                        <x-slot:value_desc>
+                                            {!! $item['desc'] !!}
+                                        </x-slot:value_desc>
+                                    </x-benefit-box>
+                          @endforeach
+                          </div>
+                    </div>
+            </div>
+
+            <div class="why-content mt-5  mb-5  justify-content-center align-items-center d-flex">
+                <div class="why-content-wrapper container row ">
+                    <div class=" col-sm-12 col-md-4 why-image"><img class="img why-image" src="/assets/funfact/fun-why.png"></div>
+                    <div class="col-md-8 col-sm-12 why-content-text p-0 mt-3">
+                        <h2 class="planty-heading-2 ">Why should you start gardening?</h2>
+                        <p class="planty-text-content">Gardening offers multiple benefits for your health and home.
                               It provides relaxing outdoor activity, fresh produce, and a connection to nature.
                               Tending plants reduces stress, improves mood, and adds beauty to your living space.
                               Whether you have a large yard or just a few pots, starting a garden can enrich your
                               life and environment in meaningful ways. </p>
-                               <button type="button" class="btn btn-success">Start Now</button>
-                        </div>
-                      </div>
+                        <x-primary-btn type="button">Start Now</x-primary-btn>
                     </div>
-
-
                 </div>
             </div>
 
+        </div>
 
-            </div>
-         </div>
+
+
+
+
   </div>
-     {{--  <x-footer>
+ <x-footer>
+        </x-footer>
 
-        </x-footer>  --}}
+
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

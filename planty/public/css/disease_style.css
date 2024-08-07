@@ -1,12 +1,15 @@
-*{
+* {
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
 }
 
-.card-title{
-    /* max-width: 243px;
-    min-height: 334px; */
+.back {
+    padding-left: 5%;
+    padding-top: 6rem;
+}
+
+.card-title {
     width: 15.1875rem;
     height: 20.875rem;
     display: flex;
@@ -14,7 +17,9 @@
     justify-content: center;
     color: #122218;
 
-    padding: 2rem;
+    background-repeat: no-repeat;
+    text-decoration: none;
+    padding: 3rem;
 
     background: var(
         --tes1,
@@ -25,25 +30,42 @@
         )
     );
 
-    border: 3px solid var(--tes1, #ADBC9F);
+    border: 3px solid var(--tes1, #adbc9f);
     border-radius: 0.9375rem;
     box-shadow: 0px 8px 30px 0px rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(6.099999904632568px);
-}
-
-.card-title:hover {
-    border-radius: 0.9375rem;
-    border: 3px solid var(--tes1, #ADBC9F);
-    background: url(../assets/desc-card.png) lightgray 50% / cover no-repeat;
-    box-shadow: 0px 8px 20px 0px #FFF;
     backdrop-filter: blur(6.099999904632568px);
 }
 
-.card-title:hover p{
+.card-title:hover {
+    opacity: 1;
+    border-radius: 0.9375rem;
+
+    background: var(
+        --tes1,
+        linear-gradient(
+            108deg,
+            rgba(173, 188, 159, 0.3) 10.91%,
+            rgba(79, 86, 73, 0.3) 111.54%
+        )
+    );
+
+    border: 3px solid var(--tes1, #adbc9f);
+    box-shadow: 0px 8px 20px 0px #fff;
+    backdrop-filter: blur(6.099999904632568px);
+}
+
+.hover-background {
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    object-fit: cover;
+}
+
+.card-title:hover p {
     color: white;
 }
 
-.desc-disease-card{
+.desc-disease-card {
     width: 100%;
     height: 28rem;
     position: relative;
@@ -53,23 +75,43 @@
     gap: 4rem;
 }
 
-.image-disease{
+.image-disease {
     width: 15.375rem;
     height: 28.1875rem;
     position: absolute;
     z-index: 1;
     left: 0;
+    padding: 0;
+    margin: 0;
     border-radius: 0.9375rem;
-    border: 3px solid var(--tes1, #ADBC9F);
-    background: url(../assets/desc-card.png) lightgray 50% / cover no-repeat;
+    border: 1px solid var(--tes1, #adbc9f);
+    background: lightgray 50% / cover no-repeat;
 
     box-shadow: 0px 8px 30px 0px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(6.099999904632568px);
 }
 
-.desc-disease{
+.image {
+    width: 15.375rem;
+    height: 28.1875rem;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    padding: 0;
+    margin: 0;
+    border-radius: 0.9375rem;
+    border-radius: 0.9375rem;
+    border: 1px solid var(--tes1, #adbc9f);
+    background: lightgray 50% / cover no-repeat;
+
+    box-shadow: 0px 8px 30px 0px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(6.099999904632568px);
+}
+
+.desc-disease {
     width: 34.0625rem;
     height: 24.5625rem;
+    padding: 2rem;
     position: relative;
     flex-direction: column;
     justify-content: center;
@@ -80,12 +122,174 @@
         --tes1,
         linear-gradient(
             108deg,
-            rgba(173, 188, 159, 0.30) 10.91%,
-            rgba(79, 86, 73, 0.30) 111.54%
+            rgba(173, 188, 159, 0.3) 10.91%,
+            rgba(79, 86, 73, 0.3) 111.54%
         )
     );
-    border: 2px solid var(--tes1, #ADBC9F);
+    border: 2px solid var(--tes1, #adbc9f);
     box-shadow: 0px 8px 30px 0px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(6.099999904632568px);
 }
 
+#disease-number {
+    font-family: Poppins, sans-serif;
+    font-weight: 900;
+    font-size: 64px;
+}
+
+@media (max-width: 1201.98px) {
+    .container {
+        width: 100%;
+        height: auto;
+    }
+
+    .background-container {
+        width: 100%;
+        height: auto;
+        background-repeat: no-repeat;
+    }
+
+    .disease {
+        width: 100%;
+        justify-content: center;
+        align-content: center;
+        padding: 0;
+        margin: 0;
+    }
+
+    .disease-list {
+        width: 80%;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .card-title {
+        width: 10rem;
+        height: 14rem;
+        padding: 15px !important;
+    }
+
+    .disease-card p {
+        font-size: var(--planty-heading-mobile-3-font-size);
+    }
+
+    #disease-number {
+        font-size: 32px;
+    }
+
+    .desc-card {
+        padding-top: 10rem;
+    }
+
+    .desc {
+        width: 100%;
+        justify-content: center !important;
+    }
+
+    .desc-disease {
+        width: 24rem;
+        height: 20rem;
+        flex-shrink: 0;
+        justify-content: center;
+        align-self: center;
+        gap: 0 !important;
+        padding: 0 !important;
+    }
+
+    .desc-disease p {
+        font-size: var(--planty-heading-mobile-paragraph-font-size);
+        padding-left: 13rem !important;
+    }
+
+    .desc-disease h1 {
+        font-size: var(--planty-heading-mobile-3-font-size);
+        padding-left: 13rem !important;
+    }
+
+    .desc-disease-card {
+        width: 100%;
+        height: auto;
+        flex-shrink: 0;
+        padding: 0 !important;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 0 !important;
+    }
+
+    .image-disease {
+        width: 12rem;
+        height: 24rem;
+        flex-shrink: 0;
+        left: 6rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        width: 100%;
+        height: auto;
+    }
+
+    .background-container {
+        width: 100%;
+        height: auto;
+        background-repeat: no-repeat;
+    }
+
+    .card-title {
+        width: 7.5rem;
+        height: 9.6875rem;
+        flex-shrink: 0;
+    }
+
+    .disease-card p {
+        font-size: var(--planty-heading-mobile-4-font-size);
+    }
+
+    #disease-number {
+        font-size: 32px;
+    }
+
+    .desc-card {
+        width: 100%;
+        padding-top: 10rem;
+        justify-content: end !important;
+    }
+
+    .desc {
+        width: 20rem !important;
+        height: auto;
+        justify-content: end !important;
+        scale: 0.8;
+    }
+
+    .desc-disease {
+        width: 17.89981rem;
+        height: 17.42794rem;
+        flex-shrink: 0;
+        justify-content: center;
+        align-self: center;
+        gap: 0 !important;
+        padding: 0 !important;
+    }
+
+    .desc-disease p {
+        font-size: var(--planty-heading-mobile-paragraph-font-size);
+        padding-left: 6rem !important;
+    }
+
+    .desc-disease h1 {
+        font-size: var(--planty-heading-mobile-3-font-size);
+        padding-left: 6rem !important;
+    }
+
+    .image-disease {
+        width: 8.07956rem;
+        height: 20rem;
+        flex-shrink: 0;
+        left: 0;
+    }
+}

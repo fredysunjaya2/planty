@@ -1,0 +1,292 @@
+/*--------------------------------------------- subscription --------------------------------------------- */
+body{
+    background-image: url("/assets/subs/Subscription-bg.png");
+    background-size: cover;
+}
+
+.content{
+    margin-top: 6%;
+
+}
+
+.header-subs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 12%;
+}
+
+.benefit-wrapper{
+    display: none;
+}
+
+.plan-content {
+    margin-top: 7rem;
+}
+
+.subscription-plan {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+}
+
+.subscription-plan > div {
+    min-width: 300px;
+    max-width: 500px;
+}
+
+.plan-wrapper {
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.subscription-card {
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px 15px 0 0;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  padding: 2rem;
+  z-index: 1000;
+  margin-top: 0;
+  position: relative;
+  border-radius: 1.25rem;
+    border: 2px solid var(--tes1, #ADBC9F);
+    background: linear-gradient(108deg, rgba(255, 255, 255, 0.30) 10.91%, rgba(173, 188, 159, 0.30) 111.54%);
+    box-shadow: 0px 8px 30px 0px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(6.099999904632568px);
+     width: 100%;
+  max-width: 26.9375rem;
+  height: 20.80956rem;
+}
+
+.card-body-subs{
+      text-align: center;
+}
+
+.subscription-title {
+    font-weight: 600;
+    color: #122218;
+    margin-top: 1rem;
+}
+
+.subscription-price{
+    font-weight: 550;
+    font-size: 2.25rem;
+    color: #122218;
+    margin-top: 4rem;
+}
+
+.btn-plan{
+    margin-top: 3rem;
+    padding-bottom: 2rem;
+}
+
+.plan-information-content{
+    display: flex;
+    justify-content: center;
+    margin-top: -5%;
+}
+
+.plan-information-title-1{
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    margin-top: 5rem;
+}
+
+.plan-information-title-2{
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    margin-top: 5rem;
+}
+
+.subs-list li{
+    list-style: none;
+    padding-left: 0;
+    margin-top: 2rem;
+}
+
+.subs-list ul{
+    padding-bottom: 3rem;
+}
+
+.plan-information-1{
+    background-image: linear-gradient(180deg, rgba(173, 188, 159, 0.12) -0.25%, rgba(173, 188, 159, 0.60) 99.75%);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 3.125rem;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    margin-bottom: 2rem;
+}
+
+.plan-information-2{
+    background-image: linear-gradient(0deg, rgba(97, 130, 100, 0.60) 0%, rgba(97, 130, 100, 0.12) 125.69%);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 3.125rem;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    margin-bottom: 2rem;
+}
+
+.plan-information-1, .plan-information-2 {
+    width: 100%;
+    margin-top: -4rem;
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    max-width: 34.375rem;
+    max-height: 44.375rem;
+}
+
+.subs-info{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.subs-accordion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.accordion{
+    width: 80%;
+    border-radius: 15px;
+    margin: 1rem;
+    background: transparent;
+}
+
+.header-accordion{
+    text-align: center;
+    margin-top: 13rem;
+    margin-bottom: 2rem;
+}
+
+.accordion-button{
+    background: transparent;
+    outline: none;
+    font-weight: 500;
+}
+
+.accordion-body {
+    border-top: 1px solid rgba(173, 188, 159, 0.40);
+}
+
+.accordion-button:focus{
+    box-shadow: none;
+}
+
+.accordion-button::after{
+    color: black;
+}
+
+.accordion-item{
+    border-radius: 1.25rem !important;
+    border: 1px solid var(--tes1, #ADBC9F);
+    background: var(--tes1, linear-gradient(108deg, rgba(173, 188, 159, 0.2)10.91%, rgba(79, 86, 73, 0.2)111.54%));
+
+    border: none;
+    margin: 1rem;
+    box-shadow: 0px 8px 30px 0px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(6.099999904632568px);
+}
+
+.subs-accordion{
+    padding-bottom: 10rem;
+}
+
+.accordion-button:not(.colapsed) {
+    box-shadow: none;
+}
+
+.accordion-button::after{
+    background-image: none;
+    content: "\f107";
+    font-family: fontawesome;
+    width: auto;
+    height: auto;
+}
+
+.accordion-button:focus{
+    box-shadow: none;
+}
+
+.accordion-button:not(.colapsed)::after{
+    background-image: none;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: var(--tes1, linear-gradient(108deg, rgba(173, 188, 159, 0.2)10.91%, rgba(79, 86, 73, 0.2)111.54%));
+}
+
+
+@media (max-width: 576px) {
+    .content{
+        margin-top: 25%;
+    }
+
+    .subscription-plan {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .subscription-card {
+        max-width: 14.69469rem !important;
+        padding: 1rem !important;
+        height: auto;
+        max-height: none; 
+        margin-bottom: -4rem;
+    }
+
+    .subscription-title{
+        margin-top: 0.5rem;
+    }
+
+    .subscription-price{
+        margin-top: 1rem !important;
+    }
+
+    .plan-information-1, .plan-information-2 {
+        width: 80%;
+        margin-top: -2rem;
+    }
+
+    .planty-heading-1 {
+        font-size: var(--planty-heading-mobile-1-font-size) !important;
+    }
+
+    .planty-heading-2 {
+        font-size: var(--planty-heading-mobile-2-font-size) !important;
+    }
+
+    .planty-heading-3 {
+        font-size: var(--planty-heading-mobile-3-font-size) !important;
+    }
+
+    .planty-heading-4 {
+        font-size: var(--planty-heading-mobile-4-font-size) !important;
+    }
+
+    .planty-heading-5 {
+        font-size: var(--planty-heading-mobile-5-font-size) !important;
+    }
+
+    .planty-text-sentence, .planty-text-paragraph {
+        font-size: var(--planty-heading-mobile-paragraph-font-size) !important;
+    }
+
+    .primaryBtn {
+        margin-top: -2rem ;
+    }
+}

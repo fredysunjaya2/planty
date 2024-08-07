@@ -33,7 +33,7 @@
     text-align: center;
     color: rgb(var(--white-background));
     background-color: rgb(var(--hijau-gelap));
-    width: 25%;
+    width: 30%;
 }
 
 @media (max-width: 992px) {

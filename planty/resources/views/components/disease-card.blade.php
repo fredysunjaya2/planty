@@ -1,4 +1,8 @@
-<div class="card-title">
-    <p style="font-family: Poppins, sans-serif; font-weight:900; font-size:4rem">{{ $slot }}</p>
-    <p style="font-family: Poppins, sans-serif; font-weight:600; font-size:2.5rem">Downy Mildew</p>
-</div>
+@props(['href', 'number', 'hoverImage'])
+
+<a href="javascript:void(0)" onclick="scrollToElement('{{ $href }}')" class="card-title p-4 m-0 d-flex justify-content-center align-items-start" data-hover-image="{{ $hoverImage }}">
+    <div class="disease-card">
+        <p id="disease-number">{{ $number }}</p>
+        <p class="planty-heading-2">{{ $slot }}</p>
+    </div>
+</a>

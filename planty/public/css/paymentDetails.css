@@ -1,13 +1,13 @@
 .payment-detail-container {
-    height: 100vh;
-    padding: 10rem 10% 0 10%;
+    height: 100%;
+    padding: 10rem 10% 5rem 10%;
     background-image: url('/assets/PaymentDetailsBackground.png');
     background-size: cover;
 }
 
 .paymentDetails {
     width: 47%;
-    height: 95%;
+    height: fit-content;
 
     border-radius: 0.9375rem;
     border: 1px solid var(--tes1, #adbc9f);

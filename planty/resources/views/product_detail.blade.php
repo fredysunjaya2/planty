@@ -23,7 +23,7 @@
         <div class="col-5 h-100 product-detail-img">
             <img src="{{ asset('/assets/beginner_kit.png') }}" alt="" class="w-100 h-100" style="object-fit: cover;">
         </div>
-        <div class="container-content col d-flex h-100 align-items-start">
+        <div class="container-content col d-flex align-items-start">
             <div class="content d-flex flex-column justify-content-center">
                 <a href="{{ route('subscription') }}" style="color: #122218" class="back-btn">
                     <div class="back-btn">
@@ -42,7 +42,7 @@
                             <h1 class="planty-heading-1">{{ $pricings[0]->subsTier->tier_name }}</h1>
                             <p class="planty-text-sentence">subscription plan</p>
                         </div>
-                        <div class="price ms-auto planty-text-sentence">
+                        <div class="price ms-auto planty-text-sentence d-flex column align-items-center">
                             <h2 class="planty-heading-2"><span
                                     id="pricePerMonth">{{ number_format(($pricings[2]->price - $pricings[2]->price * $pricings[2]->discount) / $pricings[2]->months, 2, ',', '.') }}</span>
                             </h2>
@@ -89,8 +89,9 @@
                     </div>
                     <hr class="border-2 m-0" style="border-color: #618264; ">
                     <div class="payment-btn d-flex justify-content-center mt-3">
-                        <button type="submit" class="btn btn-success planty-heading-4 text-white"
-                            style="border-radius: 0.625rem;">Payment</button>
+                        {{-- <button type="submit" class="btn btn-success planty-heading-4 text-white"
+                            style="border-radius: 0.625rem;">Payment</button> --}}
+                        <x-primary-btn type="submit">Payment</x-primary-btn>
                     </div>
                 </form>
             </div>

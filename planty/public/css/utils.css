@@ -156,7 +156,6 @@ body {
     background: #618264;
     color: #fff;
     text-align: center;
-    font-family: Poppins;
     font-size: 20px;
     font-style: normal;
     font-weight: 600;
@@ -164,7 +163,7 @@ body {
 }
 
 .primaryBtn:hover {
-    border: 2px solid var(--tes1, #adbc9f);
+    /* border: 0.5px solid var(--tes1, #adbc9f); */
     color: #618264;
     background: #fff;
     box-shadow: 0px 8px 30px 0px rgba(0, 0, 0, 0.25);
@@ -182,7 +181,6 @@ body {
     background: #adbc9f;
     color: #122218;
     text-align: center;
-    font-family: Poppins;
     font-size: 20px;
     font-style: normal;
     font-weight: 600;
@@ -190,11 +188,36 @@ body {
 }
 
 .secondaryBtn:hover {
-    border: 2px solid var(--tes1, #adbc9f);
+    /* border: 2px solid var(--tes1, #adbc9f); */
     color: #adbc9f;
     background: #122218;
     box-shadow: 0px 8px 30px 0px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(6.099999904632568px);
+}
+
+
+.modalgen .modal-content{
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.code-dialog{
+    justify-content: center;
+    align-items: center;
+}
+
+.code-dialog .modal-header{
+    text-align: center;
+}
+
+.code-dialog .modal-body{
+    text-align: center;
+}
+
+.code-dialog .modal-footer{
+    text-align: center;
 }
 
 

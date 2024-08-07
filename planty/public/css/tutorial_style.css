@@ -11,9 +11,9 @@
     /* width: 90rem; */
     height: 45.0625rem;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
-    padding-top: 7rem;
+    /* padding-top: 2rem; */
 }
 
 .tutorial-container.container-fluid {
@@ -25,7 +25,26 @@
     /* padding-top: 7rem; */
 }
 
+.jumbo-back{
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    padding-left: 7%;
+}
+
+.back-btn{
+    width: 1.3125rem;
+    height: 2rem;
+}
+
+.back{
+    padding-left: 5%;
+    padding-top: 7rem;
+}
+
+
 .jumbo-text {
+    padding-top: 5rem;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -83,6 +102,7 @@
     align-items: center;
     gap: 3rem;
     padding-left: 15%;
+    padding-right: 10%;
 }
 
 .tutor-card {
@@ -103,9 +123,24 @@
     transition: all 0.2s !important;
 }
 
-.tutor-card:hover {
-    /* background: var(--tes1, linear-gradient(108deg, rgba(173, 188, 159, 0.50) 10.91%, rgba(79, 86, 73, 0.70) 111.54%)); */
+/* .tutor-card:hover {
     background-color: #adbc9f;
+} */
+
+#card1:hover{
+    background-color: #ADBC9F;
+}
+
+#card2:hover{
+    background-color: #618264;
+}
+
+#card3:hover{
+    background-color: #3EA047;
+}
+
+#card4:hover{
+    background-color: #2D563D;
 }
 
 .tutor-card-top {
@@ -123,6 +158,8 @@
     height: 0.0625rem;
     /* background-color: #ADBC9F; */
 }
+
+
 
 .tutor-card-top p {
     color: #122218;
@@ -152,8 +189,16 @@
 }
 
 .tutor-card-title img {
-    width: 1.8125rem;
+    width: 2.3rem;
     height: 3.5625rem;
+}
+
+#card2 .tutor-card-title img{
+    width: 3rem;
+}
+
+#card4 .tutor-card-title img{
+    width: 3rem;
 }
 
 .tutor-card-title p {
@@ -340,6 +385,21 @@
 .popup-title img {
     width: 1.29031rem;
     height: 2.52531rem;
+}
+
+#popup-img2{
+    width: 2rem;
+    height: 2.25rem;
+}
+
+#popup-img3{
+    width: 2rem;
+    height: 3.4rem;
+}
+
+#popup-img4{
+    width: 2rem;
+    height: 3.25rem;
 }
 
 .popup-head p {
@@ -535,4 +595,7 @@
         padding-right: 5%;
     }
 
+    .jumbo-text{
+        gap: 3rem;
+    }
 }
