@@ -49,10 +49,12 @@ body {
     margin-top: 15rem;
     padding-left: 15%;
     padding-right: 15%;
+    height: auto;
 }
 
 .our-values-list-container {
     margin-top: 3rem;
+    height: 90%;
 }
 
 .our-values-item-container {
@@ -66,8 +68,7 @@ body {
     backdrop-filter: blur(6.099999904632568px);
     padding: 1.5rem;
     transition: 0.5s;
-    width: 17.8125rem;
-    height: 15.625rem;
+    height: 100%;
 }
 
 .our-values-item-container:hover {
@@ -170,6 +171,12 @@ body {
         row-gap: 2rem;
     }
 
+    .our-values {
+        padding-left: 5%;
+        padding-right: 5%;
+        /* height: auto; */
+    }
+
     .about-us-content {
         margin-left: 0rem;
         width: 80%;
@@ -202,9 +209,22 @@ body {
 }
 
 @media (max-width: 576px) {
+    .about-us-image {
+        height: 40vh;
+    }
+
+    .history-img {
+        height: 40vh !important;
+    }
+
+    .history-container {
+        margin-top: 8rem;
+    }
+
     .our-values {
         padding-left: 0;
         padding-right: 0;
+        margin-top: 8rem;
     }
 
     .our-values-desc {
@@ -240,6 +260,8 @@ body {
     .our-team {
         padding-left: 0;
         padding-right: 0;
+        margin-top: 8rem;
+        margin-bottom: 8rem;
     }
 
     .our-team-list-container {

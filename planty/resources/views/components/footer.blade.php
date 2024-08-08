@@ -1,23 +1,12 @@
 <div class="container-fluid footer">
     <div class="d-flex flex-row">
-        <div class="col-5">
+        <div class="col-4">
             <img class="img-fluid" src="/assets/planty-2.png">
         </div>
         <ul class="col footer-list">
-            <li class="footer-nav-item">
-                <a aria-current="page" class="nav-link" href="#">Home</a>
+            <li class="footer-nav-item nav-title mb-2">
+                Plant Care
             </li>
-            <li class="footer-nav-item">
-                <a class="nav-link" href="#">Plant Care</a>
-            </li>
-            <li class="footer-nav-item">
-                <a class="nav-link" href="#">Subscription</a>
-            </li>
-            <li class="footer-nav-item">
-                <a class="nav-link" href="#">Gallery</a>
-            </li>
-        </ul>
-        <ul class="col footer-list">
             <li class="footer-nav-item">
                 <a aria-current="page" class="nav-link" href="#">Tutorial</a>
             </li>
@@ -32,11 +21,20 @@
             </li>
         </ul>
         <ul class="col footer-list">
+            <li class="footer-nav-item nav-title mb-2">
+                Company
+            </li>
             <li class="footer-nav-item">
                 <a aria-current="page" class="nav-link" href="#">About Us</a>
             </li>
             <li class="footer-nav-item">
                 <a class="nav-link" href="#">Contact Us</a>
+            </li>
+            <li class="footer-nav-item nav-link">
+                plantyppti@gmail.com
+            </li>
+            <li class="footer-nav-item nav-link">
+                +62 2133312213232
             </li>
         </ul>
         <ul class="col-1 footer-list social-media">

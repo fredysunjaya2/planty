@@ -10,9 +10,9 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Validation\Rules;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\View\View;
-use Validator;
+use Illuminate\Validation\Rules;
 
 class RegisteredUserController extends Controller
 {
@@ -30,46 +30,23 @@ class RegisteredUserController extends Controller
      *
      * @throws \Illuminate\Validation\ValidationException
      */
-    // public function store(Request $request): RedirectResponse
-    // {
-    //     $request->validate([
-    //         'username' => ['required', 'string', 'max:255'],
-    //         'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . User::class],
-    //         'password' => ['required', Rules\Password::defaults()],
-    //         'password_confirmation' => ['required', 'same:password'],
-    //         'agreement' => ['accepted'],
-    //     ]);
-
-    //     $user = User::create([
-    //         'username' => $request->username,
-    //         'email' => $request->email,
-    //         'password' => Hash::make($request->password),
-    //         'address_id' => Address::create([])->id,
-    //     ]);
-
-    //     event(new Registered($user));
-
-    //     Auth::login($user);
-
-    //     return redirect('/');
-    // }
 
     public function store(Request $request): RedirectResponse
     {
         $rules = [
-            'username' => 'required|string|max:255',
-            'email' => 'required|string|lowercase|email|max:255|unique:users,email',
-            'password' => ['required', 'string', 'min:8'], // You can adjust this as per your requirements
-            'password_confirmation' => 'required|same:password',
-            'agreement' => 'accepted',
+            'username' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . User::class],
+            'password' => ['required', Rules\Password::defaults()],
+            'password_confirmation' => ['required', 'same:password'],
+            'agreement' => ['accepted'],
         ];
 
         $messages = [
-            'required' => ':attribute wajib diisi',
-            'unique' => ':attribute sudah terdaftar',
-            'same' => ':attribute dan konfirmasi harus sama',
-            'accepted' => 'Anda harus menyetujui persyaratan dan ketentuan',
-            'min' => ':attribute minimal berisi :min karakter',
+            'required' => ':attribute is required',
+            'unique' => ':attribute is already used',
+            'same' => ':attribute dan password must be same',
+            'accepted' => 'You must agree to the terms and conditions',
+            'min' => ':attribute must contains :min characters',
         ];
 
         $validator = Validator::make($request->all(), $rules, $messages);
@@ -90,7 +67,7 @@ class RegisteredUserController extends Controller
             event(new Registered($user));
             Auth::login($user);
 
-            return redirect('/')->with('success', 'Registrasi berhasil');
+            return redirect(auth()->user()->getRedirectRoute());
         }
     }
 

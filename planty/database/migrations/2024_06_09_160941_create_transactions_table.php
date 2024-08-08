@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('token')->unique();
             $table->foreignId('user_id')->references('id')->on('users');
             $table->foreignId('subs_category_id')->references('id')->on('subs_categories');
+            $table->foreignId('address_id')->references('id')->on('addresses');
             $table->double('discounted_price');
             $table->enum('status', ['pending', 'success', 'failed']);
             $table->string('snap_token')->nullable();

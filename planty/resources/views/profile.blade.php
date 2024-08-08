@@ -23,7 +23,8 @@
 
     <div class="container-fluid profile-container">
         <h1 class="planty-heading-1 text-center">My Profile</h1>
-        <div class="d-flex flex-row align-items-center justify-content-center profile-box profile-header column-gap-5 mb-5 mt-5">
+        <div
+            class="d-flex flex-row align-items-center justify-content-center profile-box profile-header column-gap-5 mb-5 mt-5">
             <img class="rounded-circle profile-pic" src="{{ asset('/assets/user.png') }}">
             <p class="planty-heading-2 username m-0">{{ auth()->user()->username }}</p>
             <form method="POST" class="ms-auto d-flex flex-row" id="redeem-code-form">
@@ -31,7 +32,8 @@
                 <div class="d-flex flex-column">
                     <label for="redeem-code" class="form-label planty-heading-4 m-0">Redeem Code</label>
                     <div class="d-flex flex-row column-gap-4 redeem-code-btn-container">
-                        <input type="text" name="redeem_code" class="form-control" id="redeem-code" placeholder="Redeem Code">
+                        <input type="text" name="redeem_code" class="form-control" id="redeem-code"
+                            placeholder="Redeem Code">
                         <x-primary-btn type="button" id="redeem-button">Redeem</x-primary-btn>
                     </div>
                 </div>
@@ -89,9 +91,9 @@
                     <p class="planty-text m-0 w-100">Bill</p>
                     <p class="planty-text-sentence m-0 w-100">
                         @if ($date == '-')
-                        {{ $date }}
+                            {{ $date }}
                         @else
-                        {{ $date->format('Y-m-d') }}
+                            {{ $date->format('Y-m-d') }}
                         @endif
                     </p>
                 </div>
@@ -152,6 +154,10 @@
                         class="planty-text-sentence m-0 w-100" disabled>
                 </div>
             </div>
+        </form>
+        <form action="{{ route('logout') }}" enctype="multipart/form-data" class="d-flex justify-content-center pb-5" method="POST">
+            @csrf
+            <x-primary-btn type="submit" id="log-out">Log Out</x-primary-btn>
         </form>
     </div>
     <x-footer>

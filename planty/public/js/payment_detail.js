@@ -5,12 +5,12 @@ function handleMediaQuery(e) {
     var container = document.querySelector('.order-summary-container');
     var newContainer = document.querySelector('.paymentDetails');
 
-    if(e.matches) {
+    if (e.matches) {
         var btn = document.querySelector('.payment-btn');
         var temp = container.removeChild(btn);
         newContainer.appendChild(temp);
     } else {
-        if(newContainer.querySelector('.payment-btn') != null) {
+        if (newContainer.querySelector('.payment-btn') != null) {
             var btn = document.querySelector('.payment-btn');
             var temp = newContainer.removeChild(btn);
             container.appendChild(temp);
@@ -36,10 +36,18 @@ document.getElementById('pay-button').addEventListener('click', function (e) {
             }
         });
 
+        // Collect form data
+        const formData = new FormData(document.querySelector('.payment-detail-container')); // `this` refers to the form
+
+        // Convert form data to a plain object
+        formData.append('jsonData', JSON.stringify(gift));
+
         $.ajax({
             url: '/process-payment',
-            data: JSON.stringify(gift),
+            data: formData,
             type: 'POST',
+            contentType: false, // Important for FormData
+            processData: false, // Important for FormData
             success: function (response) {
                 transaction = JSON.parse(response);
 
@@ -76,9 +84,9 @@ function windowPayment() {
     // SnapToken acquired from previous step
     window.snap.pay(transaction.snap_token, {
         onSuccess: function (result) {
-            if(gift["isGift"]) {
+            if (gift["isGift"]) {
                 document.querySelector('.modal-btn').click();
-                document.querySelector('.modal-footer button').addEventListener('click', function() {
+                document.querySelector('.modal-footer button').addEventListener('click', function () {
                     window.location.href = '/process-payment/success/' + transaction.token + "/" + gift["isGift"] + "/" + gift["isRedeemed"];
                 });
             } else {

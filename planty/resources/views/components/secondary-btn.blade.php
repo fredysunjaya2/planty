@@ -1,1 +1,1 @@
-<button type="{{$type}}" class="secondaryBtn">{{$slot}}</button>
+<button type="{{$type}}"{{ $attributes }} class="secondaryBtn">{{$slot}}</button>

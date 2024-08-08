@@ -69,36 +69,4 @@ class AboutusController extends Controller
 
         return view('about_us', compact('values', 'team'));
     }
-
-    // public function team(){
-    //     $team = [
-    //         [
-    //             'name' => 'Fredy Sunjaya',
-    //             'nim' => '2602189240',
-    //             'img' => '/assets/path-to-images/fredy-sunjaya.png'
-    //         ],
-    //         [
-    //             'name' => 'Putu A. D. Kenzhie',
-    //             'nim' => '2602200294',
-    //             'img' => '/assets/path-to-images/putu-kenzhie.png'
-    //         ],
-    //         [
-    //             'name' => 'Stephanie Anastasia M.',
-    //             'nim' => '2602189796',
-    //             'img' => '/assets/path-to-images/stephanie-anastasia.png'
-    //         ],
-    //         [
-    //             'name' => 'Felix Gustino Tjuatja',
-    //             'nim' => '2602189234',
-    //             'img' => '/assets/path-to-images/felix-tjuatja.png'
-    //         ],
-    //         [
-    //             'name' => 'Neisya Holly Santoso',
-    //             'nim' => '2602189934',
-    //             'img' => '/assets/path-to-images/neisya-santoso.png'
-    //         ]
-    //     ];
-
-    //     return view('about-us',compact("team"));
-    // }
 }

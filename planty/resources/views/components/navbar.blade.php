@@ -11,24 +11,24 @@
         <div class="container-fluid collapse navbar-collapse pt-lg-0 pt-3" id="navbarSupportedContent">
             <ul class="ps-lg-4 me-auto align-items-center navbar-nav column-gap-4">
                 <li class="nav-item">
-                    <a aria-current="page" class="nav-link" href="{{ route('index') }}">Home</a>
+                    <a aria-current="page" class="nav-link {{ Route::is('index') ? 'active' : '' }}" href="{{ route('index') }}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('plant-care') }}">Plant Care</a>
+                    <a class="nav-link {{ Route::is('plant-care') ? 'active' : '' }}" href="{{ route('plant-care') }}">Plant Care</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('subscription') }}">Subscription</a>
+                    <a class="nav-link {{ Route::is('subscription') ? 'active' : '' }}" href="{{ route('subscription') }}">Subscription</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('gallery') }}">Gallery</a>
+                    <a class="nav-link {{ Route::is('gallery') ? 'active' : '' }}" href="{{ route('gallery') }}">Gallery</a>
                 </li>
             </ul>
             <ul class="pe-lg-4 me-lg-5 navbar-nav align-items-center column-gap-4 justify-content-end">
                 <li class="nav-item">
-                    <a aria-current="page" class="nav-link" href="{{ route('about-us') }}">About</a>
+                    <a aria-current="page" class="nav-link {{ Route::is('about-us') ? 'active' : '' }}" href="{{ route('about-us') }}">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
+                    <a class="nav-link {{ Route::is('contact-us') ? 'active' : '' }}" href="{{ route('contact-us') }}">Contact</a>
                 </li>
                 @if (auth()->user() == null)
                     <li class="nav-item">

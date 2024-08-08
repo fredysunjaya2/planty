@@ -23,15 +23,16 @@
 }
 
 .form-container {
-    padding: 5% 8% 2rem 8%;
+    padding: 1% 8% 1% 8%;
     color: rgb(var(--font));
     display: flex;
     flex-direction: column;
     height: 100vh;
+    justify-content: center;
 }
 
 .form-container.login {
-    padding: 9% 10% 2rem 10%;
+    padding: 3% 10% 3% 10%;
 }
 
 .form-textfield {
@@ -77,12 +78,7 @@ input {
     display: none;
 }
 
-.position-relative {
-    position: relative;
-}
-
-.position-absolute {
-    position: absolute;
+.pass-show-hide .position-absolute {
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
@@ -93,21 +89,27 @@ input {
 }
 
 @media (max-width: 992px) {
+    .register-container {
+        height: auto;
+    }
+
     .navbar {
         display: block;
     }
 
     .register-img-container {
+        height: auto;
         display: none;
     }
 
     .form-container {
-        padding: 15% 12% 1rem 12%;
+        height: auto;
+        padding: 8rem 12% 1rem 12%;
         width: 100%;
     }
 
     .form-container.login {
-        padding: 25% 10% 1.5rem 10%;
+        padding: 8rem 10% 1.5rem 10%;
     }
 
     .form-container h1 {
@@ -120,7 +122,8 @@ input {
 }
 
 @media (max-width: 576px) {
-    .form-container {
-        padding: 30% 12% 1rem 12%;
+
+    form input {
+        height: 40px;
     }
 }

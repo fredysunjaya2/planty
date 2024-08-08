@@ -77,29 +77,34 @@
                     <div class="tab-pane fade ms-5 me-5 mt-4 mb-4" id="nav-shippingInfo" role="tabpanel"
                         aria-labelledby="nav-shippingInfo-tab" tabindex="0">
                         <div class="row g-3">
-                            <div class="col-md-12">
+                            <div class="col-md-8">
                                 <label for="street" class="form-label planty-heading-4">Street</label>
-                                <input type="text" class="form-control" id="street"
+                                <input type="text" class="form-control" id="street" name="street_number"
                                     value="{{ auth()->user()->address->street_number ?? '' }}">
                             </div>
-                            <div class="col-md-6">
-                                <label for="district" class="form-label planty-heading-4">District</label>
-                                <input type="text" class="form-control" id="district"
+                            <div class="col-md-4">
+                                <label for="country" class="form-label planty-heading-4">Country</label>
+                                <input type="text" class="form-control" id="country" name="country"
                                     value="{{ auth()->user()->address->country ?? '' }}">
                             </div>
                             <div class="col-md-6">
                                 <label for="city" class="form-label planty-heading-4">City</label>
-                                <input type="text" class="form-control" id="city"
+                                <input type="text" class="form-control" id="city" name="city"
                                     value="{{ auth()->user()->address->city ?? '' }}">
                             </div>
+                            <div class="col-md-6">
+                                <label for="district" class="form-label planty-heading-4">District</label>
+                                <input type="text" class="form-control" id="district" name="district"
+                                    value="{{ auth()->user()->address->district ?? '' }}">
+                            </div>
                             <div class="col-md-7">
-                                <label for="province" class="form-label planty-heading-4">Province</label>
-                                <input type="text" class="form-control" id="province"
+                                <label for="village" class="form-label planty-heading-4">Village</label>
+                                <input type="text" class="form-control" id="village" name="village"
                                     value="{{ auth()->user()->address->village ?? '' }}">
                             </div>
                             <div class="col-md-5">
                                 <label for="postalCode" class="form-label planty-heading-4">Postal Code</label>
-                                <input type="text" class="form-control" id="postalCode"
+                                <input type="text" class="form-control" id="postalCode" name="postal_code"
                                     value="{{ auth()->user()->address->postal_code ?? '' }}">
                             </div>
                         </div>
@@ -109,71 +114,73 @@
         </div>
         <div class="d-flex flex-column pt-3 justify-content-start order-summary-container">
 
-                <div class="titleOrder">
-                    <h1 class="planty-heading-1">Order Summary</h1>
+            <div class="titleOrder">
+                <h1 class="planty-heading-1">Order Summary</h1>
+            </div>
+            <div
+                class="descriptionOrder d-flex justify-items-center align-items-center my-3 planty-text-sentence column-gap-3">
+                <img src="../assets/product-payment.png" alt="">
+                start your plant journey with easy-to-care-for plants and comprehensive guidance.
+            </div>
+            <div class="calculation">
+                <div class="row-3 d-flex justify-content-between my-2">
+                    <div class="planty-text-sentence">
+                        Subtotal
+                    </div>
+                    <div class="planty-text-sentence" id="subtotalValue">
+                        {{-- {{ $oldPrice }} --}}
+                        {{ 'Rp ' . number_format($product->price, 2, ',', '.') }}
+                    </div>
                 </div>
-                <div class="descriptionOrder d-flex justify-items-center align-items-center my-3 planty-text-sentence column-gap-3">
-                    <img src="../assets/product-payment.png" alt="">
-                    start your plant journey with easy-to-care-for plants and comprehensive guidance.
-                </div>
-                <div class="calculation">
-                    <div class="row-3 d-flex justify-content-between my-2">
-                        <div class="planty-text-sentence">
-                            Subtotal
-                        </div>
-                        <div class="planty-text-sentence" id="subtotalValue">
-                            {{-- {{ $oldPrice }} --}}
+                <div class="row-3 d-flex justify-content-between my-2">
+                    <div class="planty-text-sentence">
+                        Discount
+                    </div>
+                    <div class="planty-text-sentence" id="discountValue">
+                        {{-- {{ $discount }} --}}
+                        @if ($redeemed == 'false')
+                            {{ 'Rp ' . number_format($product->price * $product->discount, 2, ',', '.') }}
+                        @else
                             {{ 'Rp ' . number_format($product->price, 2, ',', '.') }}
-                        </div>
-                    </div>
-                    <div class="row-3 d-flex justify-content-between my-2">
-                        <div class="planty-text-sentence">
-                            Discount
-                        </div>
-                        <div class="planty-text-sentence" id="discountValue">
-                            {{-- {{ $discount }} --}}
-                            @if ($redeemed == 'false')
-                                {{ 'Rp ' . number_format($product->price * $product->discount, 2, ',', '.') }}
-                            @else
-                                {{ 'Rp ' . number_format($product->price, 2, ',', '.') }}
-                            @endif
-                        </div>
-                    </div>
-                    <div class="row-3 d-flex justify-content-between my-2">
-                        <div class="planty-text-sentence">
-                            Tax
-                        </div>
-                        <div class="planty-text-sentence">
-                            {{-- utk test doang, harusnya subsId disimpan saja, tidak ditampilkan --}}
-                            {{-- {{ $product->subsCategory->id }} --}}
-                            Rp 0,00
-                        </div>
-                    </div>
-                    <hr class="border-1 border-black opacity-100">
-                    <div class="row-3 d-flex justify-content-between my-2">
-                        <div class="planty-heading-4">
-                            Total
-                        </div>
-                        <div class="planty-heading-4" id="totalValue">
-                            {{-- {{ $discountedPrice }} --}}
-                            @if ($redeemed == 'false')
-                                {{ 'Rp ' . number_format($product->price - $product->price * $product->discount, 2, ',', '.') }}
-                            @else
-                                {{ 'Rp ' . number_format(0, 2, ',', '.') }}
-                            @endif
-                        </div>
+                        @endif
                     </div>
                 </div>
-                <div class="payment-btn d-flex justify-content-center mt-5">
-                    {{-- <button id="pay-button" type="button" class="btn btn-success planty-heading-4 text-white"
+                <div class="row-3 d-flex justify-content-between my-2">
+                    <div class="planty-text-sentence">
+                        Tax
+                    </div>
+                    <div class="planty-text-sentence">
+                        {{-- utk test doang, harusnya subsId disimpan saja, tidak ditampilkan --}}
+                        {{-- {{ $product->subsCategory->id }} --}}
+                        Rp 0,00
+                    </div>
+                </div>
+                <hr class="border-1 border-black opacity-100">
+                <div class="row-3 d-flex justify-content-between my-2">
+                    <div class="planty-heading-4">
+                        Total
+                    </div>
+                    <div class="planty-heading-4" id="totalValue">
+                        {{-- {{ $discountedPrice }} --}}
+                        @if ($redeemed == 'false')
+                            {{ 'Rp ' . number_format($product->price - $product->price * $product->discount, 2, ',', '.') }}
+                        @else
+                            {{ 'Rp ' . number_format(0, 2, ',', '.') }}
+                        @endif
+                    </div>
+                </div>
+            </div>
+            <div class="payment-btn d-flex justify-content-center mt-5">
+                {{-- <button id="pay-button" type="button" class="btn btn-success planty-heading-4 text-white"
                         style="width: 7.0625rem; height: 3.125rem; border-radius: 0.625rem; background: #618264;">Pay</button> --}}
-                    <x-primary-btn type="button" id="pay-button">Pay</x-primary-btn>
-                </div>
+                <x-primary-btn type="submit" id="pay-button">Pay</x-primary-btn>
+            </div>
 
         </div>
     </form>
     <x-footer></x-footer>
-    <button type="button" class="btn btn-primary d-none modal-btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    <button type="button" class="btn btn-primary d-none modal-btn" data-bs-toggle="modal"
+        data-bs-target="#staticBackdrop">
         Launch static backdrop modal
     </button>
     <!-- Modal -->
@@ -202,7 +209,7 @@
         var gift = {
             "isGift": {{ $gift }},
             "subs_id": {{ $product->id }},
-            "discounted_price": {{ $product->price - $product->price * $product->discount }},
+            "discounted_price": {{ ceil($product->price - $product->price * $product->discount) }},
             "isRedeemed": "{{ $redeemed }}",
 
         };

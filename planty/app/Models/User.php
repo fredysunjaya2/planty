@@ -54,11 +54,18 @@ class User extends Authenticatable
 
     protected $with = ['address'];
 
-    public function address(): BelongsTo {
+    public function getRedirectRoute()
+    {
+        return '/';
+    }
+
+    public function address(): BelongsTo
+    {
         return $this->belongsTo(Address::class);
     }
 
-    public function transactions(): HasMany {
+    public function transactions(): HasMany
+    {
         return $this->hasMany(Transaction::class);
     }
 }

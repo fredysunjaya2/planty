@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Gift;
 use Ramsey\Uuid\Uuid;
 use App\Mail\GiftMail;
+use App\Models\Address;
 use App\Models\Transaction;
 use Illuminate\Support\Str;
 use App\Models\SubsCategory;
@@ -42,23 +43,52 @@ class TransactionsController extends Controller
 
     public function processPayment(Request $request)
     {
-
-        $data = $request->json()->all();
+        $transaction = null;
+        $jsonData = json_decode($request->input('jsonData'), true);
 
         $subsCategory = SubsCategory::join('transactions', 'transactions.subs_category_id', '=', 'subs_categories.id')
             ->select('subs_categories.*')
-            ->where('subs_categories.id', '=', $request->input('subsId'))
+            ->where('subs_categories.id', '=', $jsonData["subs_id"])
             ->first();
 
-        $transaction = Transaction::create([
-            'user_id' => Auth::user()->id,
-            'token' => '',
-            'subs_category_id' => $data["subs_id"],
-            'discounted_price' => $data["discounted_price"],
-            'status' => 'pending',
-        ]);
+        $isSameAddress = Auth::user()->address->street_number === $request->input('street_number') &&
+            Auth::user()->address->city === $request->input('city') &&
+            Auth::user()->address->country === $request->input('country') &&
+            Auth::user()->address->village === $request->input('village') &&
+            Auth::user()->address->district === $request->input('district') &&
+            Auth::user()->address->postal_code === $request->input('postal_code');
 
-        if ($data["isRedeemed"] == "false") {
+
+        if ($isSameAddress) {
+            $transaction = Transaction::create([
+                'user_id' => Auth::user()->id,
+                'token' => '',
+                'subs_category_id' => $jsonData["subs_id"],
+                'address_id' => Auth::user()->address_id,
+                'discounted_price' => $jsonData["discounted_price"],
+                'status' => 'pending',
+            ]);
+        } else {
+            $address = Address::create([
+                'street_number' => $request->input('street_number'),
+                'city' => $request->input('city'),
+                'country' => $request->input('country'),
+                'village' => $request->input('village'),
+                'district' => $request->input('district'),
+                'postal_code' => $request->input('postal_code'),
+            ]);
+
+            $transaction = Transaction::create([
+                'user_id' => Auth::user()->id,
+                'token' => '',
+                'subs_category_id' => $jsonData["subs_id"],
+                'address_id' => $address->id,
+                'discounted_price' => $jsonData["discounted_price"],
+                'status' => 'pending',
+            ]);
+        }
+
+        if ($jsonData["isRedeemed"] == "false") {
             // Set your Merchant Server Key
             \Midtrans\Config::$serverKey = env('MIDTRANS_SERVER_KEY');
             // Set to Development/Sandbox Environment (default). Set to true fmidtrans.serverKeyor Production Environment (accept real transaction).
@@ -71,7 +101,7 @@ class TransactionsController extends Controller
             $params = [
                 'transaction_details' => [
                     'order_id' => rand(),
-                    'gross_amount' => ceil($data['discounted_price']),
+                    'gross_amount' => $jsonData["discounted_price"],
                 ],
                 'items_details' => [
                     'id' => $transaction->subs_category_id,
@@ -85,8 +115,12 @@ class TransactionsController extends Controller
                     'last_name' => Auth::user()->last_name,
                     'phone' => Auth::user()->phone_number,
                     'shipping_address' => [
-                        'address' => Auth::user()->address->street_number . ', ' . Auth::user()->address->district . ', ' . Auth::user()->address->village . ', ' . Auth::user()->address->city . ', ' . Auth::user()->address->country,
-                        'postal_code' => Auth::user()->address->postal_code
+                        'address' => $transaction->address->street_number . ', ' .
+                            $transaction->address->district . ', ' .
+                            $transaction->address->village . ', ' .
+                            $transaction->address->city . ', ' .
+                            $transaction->address->country,
+                        'postal_code' => $transaction->address->postal_code
                     ]
                 ]
             ];
