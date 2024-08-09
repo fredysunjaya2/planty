@@ -21,22 +21,21 @@ Route::get('/', function () {
     return view('index');
 })->name('index');
 
-Route::get('/fun', [BenefitController::class, 'benefit']);
 Route::get('/subscription', [AccordionController::class, 'accordion'])->name('subscription');
-Route::get('/about-us', [AboutusController::class, 'values'])->name('about-us');
-Route::get('/plant-care', [PlantcareController::class, 'content'])->name('plant-care');
 
-Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');
+Route::get('/about-us', [AboutusController::class, 'values'])->name('about-us');
+
+Route::get('/plant-care', [PlantcareController::class, 'content'])->name('plant-care');
 
 Route::get('/contact', function () {
     return view('contact_us');
 })->name('contact-us');
 
-Route::get('/gallery', [GalleriesController::class, 'readGalleries'])->name('gallery');
+Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/product-detail/{productType}', [SubsCategoriesController::class, 'productDetail'])->name('product-detail');
+
+Route::get('/gallery', [GalleriesController::class, 'readGalleries'])->name('gallery');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
@@ -50,6 +49,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/process-payment/failed/{token}', [TransactionsController::class, 'paymentFailed'])->name('payment-failed');
 });
 
+Route::get('/fun-facts', [BenefitController::class, 'benefit'])->name('fun-facts');
 
 Route::get('/tutorial', function () {
     return view('tutorial');
@@ -57,10 +57,9 @@ Route::get('/tutorial', function () {
 
 Route::get('/diseases', function () {
     return view('disease');
-});
+})->name('diseases');
 
 Route::get('/donts', function () {
     return view('donts');
-});
+})->name('donts');
 
-Route::get('/product-detail/{productType}', [SubsCategoriesController::class, 'productDetail'])->name('product-detail');

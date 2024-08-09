@@ -129,7 +129,7 @@
                     @foreach($accordions as $key => $accordion)
                         <div class="accordion-item">
                             <h2 class="planty-heading-2 accordion-header" id="flush-heading{{ $key + 1 }}">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse{{ $key + 1 }}" aria-expanded="false" aria-controls="flush-collapse{{ $key + 1 }}">
+                                <button class="accordion-button faq-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse{{ $key + 1 }}" aria-expanded="false" aria-controls="flush-collapse{{ $key + 1 }}">
                                     <div class="planty-heading-4">{{ $accordion['title'] }}</div>
                                 </button>
                             </h2>

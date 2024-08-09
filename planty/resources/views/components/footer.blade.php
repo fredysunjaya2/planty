@@ -8,16 +8,16 @@
                 Plant Care
             </li>
             <li class="footer-nav-item">
-                <a aria-current="page" class="nav-link" href="#">Tutorial</a>
+                <a aria-current="page" class="nav-link" href="{{ route('tutorial') }}">Tutorial</a>
             </li>
             <li class="footer-nav-item">
-                <a class="nav-link" href="#">Don'ts</a>
+                <a class="nav-link" href="{{ route('donts') }}">Don'ts</a>
             </li>
             <li class="footer-nav-item">
-                <a class="nav-link" href="#">Fun Facts</a>
+                <a class="nav-link" href="{{ route('fun-facts') }}">Fun Facts</a>
             </li>
             <li class="footer-nav-item">
-                <a class="nav-link" href="#">Diseases</a>
+                <a class="nav-link" href="{{ route('diseases') }}">Diseases</a>
             </li>
         </ul>
         <ul class="col footer-list">
@@ -25,10 +25,10 @@
                 Company
             </li>
             <li class="footer-nav-item">
-                <a aria-current="page" class="nav-link" href="#">About Us</a>
+                <a aria-current="page" class="nav-link" href="{{ route('about-us') }}">About Us</a>
             </li>
             <li class="footer-nav-item">
-                <a class="nav-link" href="#">Contact Us</a>
+                <a class="nav-link" href="{{ route('contact-us') }}">Contact Us</a>
             </li>
             <li class="footer-nav-item nav-link">
                 plantyppti@gmail.com

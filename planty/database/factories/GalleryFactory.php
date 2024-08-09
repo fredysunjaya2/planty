@@ -14,13 +14,24 @@ class GalleryFactory extends Factory
      *
      * @return array<string, mixed>
      */
+
+    private static $uniquePlantIds = [];
+
     public function definition(): array
     {
+        if (empty(self::$uniquePlantIds)) {
+            self::$uniquePlantIds = range(1, 24);
+            shuffle(self::$uniquePlantIds);
+        }
+
+        // Pop a unique plant_id from the array
+        $uniquePlantId = array_pop(self::$uniquePlantIds);
+
         return [
             //
-            'plant_id' => rand(1, 100),
+            'plant_id' => $uniquePlantId,
             'subs_tier_id' => rand(1, 2),
-            'archive_date' => fake()->date('Y-m-d', 'now')
+            'archive_date' => fake()->dateTimeBetween('-2 years', 'now')
         ];
     }
 }

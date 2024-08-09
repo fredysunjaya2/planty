@@ -28,12 +28,12 @@
                 <div class="disease col-12 d-flex row mt-3 pb-5">
                     <div class="col-1"></div>
                     <div class="disease-list d-flex align-items-center justify-content-around col-10">
-                        <x-disease-card href="disease1" number="1" hoverImage="../assets/disease/disease1.jpg">Downy Mildew</x-disease-card>
-                        <x-disease-card href="disease2" number="2" hoverImage="../assets/disease/disease2.jpg">Powdery Mildew</x-disease-card>
-                        <x-disease-card href="disease3" number="3" hoverImage="../assets/disease/disease3.jpg">Root <br> Rot</x-disease-card>
-                        <x-disease-card href="disease4" number="4" hoverImage="../assets/disease/disease4.jpg">Leaf <br> Spot</x-disease-card>
+                        <x-disease-card href="disease1" number="1" hoverImage="{{ asset('/assets/disease/disease1.jpg') }}">Downy Mildew</x-disease-card>
+                        <x-disease-card href="disease2" number="2" hoverImage="{{ asset('/assets/disease/disease2.jpg') }}">Powdery Mildew</x-disease-card>
+                        <x-disease-card href="disease3" number="3" hoverImage="{{ asset('/assets/disease/disease3.jpg') }}">Root <br> Rot</x-disease-card>
+                        <x-disease-card href="disease4" number="4" hoverImage="{{ asset('/assets/disease/disease4.jpg') }}">Leaf <br> Spot</x-disease-card>
                     </div>
-                    <div class="col-1"></div>
+                    <div class="col-1"></div>dis
                 </div>
             </div>
         </div>
@@ -41,12 +41,12 @@
         <div class="desc-card d-flex position-relative row col-12 pb-5" style="top: 10rem">
             <div class="desc-disease-card d-flex col-6">
                 <div id="disease1">
-                    @component('components.description-disease', ['disease' => 'Downy Mildew', 'diseasepic' => '../assets/disease/disease1.jpg'])
+                    @component('components.description-disease', ['disease' => 'Downy Mildew', 'diseasepic' => asset('/assets/disease/disease1.jpg') ])
                         Downy mildew is a fungal disease that thrives in cool, damp conditions. It appears as yellow to white patches on leaf surfaces with a fuzzy growth underneath. This disease can quickly spread and severely damage plants if left untreated.
                     @endcomponent
                 </div>
                 <div id="disease2">
-                    @component('components.description-disease', ['disease' => 'Powdery Mildew', 'diseasepic' => '../assets/disease/disease2.jpg'])
+                    @component('components.description-disease', ['disease' => 'Powdery Mildew', 'diseasepic' => asset('/assets/disease/disease2.jpg') ])
                         Unlike its "downy" counterpart, powdery mildew presents as a white, powdery coating on leaves and stems. It prefers warm, dry conditions and can affect a wide range of plants, from vegetables to ornamentals.
                     @endcomponent
                 </div>
@@ -54,12 +54,12 @@
 
             <div class="desc-disease-card d-flex col-6 pb-5">
                 <div id="disease3">
-                    @component('components.description-disease', ['disease' => 'Root Rot', 'diseasepic' => '../assets/disease/disease3.jpg'])
+                    @component('components.description-disease', ['disease' => 'Root Rot', 'diseasepic' => asset('/assets/disease/disease3.jpg')])
                         Root rot is a serious condition caused by overwatering or poor drainage. It leads to the decay of plant roots, often resulting in wilting, yellowing leaves, and stunted growth. Prevention involves proper watering practices and well-draining soil.
                     @endcomponent
                 </div>
                 <div id="disease4">
-                    @component('components.description-disease', ['disease' => 'Leaf Spot', 'diseasepic' => '../assets/disease/disease4.jpg'])
+                    @component('components.description-disease', ['disease' => 'Leaf Spot', 'diseasepic' => asset('/assets/disease/disease4.jpg')])
                         Leaf spot diseases are caused by various fungi and bacteria. They manifest as dark, circular spots on leaves, which can eventually lead to leaf drop. Good air circulation and avoiding overhead watering can help prevent leaf spot diseases.
                     @endcomponent
                 </div>
@@ -72,8 +72,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous" defer></script>
     <script>
         function scrollToElement(id) {
-            document.getElementById(id).scrollIntoView({ 
-                behavior: 'smooth', 
+            document.getElementById(id).scrollIntoView({
+                behavior: 'smooth',
                 block: 'center'
             });
         }

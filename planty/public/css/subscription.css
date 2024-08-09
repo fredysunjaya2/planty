@@ -175,6 +175,8 @@ body{
     background: transparent;
     outline: none;
     font-weight: 500;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
 }
 
 .accordion-body {
@@ -245,7 +247,7 @@ body{
         max-width: 14.69469rem !important;
         padding: 1rem !important;
         height: auto;
-        max-height: none; 
+        max-height: none;
         margin-bottom: -4rem;
     }
 

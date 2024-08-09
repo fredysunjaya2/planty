@@ -31,7 +31,7 @@ class GalleriesController extends Controller
         // Iterate through the data array
         foreach ($plants as $item) {
             // Extract the year from the archive_date
-            $year = (new DateTime($item['archive_year']))->format('Y');
+            $year = $item['archive_year'];
 
             // If the year key doesn't exist in the categorizedData array, create it
             if (!isset($categorizedData[$year])) {
@@ -43,6 +43,7 @@ class GalleriesController extends Controller
         }
 
         // return $categorizedData;
+
 
         return view('gallery', compact('categorizedData'));
     }

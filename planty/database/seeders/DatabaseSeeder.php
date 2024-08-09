@@ -21,9 +21,9 @@ class DatabaseSeeder extends Seeder
             SubsCategorySeeder::class,
             AddressSeeder::class,
             UserSeeder::class,
+            PlantSeeder::class,
         ]);
 
-        Plant::factory()->count(100)->create();
-        Gallery::factory()->count(100)->create();
+        Gallery::factory()->count(24)->create();
     }
 }
