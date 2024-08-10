@@ -23,8 +23,8 @@
                 <p>Experience the joy of fresh herbs and vegetables right at your doorstep with our guidance.</p>
             </div>
             <div class="jumbo-btn d-flex">
-            <x-primary-btn type="button">Subscribe</x-primary-btn>
-            <x-secondary-btn type="button">Info</x-secondary-btn>
+            <a href="{{ route('subscription') }}"><x-primary-btn type="button">Subscribe</x-primary-btn></a>
+            <a href="{{ route('gallery') }}"><x-secondary-btn type="button">Info</x-secondary-btn></a>
             </div>
           </div>
           <div class="col-5">
@@ -57,7 +57,7 @@
             <h2>Why should you join us?</h2>
             <p>Join our community of plant enthusiasts and discover the satisfaction of growing your own greens. Whether you're a novice or an experienced gardener, our kits and resources make it easy to cultivate a thriving garden in any space</p>
             <div class="col-2">
-                <x-primary-btn type="button">About Us</x-primary-btn>
+                <a href="{{ route('about-us') }}"><x-primary-btn type="button" id="aboutusBtn">About Us</x-primary-btn></a>
             </div>
           </div>
           <div class="why-img">
@@ -78,20 +78,20 @@
           <x-testi-card testiName="James R." testiTier="Enthusiast">
             As a beginner, I found Planty's step-by-step guides incredibly helpful. Now I have a flourishing mini garden!
           </x-testi-card>
-          <x-testi-card testiName="Emily S." testiTier="Enthusiast">
+          <x-testi-card testiName="Emily S." testiTier="Beginner">
             The quality of Planty's seeds and soil is outstanding. My plants are growing fast and healthy.
           </x-testi-card>
           <x-testi-card testiName="Michael P." testiTier="Enthusiast">
             Subscribing to Planty was the best decision for my gardening hobby. I always look forward to their monthly deliveries!
           </x-testi-card>
-          <x-testi-card testiName="Name" testiTier="Enthusiast">
-            Lorem Ipsumis simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
+          <x-testi-card testiName="Michael P." testiTier="Enthusiast">
+            Subscribing to Planty was the best decision for my gardening hobby. I always look forward to their monthly deliveries!
           </x-testi-card>
-          <x-testi-card testiName="Name" testiTier="Enthusiast">
-            Lorem Ipsumis simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
+          <x-testi-card testiName="Michael P." testiTier="Enthusiast">
+            Subscribing to Planty was the best decision for my gardening hobby. I always look forward to their monthly deliveries!
           </x-testi-card>
-          <x-testi-card testiName="Name" testiTier="Enthusiast">
-            Lorem Ipsumis simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
+          <x-testi-card testiName="Michael P." testiTier="Enthusiast">
+            Subscribing to Planty was the best decision for my gardening hobby. I always look forward to their monthly deliveries!
           </x-testi-card>
         </div>
 

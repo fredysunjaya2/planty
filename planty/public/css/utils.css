@@ -158,7 +158,7 @@ body {
 
 .primaryBtn {
     display: inline-flex;
-    border: none;
+    border: 2px solid rgba(0,0,0,0) ;
     height: 3.125rem;
     padding: 0.625rem 1.25rem;
     justify-content: center;
@@ -174,7 +174,7 @@ body {
 }
 
 .primaryBtn:hover {
-    /* border: 0.5px solid var(--tes1, #adbc9f); */
+    border: 2px solid var(--tes1, #adbc9f);
     color: #618264;
     background: #fff;
     box-shadow: 0px 8px 30px 0px rgba(0, 0, 0, 0.25);
@@ -183,9 +183,10 @@ body {
 
 .secondaryBtn {
     display: inline-flex;
-    border: none;
+    border: 2px solid rgba(0,0,0,0) ;
     height: 3.125rem;
     padding: 0.625rem 1.25rem;
+    padding: 0.30625rem 0.6125rem;
     justify-content: center;
     align-items: center;
     border-radius: 0.625rem;
@@ -199,7 +200,7 @@ body {
 }
 
 .secondaryBtn:hover {
-    /* border: 2px solid var(--tes1, #adbc9f); */
+    border: 2px solid var(--tes1, #adbc9f);
     color: #adbc9f;
     background: #122218;
     box-shadow: 0px 8px 30px 0px rgba(0, 0, 0, 0.25);
@@ -302,6 +303,10 @@ body {
         padding: 0.30625rem 0.6125rem;
         border-radius: 0.30625rem;
         font-size: var(--planty-heading-mobile-paragraph-font-size) !important;
+    }
+
+    #aboutusBtn{
+        width: 4.5rem;
     }
 
     .secondaryBtn{

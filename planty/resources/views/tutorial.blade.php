@@ -47,7 +47,7 @@
                 <h4>Don't be afraid to ask us</h4>
                 <p>LAt Planty, we're passionate about helping you succeed in your plant care journey. Our team of expert horticulturists is always ready to assist with any questions or concerns you may have. Whether you're a beginner just starting out or an experienced plant parent facing a challenging situation, we're here to provide personalized advice and support. From troubleshooting plant health issues to offering tips on creating the perfect indoor garden, our knowledgeable staff is committed to ensuring your plants thrive. Reach out anytime - we're excited to help you grow!</p>
                 {{-- <button type="button" class="primaryBtn">Contact Us</button> --}}
-                <x-primary-btn type="button">Contact Us</x-primary-btn>
+                <a href="{{ route('contact-us') }}"><x-primary-btn type="button">Contact Us</x-primary-btn></a>
             </div>
         </div>
     </section>
@@ -60,7 +60,7 @@
             <div class="popup-content d-flex flex-row">
                 <div class="popup-left d-flex flex-column">
                     <div class="popup-vid">
-                        <iframe src="https://youtu.be/dQJ9x6dLFTY?si=CZ-a6iG39J8zLPsy" title="Planting 20,000,000 Trees, My Biggest Project Ever!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <iframe width="996" height="560" src="https://www.youtube.com/embed/dQJ9x6dLFTY" title="EASY Succulent Grow Kit Tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                     <div class="popup-head d-flex flex-column">
                         <div class="popup-title d-flex flex-row">
@@ -68,22 +68,22 @@
                             <img src="../assets/tutorial/popup.png" alt="#">
                         </div>
                         <p>
-                            Easy-to-grow aromatic plants perfect for kitchen gardens and culinary use.
+                            Low-maintenance, drought-resistant plants ideal for beginners or busy individuals.
                         </p>
                     </div>
                 </div>
                 <div class="popup-right d-flex flex-column">
                     <h2>Step by Step</h2>
                     <p>
-                        Choose a sunny spot indoors or outdoors
-
-                            Fill containers with well-draining potting mix
-
-                            Sow seeds or plant seedlings, spacing appropriately
-
-                            Water regularly, keeping soil moist but not waterlogged
-
-                            Harvest outer leaves as needed, encouraging bushier growth
+                        Use a gritty, well-draining potting mix
+                        <br>
+                        Place in bright, indirect light
+                        <br>
+                        Water sparingly, allowing soil to dry between waterings
+                        <br>
+                        Rotate occasionally for even growth
+                        <br>
+                        Propagate easily from leaves or cuttings
                     </p>
                 </div>
             </div>
@@ -97,7 +97,7 @@
             <div class="popup-content d-flex flex-row">
                 <div class="popup-left d-flex flex-column">
                     <div class="popup-vid">
-                        <iframe src="https://youtu.be/lvQgdt9sprw?si=fOZF2Nu40jQv3BaW" title="Planting 20,000,000 Trees, My Biggest Project Ever!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <iframe width="996" height="560" src="https://www.youtube.com/embed/lvQgdt9sprw" title="Herb Garden Kit - Grow 5 of your favorites kitchen herbs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                     <div class="popup-head d-flex flex-column">
                         <div class="popup-title d-flex flex-row">
@@ -113,13 +113,13 @@
                     <h2>Step by Step</h2>
                     <p>
                         Choose a sunny spot indoors or outdoors
-
+                        <br>
                             Fill containers with well-draining potting mix
-
+                        <br>
                             Sow seeds or plant seedlings, spacing appropriately
-
+                        <br>
                             Water regularly, keeping soil moist but not waterlogged
-
+                        <br>
                             Harvest outer leaves as needed, encouraging bushier growth
                     </p>
                 </div>
@@ -134,7 +134,7 @@
             <div class="popup-content d-flex flex-row">
                 <div class="popup-left d-flex flex-column">
                     <div class="popup-vid">
-                        <iframe src="https://youtu.be/keDJaDE4bIY?si=bkN8xTezstMlwMQ9" title="Planting 20,000,000 Trees, My Biggest Project Ever!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <iframe width="996" height="560" src="https://www.youtube.com/embed/keDJaDE4bIY" title="How to Grow Flowers From a Grow Kit- Review" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                     <div class="popup-head d-flex flex-column">
                         <div class="popup-title d-flex flex-row">
@@ -142,22 +142,24 @@
                             <img id="popup-img3" src="../assets/tutorial/popup3.png" alt="#">
                         </div>
                         <p>
-                            Easy-to-grow aromatic plants perfect for kitchen gardens and culinary use.
+                            Colorful, mood-boosting plants to brighten up any space.
                         </p>
                     </div>
                 </div>
                 <div class="popup-right d-flex flex-column">
                     <h2>Step by Step</h2>
                     <p>
-                        Choose a sunny spot indoors or outdoors
-
-                            Fill containers with well-draining potting mix
-
-                            Sow seeds or plant seedlings, spacing appropriately
-
-                            Water regularly, keeping soil moist but not waterlogged
-
-                            Harvest outer leaves as needed, encouraging bushier growth
+                        Choose annuals or perennials based on your climate
+                        <br>
+                        Plant in nutrient-rich, well-draining soil
+                        <br>
+                        Ensure adequate sunlight based on flower type
+                        <br>
+                        Water regularly, especially during blooming periods
+                        <br>
+                        Deadhead spent blooms to encourage more flowers
+                        <br>
+                        Provide support for tall or climbing varieties
                     </p>
                 </div>
             </div>
@@ -171,7 +173,7 @@
             <div class="popup-content d-flex flex-row">
                 <div class="popup-left d-flex flex-column">
                     <div class="popup-vid">
-                        <iframe src="https://youtu.be/gwRh0NtrVDc?si=IOiL70DVRTS1BqOG" title="Planting 20,000,000 Trees, My Biggest Project Ever!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <iframe width="996" height="560" src="https://www.youtube.com/embed/gwRh0NtrVDc" title="Indoor Exotic Veggie Grow Kit Instructional Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                     <div class="popup-head d-flex flex-column">
                         <div class="popup-title d-flex flex-row">
@@ -179,22 +181,25 @@
                             <img id="popup-img4" src="../assets/tutorial/popup4.png" alt="#">
                         </div>
                         <p>
-                            Easy-to-grow aromatic plants perfect for kitchen gardens and culinary use.
+                            Nutritious and rewarding plants for home gardeners of all levels.
                         </p>
                     </div>
                 </div>
                 <div class="popup-right d-flex flex-column">
                     <h2>Step by Step</h2>
                     <p>
-                        Choose a sunny spot indoors or outdoors
+                        Select a location with 6-8 hours of daily sunlight
+                        <br>
+                        Soak seed for 24 hours
+                        <br>
+                        Prepare soil with compost or fertilizer
+                        <br>
+                        Water deeply and consistently
+                        <br>
+                        Support climbing varieties with stakes or trellises
+                        <br>
+                        Monitor for pests and harvest when ripe
 
-                            Fill containers with well-draining potting mix
-
-                            Sow seeds or plant seedlings, spacing appropriately
-
-                            Water regularly, keeping soil moist but not waterlogged
-
-                            Harvest outer leaves as needed, encouraging bushier growth
                     </p>
                 </div>
             </div>

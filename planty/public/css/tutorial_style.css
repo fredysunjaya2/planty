@@ -492,7 +492,7 @@
     }
 
     .popup-head{
-        width: 80%;
+        width: 100%;
         height: auto;
         padding-top: none;
         padding: 1rem;
@@ -503,7 +503,7 @@
     }
 
     .popup-right{
-        width: 80%;
+        width: 100%;
         height: auto;
         padding-top: none;
         padding: 1rem;
