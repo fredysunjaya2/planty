@@ -28,9 +28,11 @@ class ProfileController extends Controller
     {
         $transaction = Transaction::join('users', 'users.id', '=', 'transactions.user_id')
             ->join('subs_categories', 'subs_categories.id', '=', 'transactions.subs_category_id')
+            ->leftJoin('gifts', 'gifts.transaction_id', '=', 'transactions.id')
             ->select('*', 'transactions.id as transaction_id')
             ->where('transactions.user_id', '=', auth()->user()->id)
             ->where('transactions.status', '=', 'success')
+            ->whereNull('gifts.redeem_code')
             ->orderBy('transactions.created_at', 'desc')
             ->first();
 

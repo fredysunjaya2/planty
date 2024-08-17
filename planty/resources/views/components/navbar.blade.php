@@ -44,7 +44,7 @@
                 @else
                     <li class="nav-item profile-pic">
                         <a class="nav-link" href="{{ route('profile') }}">
-                            <img class="rounded-circle" src="/assets/user.png" style="height: 50px">
+                            <img class="rounded-circle" src="/assets/user.png" style="height: 40px">
                         </a>
                     </li>
                     <li class="nav-item profile">

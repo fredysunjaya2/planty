@@ -58,7 +58,11 @@ document.getElementById('redeem-button').addEventListener('click', function (e) 
         success: function (response) {
             result = JSON.parse(response);
 
-            if(result == 'false') {
+            if (result == 'false') {
+                document.querySelector('.profile-redeem').textContent = 'The redeem code that is inputted is not correct';
+                document.querySelector('.modal-btn').click();
+            } else if (result == 'redeemed') {
+                document.querySelector('.profile-redeem').textContent = 'The code is already redeemed';
                 document.querySelector('.modal-btn').click();
             } else {
                 redeemForm = document.getElementById('redeem-code-form');

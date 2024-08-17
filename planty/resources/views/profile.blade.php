@@ -167,7 +167,7 @@
         Launch static backdrop modal
     </button>
     <!-- Modal -->
-    <x-modal-general header="Error" btn="OK">The reddem code that is inputted is not correct</x-modal-general>
+    <x-modal-general header="Error" btn="OK">The redeem code that is inputted is not correct</x-modal-general>
 
 
     <script script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

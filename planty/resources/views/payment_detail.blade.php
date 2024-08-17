@@ -184,22 +184,8 @@
         Launch static backdrop modal
     </button>
     <!-- Modal -->
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content redeem-code-dialog">
-                <div class="modal-header border-0">
-                    <h1 class="modal-title planty-heading-2" id="staticBackdropLabel">Success!!!</h1>
-                </div>
-                <div class="modal-body pt-0 pb-0">
-                    <p class="planty-text-sentence m-0">Redeem Code is Sent to Email</p>
-                </div>
-                <div class="modal-footer border-0">
-                    <x-primary-btn type="button" data-bs-dismiss="modal">OK</x-primary-btn>
-                </div>
-            </div>
-        </div>
-    </div>
+    <x-modal-general header="Success!!!" btn="OK">Redeem Code is Sent to Email</x-modal-general>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
