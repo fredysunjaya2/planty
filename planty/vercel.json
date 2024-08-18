@@ -7,15 +7,19 @@
     "routes": [
         {
             "src": "/css/(.*)",
-            "dest": "public/css"
+            "dest": "/public/css"
         },
         {
             "src": "/js/(.*)",
-            "dest": "public/js"
+            "dest": "/public/js"
         },
         {
             "src": "/assets/(.*)/(.*)",
             "dest": "/public/assets/"
+        },
+        {
+            "src": "/assets/(.*)/",
+            "dest": "/public/assets"
         },
         {
             "src": "/(.*)",
