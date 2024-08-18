@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>Donts</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,7 +47,7 @@
                     This refers to overlooking proper nutrition and soil composition. Plants need balanced nutrients to thrive. Neglecting fertilization or using the wrong type can result in poor growth and increased vulnerability to pests and diseases. Similarly, using inappropriate soil or failing to replenish soil nutrients over time can hinder plant health. Regular fertilization and occasional repotting with fresh, nutrient-rich soil help ensure your plants have all they need for healthy growth.
                 @endcomponent
             </div>
-            
+
             <div id="overwatering-plants" class="div-content row d-flex flex-row-reverse justify-content-center align-items-center my-5 py-5 gap-5">
                 @component('components.mistake-detail', ['mistakeTitle' => 'Overwatering Plants', 'mistakePic' => '../assets/donts/overwateringPlantsDetail.webp'])
                     Overwatering is a common mistake that can suffocate roots and lead to root rot. Many plants prefer soil that dries slightly between waterings. Signs of overwatering include yellowing leaves and wilting despite wet soil. To avoid this, always check soil moisture before watering and ensure proper drainage for your plants.
@@ -65,8 +66,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous" defer></script>
     <script>
         function scrollToElement(id) {
-            document.getElementById(id).scrollIntoView({ 
-                behavior: 'smooth', 
+            document.getElementById(id).scrollIntoView({
+                behavior: 'smooth',
                 block: 'center' // Mengatur posisi elemen di tengah layar saat scroll
             });
         }
