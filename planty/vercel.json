@@ -11,11 +11,11 @@
         },
         {
             "src": "/css/(.*)",
-            "dest": "/public/css"
+            "dest": "public/css"
         },
         {
             "src": "/js/(.*)",
-            "dest": "/public/js"
+            "dest": "public/js"
         },
         {
             "src": "/assets/(.*)/(.*)",
