@@ -10,12 +10,16 @@
             "dest": "/api/index.php"
         },
         {
-            "src": "/(css|js)/(.*)",
-            "dest": "public/$1/$2"
+            "src": "/css/(.*)",
+            "dest": "/public/css"
         },
         {
-            "src": "/assets/(.*)",
-            "dest": "public/assets/"
+            "src": "/js/(.*)",
+            "dest": "/public/js"
+        },
+        {
+            "src": "/assets/(.*)/(.*)",
+            "dest": "/public/assets/"
         }
     ],
     "env": {
