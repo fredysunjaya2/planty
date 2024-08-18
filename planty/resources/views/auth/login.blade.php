@@ -23,14 +23,15 @@
 <body>
     <x-navbar></x-navbar>
     <!-- Session Status -->
-    <x-auth-session-status :status="session('status')" class="mb-4" />
 
     <div class='row container-fluid register-container p-0 m-0'>
         <div class='col-5 register-img-container position-relative'>
-            {{-- <img src="{{ asset('/assets/planty.png') }}"> --}}
             <video autoplay loop muted preload>
                 <source src="{{ asset('/assets/login/login_background.mp4') }}" type="video/mp4">
             </video>
+            <a class="position-absolute logo-img-container" href="{{ route('index') }}">
+                <img alt="Bootstrap" src="{{ asset('/assets/planty.png') }}" class="object-fit-contain w-100 h-100">
+            </a>
         </div>
         <form action="{{ route('login') }}" class="col-7 form-container login" enctype="multipart/form-data"
             method="POST">
@@ -39,13 +40,15 @@
             <div class="form-textfield">
                 <div class="planty-heading-4 register-item">
                     <label class='p-0' for='email'>Email</label>
-                    <input autocomplete="email" id='email' name='email' required type='text' value="{{ old('email') }}">
+                    <input autocomplete="email" id='email' name='email' required type='text'
+                        value="{{ old('email') }}">
                     <x-input-error :messages="$errors->get('email')" class="m-0 text-danger fs-6 planty-text-paragraph" />
                 </div>
                 <div class="planty-heading-4 register-item">
                     <label class='p-0' for='password'>Password</label>
                     <div class="d-flex pass-show-hide justify-content-between gap-2 position-relative">
-                        <input autocomplete="new-password" id='password' name='password' style="width: 100%" required type='password' value="{{ old('password') }}">
+                        <input autocomplete="new-password" id='password' name='password' style="width: 100%" required
+                            type='password' value="{{ old('password') }}">
                         <span id="togglePassword" class="position-absolute end-0 me-3 my-auto" style="cursor: pointer;">
                             <i class="fa fa-eye" aria-hidden="true"></i>
                         </span>
@@ -55,7 +58,8 @@
             </div>
             <div class='register-agreement-container mb-5'>
                 <div class='register-agreement'>
-                    <input id='remember_me' name='remember' type='checkbox' value='False' {{ old('remember') ? 'checked' : '' }}>
+                    <input id='remember_me' name='remember' type='checkbox' value='False'
+                        {{ old('remember') ? 'checked' : '' }}>
                     <label class='planty-text-paragraph'>{{ __('Remember me') }}</label>
                 </div>
             </div>
@@ -69,7 +73,8 @@
             const passwordInput = document.getElementById('password');
             const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
             passwordInput.setAttribute('type', type);
-            this.innerHTML = type === 'password' ? '<i class="fa fa-eye" aria-hidden="true"></i>' : '<i class="fa fa-eye-slash" aria-hidden="true"></i>';
+            this.innerHTML = type === 'password' ? '<i class="fa fa-eye" aria-hidden="true"></i>' :
+                '<i class="fa fa-eye-slash" aria-hidden="true"></i>';
         });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

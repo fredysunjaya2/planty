@@ -4,7 +4,7 @@
 }
 
 .page-container {
-    background-image: url(../assets/donts/bg.png);
+    background-image: url("/assets/donts/bg.png");
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
@@ -44,7 +44,7 @@
 }
 
 .mistake-card:hover {
-    background-image: url(../assets/donts/mistakeOptionsHover.jpeg);
+    background-image: url("/assets/donts/mistakeOptionsHover.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
 }

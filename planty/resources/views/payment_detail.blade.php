@@ -120,7 +120,7 @@
             </div>
             <div
                 class="descriptionOrder d-flex justify-items-center align-items-center my-3 planty-text-sentence column-gap-3">
-                <img src="../assets/product-payment.png" alt="">
+                <img src="{{ asset('/assets/product-payment.png') }}" alt="">
                 start your plant journey with easy-to-care-for plants and comprehensive guidance.
             </div>
             <div class="calculation">

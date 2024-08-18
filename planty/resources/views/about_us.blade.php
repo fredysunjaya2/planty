@@ -73,18 +73,6 @@
                         <x-our-team-box team_img="{{ $member['img'] }}" team_name="{{ $member['name'] }}"
                             team_nim="{{ $member['nim'] }}"></x-our-team-box>
                     @endforeach
-                    {{-- @php
-                            $team_img = '/assets/aboutus/our-team-1.png';
-                        @endphp --}}
-                    {{-- <x-our-team-box :team_img="$team_img">
-                            <x-slot:team_name>
-                                Fredy Sunjaya
-                            </x-slot:team_name>
-                            <x-slot:team_nim>
-                                NIM
-                            </x-slot:team_nim>
-                        </x-our-team-box>
-                    @endfor --}}
                 </div>
             </div>
         </div>
