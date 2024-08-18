@@ -14,12 +14,12 @@
             "dest": "/public/js"
         },
         {
-            "src": "/assets/(.*)/(.*)",
-            "dest": "/public/assets/"
+            "src": "/assets/(.*)",
+            "dest": "/public/assets"
         },
         {
-            "src": "/assets/(.*)/",
-            "dest": "/public/assets"
+            "src": "/assets/(.*)/(.*)",
+            "dest": "/public/assets/"
         },
         {
             "src": "/(.*)",
