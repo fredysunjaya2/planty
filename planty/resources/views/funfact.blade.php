@@ -23,10 +23,7 @@
     </x-navbar>
 
     <div class="container-fluid content">
-        <div class="position-absolute background-top-fun">
-            <img src="{{ asset('/assets/funfact/background-top.png') }}" class="img-fluid w-100">
-        </div>
-        <div class="row d-flex justify-content-center align-items-center ">
+        <div class="row d-flex justify-content-center align-items-center funfact-content">
             <a href="{{ route('plant-care') }}" class="back text-start top-0 start-0">
                 <img src="{{ asset('/assets/Vector.svg') }}" alt="">
             </a>
@@ -47,7 +44,7 @@
 
             </div>
             <div class="benefit-1 justify-content-center align-items-center d-flex">
-                <div class="row benefit-wrapper container d-flex flex-col">
+                <div class="row benefit-wrapper justify-content-center container d-flex flex-col">
                     <div class="col-lg-6 col-sm-12 benefit-title text-start mt-3">
                         <h2 class="planty-heading-2 fw-bold"> 6 Benefits of Indoor Plants</h2>
                         <p class="planty-text-paragraph">Indoor plants do more than just beautify your space.
@@ -58,17 +55,17 @@
                     </div>
 
                     @foreach ($benefits as $item)
-                        <x-benefit-box>
-                            <x-slot:value_emot>
-                                <h1>{!! $item['emot'] !!}</h1>
-                            </x-slot:value_emot>
-                            <x-slot:value_title>
-                                {!! $item['title'] !!}
-                            </x-slot:value_title>
-                            <x-slot:value_desc>
-                                {!! $item['desc'] !!}
-                            </x-slot:value_desc>
-                        </x-benefit-box>
+                    <x-benefit-box>
+                        <x-slot:value_emot>
+                            <h1>{!! $item['emot'] !!}</h1>
+                        </x-slot:value_emot>
+                        <x-slot:value_title>
+                            {!! $item['title'] !!}
+                        </x-slot:value_title>
+                        <x-slot:value_desc>
+                            {!! $item['desc'] !!}
+                        </x-slot:value_desc>
+                    </x-benefit-box>
                     @endforeach
 
                 </div>
@@ -86,29 +83,31 @@
                     </div>
                     <div class="benefit-item">
                         @foreach ($benefits as $item)
-                            <x-benefit-box>
-                                <x-slot:value_emot>
-                                    <h1>{!! $item['emot'] !!}</h1>
-                                </x-slot:value_emot>
-                                <x-slot:value_title>
-                                    {!! $item['title'] !!}
-                                </x-slot:value_title>
-                                <x-slot:value_desc>
-                                    {!! $item['desc'] !!}
-                                </x-slot:value_desc>
-                            </x-benefit-box>
+                        <x-benefit-box>
+                            <x-slot:value_emot>
+                                <h1>{!! $item['emot'] !!}</h1>
+                            </x-slot:value_emot>
+                            <x-slot:value_title>
+                                {!! $item['title'] !!}
+                            </x-slot:value_title>
+                            <x-slot:value_desc>
+                                {!! $item['desc'] !!}
+                            </x-slot:value_desc>
+                        </x-benefit-box>
                         @endforeach
                     </div>
                 </div>
             </div>
 
-            <div class="why-content mt-5  mb-5  justify-content-center align-items-center d-flex">
+            <div class="why-content justify-content-center align-items-center d-flex">
                 <div class="why-content-wrapper container row ">
-                    <div class=" col-sm-12 col-md-4 why-image"><img class="img why-image"
+                    <div class=" col-sm-12 col-md-4 why-image container"><img
+                            class="img object-fit-cover why-image w-100 h-100"
                             src="{{ asset('/assets/funfact/fun-why.png') }}"></div>
-                    <div class="col-md-8 col-sm-12 why-content-text p-0 mt-3">
+                    <div class="col-md-6 col-sm-12 why-content-text p-0 mt-3">
                         <h2 class="planty-heading-2 ">Why should you start gardening?</h2>
-                        <p class="planty-text-content">Gardening offers multiple benefits for your health and home.
+                        <p class="planty-text-content text-why">Gardening offers multiple benefits for your health and
+                            home.
                             It provides relaxing outdoor activity, fresh produce, and a connection to nature.
                             Tending plants reduces stress, improves mood, and adds beauty to your living space.
                             Whether you have a large yard or just a few pots, starting a garden can enrich your
@@ -119,18 +118,9 @@
             </div>
 
         </div>
-
-
-
-
-
     </div>
     <x-footer>
     </x-footer>
-
-
-
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>

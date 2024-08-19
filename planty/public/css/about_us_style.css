@@ -23,11 +23,9 @@ body {
 .about-us-content {
     border-radius: 15px;
     padding: 2.4rem 4% 3% 4%;
-    background: linear-gradient(
-        108deg,
-        rgba(var(--white-background), 0.3) 10.91%,
-        rgba(var(--hijau-gelap), 0.3) 111.54%
-    );
+    background: linear-gradient(108deg,
+            rgba(var(--white-background), 0.3) 10.91%,
+            rgba(var(--hijau-gelap), 0.3) 111.54%);
     box-shadow: 0px 8px 30px 0px rgba(var(--hitam), 0.25);
     backdrop-filter: blur(6.099999904632568px);
     height: fit-content;
@@ -59,11 +57,9 @@ body {
 
 .our-values-item-container {
     border-radius: 15px;
-    background: linear-gradient(
-        108deg,
-        rgba(var(--white-background), 0.3) 10.91%,
-        rgba(var(--hijau-gelap), 0.3) 111.54%
-    );
+    background: linear-gradient(108deg,
+            rgba(var(--white-background), 0.3) 10.91%,
+            rgba(var(--hijau-gelap), 0.3) 111.54%);
     box-shadow: 0px 8px 30px 0px rgba(var(--hitam), 0.25);
     backdrop-filter: blur(6.099999904632568px);
     padding: 1.5rem;
@@ -73,19 +69,18 @@ body {
 
 .our-values-item-container:hover {
     border-radius: 15px;
-    background: linear-gradient(
-        180deg,
-        rgba(var(--font), 1) 0%,
-        rgba(var(--hijau-gelap), 1) 100%
-    );
+    background: linear-gradient(180deg,
+            rgba(var(--font), 1) 0%,
+            rgba(var(--hijau-gelap), 1) 100%);
     box-shadow: 0px 8px 30px 0px #122218;
     backdrop-filter: blur(6.099999904632568px);
     color: rgba(var(--white-background), 1);
 }
 
-.our-values-item-container:hover h4{
+.our-values-item-container:hover h4 {
     color: white;
 }
+
 .our-values-item-container img {
     width: 15%;
 }
@@ -115,11 +110,9 @@ body {
 }
 
 .our-team-item-container {
-    background: linear-gradient(
-        108deg,
-        rgba(var(--white-background), 0.3) 10.91%,
-        rgba(var(--hijau-gelap), 0.3) 111.54%
-    );
+    background: linear-gradient(108deg,
+            rgba(var(--white-background), 0.3) 10.91%,
+            rgba(var(--hijau-gelap), 0.3) 111.54%);
     box-shadow: 0px 8px 30px 0px rgba(var(--hitam), 0.25);
     backdrop-filter: blur(6.099999904632568px);
     padding: 1rem;
@@ -129,27 +122,14 @@ body {
 
 .our-team-item-container:hover {
     border-radius: 15px;
-    background: linear-gradient(
-        108deg,
-        rgba(var(--white-background), 0.3) 10.91%,
-        rgba(var(--hijau-gelap), 0.3) 111.54%
-    );
+    background: linear-gradient(108deg,
+            rgba(var(--white-background), 0.3) 10.91%,
+            rgba(var(--hijau-gelap), 0.3) 111.54%);
     box-shadow: 0px 8px 30px 0px rgba(var(--white-background), 0.7);
     backdrop-filter: blur(6.099999904632568px);
 
 
 }
-
-.our-team-item-container:hover {
-   color: white;
-
-}
-
-.our-team-item-container:hover {
-   color: white !important;
-
-}
-
 
 .our-team-item-container h4 {
     margin: 0;
@@ -234,12 +214,15 @@ body {
 
     .our-values-list-container {
         overflow: scroll;
-        -ms-overflow-style: none; /* IE and Edge */
-        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+        /* Firefox */
     }
 
     .our-values-list-container::-webkit-scrollbar {
-        display: none; /* Safari and Chrome */
+        display: none;
+        /* Safari and Chrome */
     }
 
     .our-values-list {
@@ -249,7 +232,7 @@ body {
         padding-bottom: 4rem;
     }
 
-    .our-values-list > * {
+    .our-values-list>* {
         width: fit-content;
     }
 
@@ -266,13 +249,17 @@ body {
 
     .our-team-list-container {
         overflow: scroll;
-        overflow: auto; /* Enable scrolling within the container */
-        -ms-overflow-style: none; /* IE and Edge */
-        scrollbar-width: none; /* Firefox */
+        overflow: auto;
+        /* Enable scrolling within the container */
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+        /* Firefox */
     }
 
     .our-team-list-container::-webkit-scrollbar {
-        display: none; /* Safari and Chrome */
+        display: none;
+        /* Safari and Chrome */
     }
 
     .our-team-list {
@@ -282,7 +269,7 @@ body {
         padding-bottom: 4rem;
     }
 
-    .our-team-list > * {
+    .our-team-list>* {
         width: fit-content;
     }
 

@@ -9,14 +9,24 @@
     <title>Contact Us - Plant Care</title>
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" rel="stylesheet">
     <link href="{{ asset('/css/utils.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('/css/contact_us_style.css') }}" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
+    <div id="loadingIndicator" class="loading-overlay">
+        <div class="spinner-grow text-success" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
     <x-navbar></x-navbar>
     <div class='row container-fluid contact-container p-0 m-0'>
         <div class='col-5 contact-img-container position-relative'>
@@ -48,31 +58,25 @@
                         <textarea id='message' name='message' required></textarea>
                     </div>
                 </div>
-                <button class="mt-5 contact-btn planty-heading-4" type='submit'>Send</button>
+                <x-primary-btn class="mt-5 contact-btn planty-heading-4 " type="submit">Send</x-primary-btn>
             </form>
         </div>
     </div>
 
+    <x-footer></x-footer>
     <!-- Keep the existing modal and script tags -->
-</body>
 
-</html>
+    <!-- Popup Modal -->
+    <button type="button" class="btn btn-primary d-none modal-btn" data-bs-toggle="modal"
+        data-bs-target="#staticBackdrop">
+        Launch static backdrop modal
+    </button>
+    <!-- Modal -->
+    <x-modal-general header="Success!!!" btn="OK">Thank you for contacting us!!!</x-modal-general>
 
-        <!-- Popup Modal -->
-        <div class="modal fade justify-content-center align-items-center m-0" id="thankYouModal" tabindex="-1" aria-labelledby="thankYouModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body text-center planty-heading-4">
-                        <h4 class="modal-title" id="thankYouModalLabel">Thankyou for contacting us!!!</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
     <script src="{{ asset('js/contact-form.js') }}"></script>
 </body>
 

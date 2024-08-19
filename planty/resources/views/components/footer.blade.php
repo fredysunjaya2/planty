@@ -11,7 +11,7 @@
                 <a aria-current="page" class="nav-link" href="{{ route('tutorial') }}">Tutorial</a>
             </li>
             <li class="footer-nav-item">
-                <a class="nav-link" href="{{ route('donts') }}">Don'ts</a>
+                <a class="nav-link" href="{{ route('donts') }}">Dont's</a>
             </li>
             <li class="footer-nav-item">
                 <a class="nav-link" href="{{ route('fun-facts') }}">Fun Facts</a>

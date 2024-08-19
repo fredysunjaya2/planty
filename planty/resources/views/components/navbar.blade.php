@@ -5,7 +5,7 @@
             class="navbar-toggler" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="position-absolute top-0 bottom-0 start-0 end-0 m-auto" id="img-logo" href="{{ route('index') }}">
+        <a class="position-absolute top-0 start-50" id="img-logo" href="{{ route('index') }}">
             <img alt="Bootstrap" src="{{ asset('/assets/planty.png') }}" class="w-100 h-100">
         </a>
         <div class="container-fluid collapse navbar-collapse pt-lg-0 pt-3" id="navbarSupportedContent">
@@ -37,26 +37,25 @@
                         href="{{ route('contact-us') }}">Contact</a>
                 </li>
                 @if (auth()->user() == null)
-                    <li class="nav-item">
-                        <a href="{{ route('login') }}">
-                            <button class="register-btn planty-heading-1" name='register' type='button'>Login</button>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{ route('register') }}">
-                            <button class="register-btn planty-heading-1" name='register'
-                                type='button'>Register</button>
-                        </a>
-                    </li>
+                <li class="nav-item">
+                    <a href="{{ route('login') }}">
+                        <button class="register-btn" name='register' type='button'>Login</button>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('register') }}">
+                        <button class="register-btn" name='register' type='button'>Register</button>
+                    </a>
+                </li>
                 @else
-                    <li class="nav-item profile-pic">
-                        <a class="nav-link" href="{{ route('profile') }}">
-                            <img class="rounded-circle" src="{{ asset('/assets/user.png') }}" style="height: 40px">
-                        </a>
-                    </li>
-                    <li class="nav-item profile">
-                        <a class="nav-link" href="{{ route('profile') }}">Profile</a>
-                    </li>
+                <li class="nav-item profile-pic">
+                    <a class="nav-link" href="{{ route('profile') }}">
+                        <img class="rounded-circle" src="{{ asset('/assets/user.png') }}" style="height: 40px">
+                    </a>
+                </li>
+                <li class="nav-item profile">
+                    <a class="nav-link" href="{{ route('profile') }}">Profile</a>
+                </li>
                 @endif
             </ul>
         </div>

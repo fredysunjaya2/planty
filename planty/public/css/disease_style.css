@@ -21,14 +21,10 @@
     text-decoration: none;
     padding: 3rem;
 
-    background: var(
-        --tes1,
-        linear-gradient(
-            108deg,
-            rgba(173, 188, 159, 0.3) 10.91%,
-            rgba(79, 86, 73, 0.3) 111.54%
-        )
-    );
+    background: var(--tes1,
+            linear-gradient(108deg,
+                rgba(173, 188, 159, 0.3) 10.91%,
+                rgba(79, 86, 73, 0.3) 111.54%));
 
     border: 3px solid var(--tes1, #adbc9f);
     border-radius: 0.9375rem;
@@ -40,14 +36,10 @@
     opacity: 1;
     border-radius: 0.9375rem;
 
-    background: var(
-        --tes1,
-        linear-gradient(
-            108deg,
-            rgba(173, 188, 159, 0.3) 10.91%,
-            rgba(79, 86, 73, 0.3) 111.54%
-        )
-    );
+    background: var(--tes1,
+            linear-gradient(108deg,
+                rgba(173, 188, 159, 0.3) 10.91%,
+                rgba(79, 86, 73, 0.3) 111.54%));
 
     border: 3px solid var(--tes1, #adbc9f);
     box-shadow: 0px 8px 20px 0px #fff;
@@ -118,14 +110,10 @@
     align-items: start;
 
     border-radius: 0.9375rem;
-    background: var(
-        --tes1,
-        linear-gradient(
-            108deg,
-            rgba(173, 188, 159, 0.3) 10.91%,
-            rgba(79, 86, 73, 0.3) 111.54%
-        )
-    );
+    background: var(--tes1,
+            linear-gradient(108deg,
+                rgba(173, 188, 159, 0.3) 10.91%,
+                rgba(79, 86, 73, 0.3) 111.54%));
     border: 2px solid var(--tes1, #adbc9f);
     box-shadow: 0px 8px 30px 0px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(6.099999904632568px);
@@ -135,6 +123,10 @@
     font-family: Poppins, sans-serif;
     font-weight: 900;
     font-size: 64px;
+}
+
+.diseases-jumbotron {
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1.0) 90%, transparent 100%);
 }
 
 @media (max-width: 1201.98px) {

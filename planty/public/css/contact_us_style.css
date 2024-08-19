@@ -40,7 +40,9 @@
     row-gap: 0;
 }
 
-input, textarea, select {
+input,
+textarea,
+select {
     border-radius: 10px;
     border: 1px solid #618264;
     background: #F1F3F2;
@@ -58,10 +60,20 @@ textarea {
 .contact-btn {
     border-radius: 10px;
     background: rgb(var(--hijau-gelap));
-    height: 50px;
+    height: 3.125rem;
+    border: 2px solid rgba(0, 0, 0, 0);
     color: rgb(var(--white-background));
+    text-align: center;
     border: none;
     width: 100%;
+}
+
+.contact-btn:hover {
+    border: 2px solid var(--tes1, #adbc9f);
+    color: #618264;
+    background: #fff;
+    box-shadow: 0px 8px 30px 0px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(6.099999904632568px);
 }
 
 @media (max-width: 992px) {

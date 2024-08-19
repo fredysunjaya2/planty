@@ -1,8 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("contactForm");
-    const modal = new bootstrap.Modal(document.getElementById("thankYouModal"));
+    const modal = document.getElementById("thankYouModal");
+
     form.addEventListener("submit", function (e) {
         e.preventDefault();
+
+        // Show the loading screen
+        loadingIndicator.classList.add('show');
 
         fetch(form.action, {
             method: "POST",
@@ -16,13 +20,16 @@ document.addEventListener("DOMContentLoaded", function () {
         })
             .then((response) => response.json())
             .then((data) => {
+                // Hide the loading screen
+                loadingIndicator.classList.remove('show');
+
                 if (data.success) {
-                    modal.show();
+                    document.querySelector('.modal-btn').click();
                     form.reset();
                 } else {
                     alert(
                         "Failed to send email: " +
-                            (data.message || "Unknown error")
+                        (data.message || "Unknown error")
                     );
                 }
             })

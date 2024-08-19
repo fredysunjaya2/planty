@@ -57,39 +57,39 @@
             <div id="neglecting-ingredients"
                 class="div-content row d-flex flex-row justify-content-center align-items-center my-5 py-5 gap-5">
                 @component('components.mistake-detail', [
-                    'mistakeTitle' => 'Neglecting Ingredients',
-                    'mistakePic' => asset('/assets/donts/neglectingIngredientsDetail.jpg'),
+                'mistakeTitle' => 'Neglecting Ingredients',
+                'mistakePic' => asset('/assets/donts/neglectingIngredientsDetail.jpg'),
                 ])
-                    This refers to overlooking proper nutrition and soil composition. Plants need balanced nutrients to
-                    thrive. Neglecting fertilization or using the wrong type can result in poor growth and increased
-                    vulnerability to pests and diseases. Similarly, using inappropriate soil or failing to replenish soil
-                    nutrients over time can hinder plant health. Regular fertilization and occasional repotting with fresh,
-                    nutrient-rich soil help ensure your plants have all they need for healthy growth.
+                This refers to overlooking proper nutrition and soil composition. Plants need balanced nutrients to
+                thrive. Neglecting fertilization or using the wrong type can result in poor growth and increased
+                vulnerability to pests and diseases. Similarly, using inappropriate soil or failing to replenish soil
+                nutrients over time can hinder plant health. Regular fertilization and occasional repotting with fresh,
+                nutrient-rich soil help ensure your plants have all they need for healthy growth.
                 @endcomponent
             </div>
 
             <div id="overwatering-plants"
                 class="div-content row d-flex flex-row-reverse justify-content-center align-items-center my-5 py-5 gap-5">
                 @component('components.mistake-detail', [
-                    'mistakeTitle' => 'Overwatering Plants',
-                    'mistakePic' => asset('/assets/donts/overwateringPlantsDetail.webp'),
+                'mistakeTitle' => 'Overwatering Plants',
+                'mistakePic' => asset('/assets/donts/overwateringPlantsDetail.webp'),
                 ])
-                    Overwatering is a common mistake that can suffocate roots and lead to root rot. Many plants prefer soil
-                    that dries slightly between waterings. Signs of overwatering include yellowing leaves and wilting
-                    despite wet soil. To avoid this, always check soil moisture before watering and ensure proper drainage
-                    for your plants.
+                Overwatering is a common mistake that can suffocate roots and lead to root rot. Many plants prefer soil
+                that dries slightly between waterings. Signs of overwatering include yellowing leaves and wilting
+                despite wet soil. To avoid this, always check soil moisture before watering and ensure proper drainage
+                for your plants.
                 @endcomponent
             </div>
             <div id="ignoring-light-requirements"
                 class="div-content row d-flex flex-row justify-content-center align-items-center my-5 py-5 gap-5">
                 @component('components.mistake-detail', [
-                    'mistakeTitle' => 'Ignoring Light Requirements',
-                    'mistakePic' => asset('/assets/donts/IgnoringLightRequirementsDetail.jpg'),
+                'mistakeTitle' => 'Ignoring Light Requirements',
+                'mistakePic' => asset('/assets/donts/IgnoringLightRequirementsDetail.jpg'),
                 ])
-                    Different plants have varying light needs. Placing a shade-loving plant in direct sunlight can cause
-                    leaf burn, while putting a sun-loving plant in a dark corner leads to weak, leggy growth. Research each
-                    plant's light requirements and adjust their positions accordingly. Remember that light conditions change
-                    with seasons, so you may need to move plants throughout the year.
+                Different plants have varying light needs. Placing a shade-loving plant in direct sunlight can cause
+                leaf burn, while putting a sun-loving plant in a dark corner leads to weak, leggy growth. Research each
+                plant's light requirements and adjust their positions accordingly. Remember that light conditions change
+                with seasons, so you may need to move plants throughout the year.
                 @endcomponent
             </div>
             <div class="blank" style="height: 10rem"></div>
@@ -98,7 +98,8 @@
     </div>
     <x-footer></x-footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous" defer>
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"
+        defer>
     </script>
     <script>
         function scrollToElement(id) {
